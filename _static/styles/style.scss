@@ -1,0 +1,36 @@
+/*!
+Theme Name: Peggy Markel
+Description: A Wordpress theme developed by Alchemy + Aim.
+Version: 2.0
+Author: Alchemy + Aim
+Author URI: http://www.alchemyandaim.com
+*/
+
+/**
+ * Main Style.scss
+ * output file that brings together all of the parts,
+ * then contains the most specific styles.
+ * The parts are imported in order of specificty.
+ */
+
+@import "utils/variables"; // variables
+@import "utils/mixins"; // mixins, extends etc.
+
+@import "base/base"; // Base element and typography styles
+
+@import "utils/grid"; // Grid classes
+@import "utils/utilities"; // Utilities and clearfix
+
+@import "layout/layout"; // header, navigation, footer
+@import "layout/blog"; // Blog and comments styles
+@import "layout/theme"; // Theme pages and custom template layouts
+
+// @import "vendor/woocommerce"; // Useful for separating custom woocommerce styles
+// @import "vendor/vendor-custom"; // Useful for custom styles on 3rd party plugins
+
+@import "utils/responsive"; // Responsive styles, previously imported in the header
+
+/*-----------------------------------------------------------------------------------*/
+/*  GENERAL STYLES
+/* General extra styles go below
+/*-----------------------------------------------------------------------------------*/

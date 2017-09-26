@@ -1,0 +1,971 @@
+[
+    {
+        "key": "group_57699cfbbec61",
+        "title": "Developer Options",
+        "fields": [
+            {
+                "key": "field_57699d03e53b9",
+                "label": "Register Widget Areas",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_57699d27e53ba",
+                "label": "Register Widget Area",
+                "name": "register_sidebar",
+                "type": "repeater",
+                "instructions": "Please choose a unique title for each sidebar or widget area!",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Add Row",
+                "sub_fields": [
+                    {
+                        "key": "field_57699d74e53bb",
+                        "label": "Title",
+                        "name": "title",
+                        "type": "text",
+                        "instructions": "Title the sidebar or widget area.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": "",
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "key": "field_57699d91e53bc",
+                        "label": "ID",
+                        "name": "id",
+                        "type": "text",
+                        "instructions": "Please write a lowercase id, with NO SPACES!!!",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": "",
+                        "readonly": 0,
+                        "disabled": 0
+                    }
+                ]
+            },
+            {
+                "key": "field_57699db7e53bd",
+                "label": "Custom CSS & JS",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_57699dc3e53be",
+                "label": "CSS Code",
+                "name": "custom_css",
+                "type": "acf_code_field",
+                "instructions": "Add custom CSS here to over ride or test changes to the site interface.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "mode": "css",
+                "theme": "monokai"
+            },
+            {
+                "key": "field_57699e15e53bf",
+                "label": "Javascript Code",
+                "name": "custom_javascript",
+                "type": "acf_code_field",
+                "instructions": "Add custom Javascript here to test or override existing functionality.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "mode": "htmlmixed",
+                "theme": "monokai"
+            },
+            {
+                "key": "field_57d6afb37e440",
+                "label": "Dashboard Welcome Panel",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_57d6afc27e441",
+                "label": "Welcome Panel Text",
+                "name": "welcome_panel_text",
+                "type": "wysiwyg",
+                "instructions": "Enter the personalized welcome text here.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "<h1 class=\"heading\">Thank You for choosing Alchemy + Aim!<\/h1>\r\n\t  <p>Here you will find tutorials, tools and update notifications from your administrator. Check here periodically for any maintenance updates or additional functionality you may require to further benefit your user experience and help you edit your site. Should you have any questions, problems or difficulties; please do not hesitate to <a href=\"http:\/\/alchemyandaim.com\/contact\/\" target=\"_blank\">contact us<\/a>.<\/p>\r\n<p>Sincerely,<br>\r\n<img width=\"131\" height=\"45\" src=\"http:\/\/www.notyouraverageordinary.com\/wp-content\/uploads\/2015\/03\/blogsignature.png\"><\/p>",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5771476011231",
+                "label": "Dashboard Widgets",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_5771478f11232",
+                "label": "Dashboard Widgets",
+                "name": "dashboard_widgets",
+                "type": "repeater",
+                "instructions": "Add dashboard widgets here.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Add Widget",
+                "sub_fields": [
+                    {
+                        "key": "field_577147a611233",
+                        "label": "Widget Title",
+                        "name": "widget_title",
+                        "type": "text",
+                        "instructions": "Enter the widget title here.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": "",
+                        "readonly": 0,
+                        "disabled": 0
+                    },
+                    {
+                        "key": "field_577147b911234",
+                        "label": "Widget Content",
+                        "name": "widget_content",
+                        "type": "wysiwyg",
+                        "instructions": "Enter the contents of the widget here.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1,
+                        "delay": 0
+                    }
+                ]
+            },
+            {
+                "key": "field_57d81355a51f1",
+                "label": "Dashboard Alert Messages",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_57d81377a51f2",
+                "label": "Dashboard Alerts",
+                "name": "dashboard_alerts",
+                "type": "repeater",
+                "instructions": "Add dashboard alert messages here.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "row",
+                "button_label": "Add Row",
+                "sub_fields": [
+                    {
+                        "key": "field_580e6cb134c32",
+                        "label": "Alert ID",
+                        "name": "alert_id",
+                        "type": "text",
+                        "instructions": "Simple ID for each alert notice, can contain numbers and\/or letters.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_57d814caa51f6",
+                        "label": "Alert Message",
+                        "name": "message",
+                        "type": "wysiwyg",
+                        "instructions": "Enter your alert text here.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "75",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1,
+                        "delay": 0
+                    },
+                    {
+                        "key": "field_57d813b0a51f4",
+                        "label": "Alert Type",
+                        "name": "type",
+                        "type": "select",
+                        "instructions": "Select an alert type",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "12.5",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "info": "Info Notice (Blue)",
+                            "error": "Error Notice (Red)",
+                            "notice": "General Notice (Yellow)",
+                            "success": "Success Notice (Green)"
+                        },
+                        "default_value": [],
+                        "allow_null": 0,
+                        "multiple": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "return_format": "value",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_57d81434a51f5",
+                        "label": "Closable",
+                        "name": "dismissible",
+                        "type": "true_false",
+                        "instructions": "Select whether or nor to make the alert closable here.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "12.5",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 0,
+                        "ui": 0,
+                        "ui_on_text": "",
+                        "ui_off_text": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-developer"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_57cee28a8534f",
+        "title": "Feature Pages",
+        "fields": [
+            {
+                "key": "field_57cee29229ebe",
+                "label": "HTML Content",
+                "name": "html_content",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": "",
+                "readonly": 0,
+                "disabled": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "_template-parts\/template_feature_page.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_561ff222ec1ac",
+        "title": "Local Avatar",
+        "fields": [
+            {
+                "key": "field_561ff234732e5",
+                "label": "Profile Image",
+                "name": "tsm_local_avatar",
+                "type": "image",
+                "instructions": "Add a custom avatar for your profile on this website.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "user_form",
+                    "operator": "==",
+                    "value": "edit"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_57571f6377f24",
+        "title": "Theme Options",
+        "fields": [
+            {
+                "key": "field_5769982a0389a",
+                "label": "404 Page",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "left",
+                "endpoint": 0
+            },
+            {
+                "key": "field_576998410389b",
+                "label": "404 Error Page Text",
+                "name": "error_page_text",
+                "type": "wysiwyg",
+                "instructions": "Set the page content to be displayed within the 404 Error Page.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "<h1>Oops! That page can’t be found.<\/h1>\r\nIt looks like nothing was found at this location. Maybe try one of the links above or a search?",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5769997f0389f",
+                "label": "Social",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_5769998f038a0",
+                "label": "Social Links",
+                "name": "social_links",
+                "type": "repeater",
+                "instructions": "Add social links here.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Add Row",
+                "sub_fields": [
+                    {
+                        "key": "field_576999b0038a1",
+                        "label": "Social Media Icon",
+                        "name": "social_media_icon",
+                        "type": "select",
+                        "instructions": "Choose a social media icon here. These are taken from <a href=\"https:\/\/fortawesome.github.io\/Font-Awesome\/\" target=\"_blank\">fontawesome. <\/a>",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "25",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "fa-facebook": "Facebook f",
+                            "fa-facebook-official": "Facebook Official",
+                            "fa-facebook-square": "Facebook Square",
+                            "fa-twitter": "Twitter Bird",
+                            "fa-twitter-square": "Twitter Square",
+                            "fa-instagram": "Instagram",
+                            "fa-linkedin": "LinkedIn",
+                            "fa-behance": "Behance",
+                            "fa-behance-square": "Behance Square",
+                            "fa-youtube": "YouTube",
+                            "fa-youtube-play": "YouTube Play Button",
+                            "fa-youtube-square": "YouTube Square",
+                            "fa-flickr": "Flickr",
+                            "fa-google": "Google G",
+                            "fa-google-plus": "Google +",
+                            "fa-google-plus-square": "Google Square",
+                            "fa-pinterest": "Pinterest Circle",
+                            "fa-pinterest-p": "Pinterest P",
+                            "fa-pinterest-square": "Pinterest Square",
+                            "fa-rss": "RSS Feed",
+                            "fa-rss-square": "RSS Feed Square",
+                            "fa-envelope": "Envelope",
+                            "fa-envelope-o": "Envelope Outline"
+                        },
+                        "default_value": [],
+                        "allow_null": 0,
+                        "multiple": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "return_format": "value",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_576999d8038a2",
+                        "label": "Social Link",
+                        "name": "social_link",
+                        "type": "text",
+                        "instructions": "Enter the url for the social media page or mail to link.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": 75,
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": "",
+                        "readonly": 0,
+                        "disabled": 0
+                    }
+                ]
+            },
+            {
+                "key": "field_57699a2d038a3",
+                "label": "Site Logos",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_57699a3e038a4",
+                "label": "Site Header Logo",
+                "name": "site_header_logo",
+                "type": "image",
+                "instructions": "Add a site header logo, upload a transparent .png file for the logo.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_57699a6d038a5",
+                "label": "Site Favicon",
+                "name": "site_favicon",
+                "type": "image",
+                "instructions": "Upload a 16x16 .ico file for the favicon. You can also visit <a href=\"http:\/\/www.favicon-generator.org\" target=\"_blank\">www.favicon-generator.org<\/a> to generate a favicon for your site.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_57699a88038a6",
+                "label": "Site Login Logo",
+                "name": "site_login_logo",
+                "type": "image",
+                "instructions": "Add a login logo to your site.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "full",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_581228162fbf1",
+                "label": "Admin Logo",
+                "name": "admin_logo",
+                "type": "image",
+                "instructions": "Upload a logo that will be used for the backend admin area. It will appear at the top left above your admin menu. PNG files with transparent backgrounds work best as well as a monochromatic (white version) of your logo. <em>Size should not exceed 175px X 75px.<\/em>",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_57699b0d3053c",
+                "label": "Apple Touch Icons",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_57699b2d3053d",
+                "label": "iPhone",
+                "name": "iphone",
+                "type": "image",
+                "instructions": "Specify a custom icon to be displayed on a users Apple mobile device when they save your website to their home screen. \r\n<a href=\"http:\/\/iconifier.net\/\" target=\"_blank\">Free online icon generator tool.<\/a>\r\n\r\n57px x 57px",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_57699b5c3053e",
+                "label": "iPhone (Retina)",
+                "name": "iphone_retina",
+                "type": "image",
+                "instructions": "Specify a custom icon to be displayed on a users Apple mobile device when they save your website to their home screen. \r\n<a href=\"http:\/\/iconifier.net\/\" target=\"_blank\">Free online icon generator tool.<\/a>\r\n\r\n114px x 114px",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_57699b6a3053f",
+                "label": "iPad",
+                "name": "ipad",
+                "type": "image",
+                "instructions": "Specify a custom icon to be displayed on a users Apple mobile device when they save your website to their home screen. \r\n<a href=\"http:\/\/iconifier.net\/\" target=\"_blank\">Free online icon generator tool.<\/a>\r\n\r\n72px x 72px",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_57699b8430540",
+                "label": "iPad (Retina)",
+                "name": "ipad_retina",
+                "type": "image",
+                "instructions": "Specify a custom icon to be displayed on a users Apple mobile device when they save your website to their home screen. \r\n<a href=\"http:\/\/iconifier.net\/\" target=\"_blank\">Free online icon generator tool.<\/a>\r\n\r\n144px x 144px",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_57699c0b585b9",
+                "label": "Google Analytics",
+                "name": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0
+            },
+            {
+                "key": "field_57699c2c585ba",
+                "label": "Google Analytics Location",
+                "name": "google_analytics_location",
+                "type": "select",
+                "instructions": "Select whether your Google Analytics Code will appear on either the header or the footer of your site.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "header": "Header",
+                    "footer": "Footer"
+                },
+                "default_value": [
+                    0
+                ],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "disabled": 0,
+                "readonly": 0,
+                "return_format": "value"
+            },
+            {
+                "key": "field_57699c5d585bb",
+                "label": "Google Analytics Code",
+                "name": "google_analytics_code",
+                "type": "acf_code_field",
+                "instructions": "Copy and paste your Google Analytics code here. You can sign up for Google Analytics and obtain a tracking code <a href=\"http:\/\/www.google.com\/analytics\/\" target=\"_blank\">here.<\/a>",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "<script type=\"text\/javascript\">\r\n   \/\/ <![CDATA[\r\n   var _gaq = _gaq || [];\r\n   _gaq.push(['_setAccount', 'UA-00000000-1']);\r\n   _gaq.push(['_setAllowLinker', true]);\r\n   _gaq.push(['_trackPageview']);\r\n   (function() {\r\n       var ga = document.createElement('script'); ga.type = 'text\/javascript'; ga.async = true;\r\n       ga.src = ('https:' == document.location.protocol ? 'https:\/\/ssl' : 'http:\/\/www') + '.google-analytics.com\/ga.js';\r\n       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);\r\n   })();\r\n   \/\/    ]]>\r\n<\/script>",
+                "placeholder": "",
+                "mode": "javascript",
+                "theme": "monokai"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "theme-general-settings"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5621273b83cf7",
+        "title": "WYSIWYG Widget",
+        "fields": [
+            {
+                "key": "field_56212742fd44a",
+                "label": "WYSIWYG Widget",
+                "name": "wysiwyg_widget",
+                "type": "wysiwyg",
+                "instructions": "A rich text WYSIWYG widget.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "widget",
+                    "operator": "==",
+                    "value": "rich_text_widget"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]

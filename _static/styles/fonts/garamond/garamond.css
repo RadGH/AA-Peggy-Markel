@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* CSS Document */
+@font-face {
+  font-family: 'Adobe Garamond Pro Bold';
+  src: url('AGaramondPro-Bold.eot'); /* IE9 Compat Modes */
+  src: url('AGaramondPro-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('AGaramondPro-Bold.woff') format('woff'), /* Modern Browsers */
+       url('AGaramondPro-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('AGaramondPro-Bold.svg#3ba63f82a1b13c399d199d455e95ce26') format('svg'); /* Legacy iOS */    
+  font-style:   normal;
+  font-weight:  700;
+}
+@font-face {
+  font-family: 'Adobe Garamond Pro Bold';
+  src: url('AGaramondPro-BoldItalic.eot'); /* IE9 Compat Modes */
+  src: url('AGaramondPro-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('AGaramondPro-BoldItalic.woff') format('woff'), /* Modern Browsers */
+       url('AGaramondPro-BoldItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('AGaramondPro-BoldItalic.svg#fc87d529a9b2a903681f36cd7c9d9a39') format('svg'); /* Legacy iOS */    
+  font-style:   italic;
+  font-weight:  700;
+}
+@font-face {
+  font-family: 'Adobe Garamond Pro';
+  src: url('AGaramondPro-Italic.eot'); /* IE9 Compat Modes */
+  src: url('AGaramondPro-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('AGaramondPro-Italic.woff') format('woff'), /* Modern Browsers */
+       url('AGaramondPro-Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('AGaramondPro-Italic.svg#e62a4d531f55b2f8bdfd398331ec8604') format('svg'); /* Legacy iOS */
+  font-style:   italic;
+  font-weight:  400;
+}
+@font-face {
+  font-family: 'Adobe Garamond Pro';
+  src: url('AGaramondPro-Regular.eot'); /* IE9 Compat Modes */
+  src: url('AGaramondPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('AGaramondPro-Regular.woff') format('woff'), /* Modern Browsers */
+       url('AGaramondPro-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('AGaramondPro-Regular.svg#1eabc8b27c1d378ed9b1f5dd58b5095c') format('svg'); /* Legacy iOS */    
+  font-style:   normal;
+  font-weight:  400;
+}

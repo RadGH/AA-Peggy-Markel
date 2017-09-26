@@ -1,0 +1,160 @@
+/***************************************
+Mixins
+contains global mixins, functions, helper selectors, etc.
+***************************************/
+
+/* Self-clearing float mixin */
+@mixin group() {
+    zoom: 1;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+/* hover color mixin */
+@mixin link-effect($color: grey, $hover-color: crimson) {
+    color: $color;
+
+    &:hover, &:focus {
+        color: $hover-color;
+    }
+    &:active {
+        color: darken($hover-color, 3%);
+    }
+}
+
+/* hover background-color mixin */
+@mixin link-effect-bg($color: grey, $hover-color: crimson) {
+    background-color: $color;
+
+    &:hover, &:focus {
+        background-color: $hover-color;
+    }
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        background-color: darken($hover-color, 3%);
+    }
+}
+
+/* Convert px values to rems */
+@function px-to-rem($value) {
+    @return ( $value / $font-size-base ) * 1rem;
+}
+
+/* Remove default styling on UL elements */
+@mixin no-bullets {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Center an element */
+@mixin center($position) {
+    position: absolute;
+
+    @if $position == 'vertical' {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+
+    @else if $position == 'horizontal' {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translate(-50%);
+    }
+
+    @else if $position == 'both' {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+}
+/***/
+
+/* Media Queries */
+$breakpoint-small: 600px;
+$breakpoint-med-small: 960px;
+$breakpoint-med: 1175px;
+
+@mixin screen($size, $type: max, $pixels: $breakpoint-small) {
+
+    @if $size == 'small' {
+        @media screen and ($type + -width: $breakpoint-small) {
+            @content;
+        }
+    }
+
+    @else if $size == 'med-small' {
+        @media screen and ($type + -width: $breakpoint-med-small) {
+            @content;
+        }
+    }
+
+    @else if $size == 'med' {
+        @media screen and ($type + -width: $breakpoint-med) {
+            @content;
+        }
+    }
+
+    @else if $size == 'large' {
+        @media screen and ($type + -width: $breakpoint-med) {
+            @content;
+        }
+    }
+
+    @else if $size == 'custom' {
+        @media screen and ($type + -width: $pixels + px) {
+            @content;
+        }
+    }
+
+    @else {
+        @content;
+    }
+
+}
+
+/* Placeholder Color */
+
+@mixin placeholder-color($color) {
+
+  color: $color;
+
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: $color;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+  }
+}
+
+/***/
+
+/* Fonts */
+// @mixin font-source($weight: 400) {
+//  font-family: 'Source Sans Pro', sans-serif;
+//  font-weight: $weight;
+//      -webkit-font-smoothing: antialiased;
+//      -moz-osx-font-smoothing: grayscale;
+// }

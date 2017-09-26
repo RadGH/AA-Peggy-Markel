@@ -1,0 +1,473 @@
+/*
+Add custom fonts here.
+*/
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@font-face {
+	font-family: 'Acumin Pro SemiCondensed';
+	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Bold.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold.woff') format('woff'), /* Modern Browsers */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold.svg#7db59eafe919849aca5debe077f54361') format('svg'); /* Legacy iOS */
+	font-style: normal;
+	font-weight: 700;
+}
+@font-face {
+	font-family: 'Acumin Pro SemiCondensed';
+	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Bold_Italic.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Bold_Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold_Italic.woff') format('woff'), /* Modern Browsers */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold_Italic.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold_Italic.svg#919c10b470e2ecbc958c583a7431d3ba') format('svg'); /* Legacy iOS */
+	font-style: italic;
+	font-weight: 700;
+}
+@font-face {
+	font-family: 'Acumin Pro SemiCondensed';
+	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Book_Italic.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Book_Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book_Italic.woff') format('woff'), /* Modern Browsers */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book_Italic.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book_Italic.svg#b49ca0ce051f0520a287dba59cf28448') format('svg'); /* Legacy iOS */
+	font-style: italic;
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Acumin Pro SemiCondensed';
+	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Book.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book.woff') format('woff'), /* Modern Browsers */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book.svg#2f76f89a72707f5afd0003acd627242a') format('svg'); /* Legacy iOS */
+	font-style: normal;
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Adobe Garamond Pro Bold';
+	src: url('../fonts/garamond/AGaramondPro-Bold.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/garamond/AGaramondPro-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/garamond/AGaramondPro-Bold.woff') format('woff'), /* Modern Browsers */ url('../fonts/garamond/AGaramondPro-Bold.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/garamond/AGaramondPro-Bold.svg#3ba63f82a1b13c399d199d455e95ce26') format('svg'); /* Legacy iOS */
+	font-style: normal;
+	font-weight: 700;
+}
+@font-face {
+	font-family: 'Adobe Garamond Pro Bold';
+	src: url('../fonts/garamond/AGaramondPro-BoldItalic.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/garamond/AGaramondPro-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/garamond/AGaramondPro-BoldItalic.woff') format('woff'), /* Modern Browsers */ url('../fonts/garamond/AGaramondPro-BoldItalic.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/garamond/AGaramondPro-BoldItalic.svg#fc87d529a9b2a903681f36cd7c9d9a39') format('svg'); /* Legacy iOS */
+	font-style: italic;
+	font-weight: 700;
+}
+@font-face {
+	font-family: 'Adobe Garamond Pro';
+	src: url('../fonts/garamond/AGaramondPro-Italic.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/garamond/AGaramondPro-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/garamond/AGaramondPro-Italic.woff') format('woff'), /* Modern Browsers */ url('../fonts/garamond/AGaramondPro-Italic.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/garamond/AGaramondPro-Italic.svg#e62a4d531f55b2f8bdfd398331ec8604') format('svg'); /* Legacy iOS */
+	font-style: italic;
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Adobe Garamond Pro';
+	src: url('../fonts/garamond/AGaramondPro-Regular.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/garamond/AGaramondPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/garamond/AGaramondPro-Regular.woff') format('woff'), /* Modern Browsers */ url('../fonts/garamond/AGaramondPro-Regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/garamond/AGaramondPro-Regular.svg#1eabc8b27c1d378ed9b1f5dd58b5095c') format('svg'); /* Legacy iOS */
+	font-style: normal;
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Learning Curve';
+	src: url('../fonts/learningcurve/LearningCurve_OT-webfont.eot');
+	src: url('../fonts/learningcurve/LearningCurve_OT-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/learningcurve/LearningCurve_OT-webfont.woff') format('woff'), url('../fonts/learningcurve/LearningCurve_OT-webfont.ttf') format('truetype'), url('../fonts/learningcurve/LearningCurve_OT-webfont.svg#learning_curve_proregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* group clearfix */
+.index-php .welcome-panel:before,
+.index-php .welcome-panel:after {
+    content: "";
+    display: table;
+}
+.index-php .welcome-panel:after {
+    clear: both;
+}
+.index-php .welcome-panel {
+    zoom: 1;
+	height: auto;
+}
+
+/* Welcome Panel */
+.welcome-panel .welcome-panel-close {
+	display: none;
+}
+.welcome-panel-content {
+	display: none;
+}
+.welcome-panel:before {
+}
+.welcome-panel {
+	padding: 50px;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(http://alchemyandaim.com/wp-content/uploads/2013/04/alchemy-and-aim-homepage-header.jpg);
+	position: relative;
+	background-size: cover;
+}
+.welcome-panel .preview-thumb:before {
+	background-image: url(http://alchemyandaim.com/wp-content/uploads/2016/10/arrow.png);
+	z-index: 999;
+	position: absolute;
+	content: " ";
+	width: 18px;
+	height: 425px;
+	top: -28px;
+	left: 47%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-left: 5px;
+}
+.welcome-panel .preview-thumb {
+	float: left;
+	margin-right: 25px;
+}
+.welcome-panel .preview-thumb img {
+	max-width: 300px;
+	padding: 3px;
+	border: 1px solid #fff;
+}
+.welcome-panel a {
+	color: #AE8231;
+}
+.welcome-panel p {
+	color: #fff !important;
+	font: 400 15px 'Acumin Pro SemiCondensed', 'PT Sans Narrow', sans-serif;
+	letter-spacing: 0.08em;
+	line-height: 1.5;
+}
+.welcome-panel .sig {
+	padding-top: 50px;
+	background-image: url(http://alchemyandaim.com/wp-content/uploads/2016/10/blogsignature.png);
+	background-repeat: no-repeat;
+	position: relative;
+}
+.welcome-panel .theme-specs {
+	width: 100%;
+}
+.theme-specs h4, .theme-specs li {
+	text-transform: uppercase;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	color: #fff;
+	font-size: 11px;
+	letter-spacing: .2em;
+	margin: 1.5em 0 -1.5em 0;
+}
+.theme-specs h4 {
+	font-size: 14px;
+	margin-bottom: 20px;
+	margin-top: 35px;
+}
+.theme-specs p {
+	margin-top: 1.5em;
+}
+.welcome-panel h1.heading {
+	color: #fff;
+	display: inline-block;
+	font: 400 44px "Adobe Garamond Pro", serif;
+	letter-spacing: 0;
+	text-transform: lowercase;
+	padding: 20px 48px 20px 0;
+	text-align: left;
+}
+a.button-top {
+	display: inline-block;
+	width: 170px;
+	height: 60px;
+	font-size: 15px;
+	line-height: 60px;
+	text-align: center;
+	text-indent: 5px;
+	text-transform: lowercase;
+	cursor: pointer;
+	overflow: hidden;
+	bottom: 1px;
+	position: relative;
+	color: #fff;
+	letter-spacing: .15em;
+	margin-left: -10px;
+}
+a.button-top:hover{
+	color:#fff;
+}
+.button-top svg {
+	width: calc(100% - 20px);
+	left: 10px;
+	position: absolute;
+	top: 10px;
+	height: calc(100% - 20px);
+}
+.button-top svg rect {
+	width: 100%;
+	height: 100%;
+	fill: none;
+	stroke: #fff;
+	stroke-dasharray: 20, 360;
+	stroke-dashoffset: -64;
+	stroke-width: 2;
+	transition: all .4s cubic-bezier(.23, 1, .32, 1);
+}
+.button-top:hover svg rect {
+	stroke-dasharray: 360, 0;
+	stroke-dashoffset: 98;
+}
+
+/*
+* Additional custom admin styles
+*/
+a.acf-icon,
+.js .postbox .handlediv .toggle-indicator:before {
+    color: #999;
+    border-color: #BBB;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: none;
+}
+
+#wpadminbar {
+	background-color: #0073aa;
+}
+
+#adminmenu div.wp-menu-image {
+	height: 40px;
+}
+
+div.wp-menu-image:before {
+	padding: 9px 0;
+}
+
+#adminmenu .wp-submenu-head,
+#adminmenu a.menu-top {
+	line-height: 24px;
+}
+
+#adminmenu,
+#adminmenu .wp-submenu,
+#adminmenuback,
+#adminmenuwrap {
+	width: 200px;
+}
+
+#wpcontent,
+#wpfooter {
+	margin-left: 200px;
+}
+
+input[type=text]:focus,
+input[type=search]:focus,
+input[type=radio]:focus,
+input[type=tel]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus,
+input[type=password]:focus,
+input[type=checkbox]:focus,
+input[type=color]:focus,
+input[type=date]:focus,
+input[type=datetime]:focus,
+input[type=datetime-local]:focus,
+input[type=email]:focus, input[type=month]:focus,
+input[type=number]:focus, select:focus, textarea:focus {
+	border-color: #23282d;
+	box-shadow: 0 0 2px rgba(35,40,45,.8);
+}
+
+/* Admin Top Bar */
+#wpadminbar ul#wp-admin-bar-root-default > li#wp-admin-bar-custom_menu a:before {
+	color: rgba(240,245,250,.6);
+	content: "\f319";
+	font-family: "dashicons";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	line-height: 1.25;
+	text-decoration: inherit;
+	font-weight: 400;
+	font-style: normal;
+	vertical-align: top;
+	text-align: center;
+	-moz-osx-font-smoothing: grayscale;
+}
+#wpadminbar ul#wp-admin-bar-root-default > li#wp-admin-bar-custom_menu a:hover, #wpadminbar ul#wp-admin-bar-root-default > li#wp-admin-bar-custom_menu a:hover:before, li#wp-admin-bar-custom_menu:hover, #wpadminbar a:hover, #wpadminbar li:hover {
+	color: #00b9eb !important;
+	background-color:#32373c !important;
+}
+
+/* Footer */
+#wpfooter p {
+	text-transform:uppercase;
+    letter-spacing: .1em;
+    font-family: 'Montserrat', sans-serif;
+    color: #1b1b1b;
+    font-size: 11px;
+}
+#wpfooter a{
+	color: #1b1b1b;
+	text-decoration: none !important;
+}
+#footer-thankyou{
+	font-style:normal;
+}
+#wpfooter a:hover {
+	text-decoration: none;
+}
+.icon img {
+	height: 16px;
+	width: 16px;
+	vertical-align: middle;
+}
+
+/* Dashboard area */
+#wpcontent {
+	padding-left: 23px;
+}
+#wpcontent, #wpfooter {
+	margin-left: 200px;
+}
+.wrap {
+	margin: 23px 23px 0 0;
+}
+
+/* Misc */
+#c2c {
+	display: none;
+}
+.dashicons-migrate{
+	line-height:1 !important;
+}
+
+/* Inner Menu */
+#adminmenu a.aa-logo {
+	display: block;
+	width: 100%;
+	opacity: 1;
+	height: 69px;
+	margin: 0 auto;
+	padding: 50px 0 0;
+}
+#adminmenu a.aa-logo div.wp-menu-name {
+	text-align:center;
+	font-size:24px;
+	font-weight:700;
+	box-sizing:border-box;
+	padding:5px;
+	line-height:1;
+	margin-top:-10px;
+	letter-spacing:2px;
+	text-transform:uppercase;
+}
+#adminmenu .aa-logo .dashicons-before{
+	display: none;
+}
+html {
+  background: #F6F6F6; }
+
+/* Links */
+a {
+  color: #0073A6; }
+  a:hover, a:active, a:focus {
+    color: #00a0d2; }
+
+#media-upload a.del-link:hover,
+div.dashboard-widget-submit input:hover,
+.subsubsub a:hover,
+.subsubsub a.current:hover {
+  color: #00a0d2; }
+
+/* Admin Menu */
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu {
+  background: #23282d; }
+
+#adminmenu a {
+  color: #fff; }
+
+#adminmenu div.wp-menu-image:before {
+  color: #f1f2f3; }
+
+#adminmenu a:hover,
+#adminmenu li.menu-top:hover,
+#adminmenu li.opensub > a.menu-top,
+#adminmenu li > a.menu-top:focus {
+  color: #fff;
+  background-color: #0073aa; }
+
+#adminmenu li.menu-top:hover div.wp-menu-image:before,
+#adminmenu li.opensub > a.menu-top div.wp-menu-image:before {
+  color: #fff; }
+
+/* Active tabs use a bottom border color that matches the page background color. */
+.about-wrap h2 .nav-tab-active,
+.nav-tab-active,
+.nav-tab-active:hover {
+  background-color: #F6F6F6;
+  border-bottom-color: #F6F6F6; }
+
+/* Admin Menu: submenu */
+#adminmenu .wp-submenu,
+#adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+.folded #adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu {
+  background: #32373c; }
+
+#adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
+  display: none; }
+
+#adminmenu .wp-submenu .wp-submenu-head {
+  color: #b9bfcb; }
+
+#adminmenu .wp-submenu a,
+#adminmenu .wp-has-current-submenu .wp-submenu a,
+.folded #adminmenu .wp-has-current-submenu .wp-submenu a,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu a,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu a {
+  color: #b9bfcb; }
+  #adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu a:hover,
+  #adminmenu .wp-has-current-submenu .wp-submenu a:focus,
+  #adminmenu .wp-has-current-submenu .wp-submenu a:hover,
+  .folded #adminmenu .wp-has-current-submenu .wp-submenu a:focus,
+  .folded #adminmenu .wp-has-current-submenu .wp-submenu a:hover,
+  #adminmenu a.wp-has-current-submenu:focus + .wp-submenu a:focus,
+  #adminmenu a.wp-has-current-submenu:focus + .wp-submenu a:hover,
+  #adminmenu .wp-has-current-submenu.opensub .wp-submenu a:focus,
+  #adminmenu .wp-has-current-submenu.opensub .wp-submenu a:hover {
+    color: #00a0d2; }
+
+/* Admin Menu: current */
+#adminmenu .wp-submenu li.current a,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a {
+  color: #fff; }
+  #adminmenu .wp-submenu li.current a:hover, #adminmenu .wp-submenu li.current a:focus,
+  #adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a:hover,
+  #adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a:focus,
+  #adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a:hover,
+  #adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a:focus {
+    color: #00a0d2; }
+
+ul#adminmenu a.wp-has-current-submenu:after,
+ul#adminmenu > li.current > a.current:after {
+  border-right-color: #F6F6F6; }
+
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head,
+.folded #adminmenu li.current.menu-top {
+  color: #fff;
+  background: #0073A6; }
+
+#adminmenu li.wp-has-current-submenu div.wp-menu-image:before {
+  color: #fff; }
+
+/* Admin Menu: collapse button */
+#collapse-menu {
+  color: #fff; }
+
+#collapse-menu:hover {
+  color: #fff; }
+
+#collapse-button div:after {
+  color: #fff; }
+
+#collapse-menu:hover #collapse-button div:after {
+  color: #fff; }
+
+#plugins-by-dreihochzwo, #plugins-by-john-huebner{
+	display:none;
+}
