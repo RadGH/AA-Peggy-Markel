@@ -180,13 +180,15 @@ class c2c_CustomPostLimits extends C2C_Plugin_034 {
 			add_filter( 'post_limits', array( &$this, 'correct_paged_offset' ), 10, 2 );
 		}
 	}
-
+	
 	/**
 	 * Outputs the text above the setting form
 	 *
-	 * @return void (Text will be echoed.)
+	 * @param string $localized_heading_text
+	 *
+	 * @return void
 	 */
-	public function options_page_description() {
+	public function options_page_description( $localized_heading_text = '' ) {
 		$options = $this->get_options();
 		$current_limit = get_option( 'posts_per_page' );
 		$option_url = '<a href="' . admin_url( 'options-reading.php' ) . '">' . __( 'here', $this->textdomain ) . '</a>';

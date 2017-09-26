@@ -565,7 +565,7 @@ class theme_walker_nav_menu extends walker_nav_menu {
         Walker_Nav_Menu::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
     }
 
-	function start_el(&$output, $item, $depth, $args) {
+	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
 		global $wp_query;
 
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
