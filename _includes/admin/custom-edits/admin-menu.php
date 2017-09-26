@@ -14,7 +14,7 @@ add_action('admin_head','aa_admin_menu_logo');
 function aa_admin_menu_logo() {
 	$admin_logo = get_field('admin_logo','options');
 	if( !empty($admin_logo) ):
-		echo '<style>#adminmenu a.aa-logo {background: url('.$admin_logo['url'].') no-repeat center center !important;background-size: 175px !important;}#adminmenu a.aa-logo div.wp-menu-name{display: none !important;}.folded #adminmenu a.aa-logo {background:none !important;padding:0 !important;}</style>';
+		echo '<style>#adminmenu a.aa-logo {background: url('.$admin_logo['url'].') no-repeat center center !important;background-size: contain !important;}#adminmenu a.aa-logo div.wp-menu-name{display: none !important;}.folded #adminmenu a.aa-logo {background:none !important;padding:0 !important;}</style>';
 	endif;
 }
 
