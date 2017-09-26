@@ -695,6 +695,7 @@ add_action( 'wp_head', 'insert_image_src_rel_in_head', 5 );
 function custom_breadcrumbs() {
        
     // Settings
+	$prefix             = '';
     $separator          = '&gt;';
     $breadcrums_id      = 'breadcrumbs';
     $breadcrums_class   = 'breadcrumbs';
@@ -821,6 +822,9 @@ function custom_breadcrumbs() {
                    
                 // Get parents in the right order
                 $anc = array_reverse($anc);
+	
+                // Initialize parent variable
+	            $parents = '';
                    
                 // Parent page loop
                 foreach ( $anc as $ancestor ) {
