@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/_static/styles/fonts/acumin/acumin.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/_static/styles/fonts/garamond/garamond.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/_static/styles/fonts/learningcurve/stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i|EB+Garamond|Karla" rel="stylesheet">
+
 
     <!-- Style Sheets -->
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" type="text/css" media="screen" />

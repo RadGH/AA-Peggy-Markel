@@ -2,36 +2,6 @@
 /* CSS Document */
 @font-face {
   font-family: 'Acumin Pro SemiCondensed';
-  src: url('Acumin_Pro_SemiCond_Bold.eot'); /* IE9 Compat Modes */
-  src: url('Acumin_Pro_SemiCond_Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('Acumin_Pro_SemiCond_Bold.woff') format('woff'), /* Modern Browsers */
-       url('Acumin_Pro_SemiCond_Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('Acumin_Pro_SemiCond_Bold.svg#7db59eafe919849aca5debe077f54361') format('svg'); /* Legacy iOS */ 
-  font-style:   normal;
-  font-weight:  700;
-}
-@font-face {
-  font-family: 'Acumin Pro SemiCondensed';
-  src: url('Acumin_Pro_SemiCond_Bold_Italic.eot'); /* IE9 Compat Modes */
-  src: url('Acumin_Pro_SemiCond_Bold_Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('Acumin_Pro_SemiCond_Bold_Italic.woff') format('woff'), /* Modern Browsers */
-       url('Acumin_Pro_SemiCond_Bold_Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('Acumin_Pro_SemiCond_Bold_Italic.svg#919c10b470e2ecbc958c583a7431d3ba') format('svg'); /* Legacy iOS */   
-  font-style:   italic;
-  font-weight:  700;
-}
-@font-face {
-  font-family: 'Acumin Pro SemiCondensed';
-  src: url('Acumin_Pro_SemiCond_Book_Italic.eot'); /* IE9 Compat Modes */
-  src: url('Acumin_Pro_SemiCond_Book_Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('Acumin_Pro_SemiCond_Book_Italic.woff') format('woff'), /* Modern Browsers */
-       url('Acumin_Pro_SemiCond_Book_Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('Acumin_Pro_SemiCond_Book_Italic.svg#b49ca0ce051f0520a287dba59cf28448') format('svg'); /* Legacy iOS */    
-  font-style:   italic;
-  font-weight:  400;
-}
-@font-face {
-  font-family: 'Acumin Pro SemiCondensed';
   src: url('Acumin_Pro_SemiCond_Book.eot'); /* IE9 Compat Modes */
   src: url('Acumin_Pro_SemiCond_Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('Acumin_Pro_SemiCond_Book.woff') format('woff'), /* Modern Browsers */

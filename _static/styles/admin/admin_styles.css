@@ -1,70 +1,15 @@
 /*
 Add custom fonts here.
 */
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-@font-face {
-	font-family: 'Acumin Pro SemiCondensed';
-	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Bold.eot'); /* IE9 Compat Modes */
-	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold.woff') format('woff'), /* Modern Browsers */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold.svg#7db59eafe919849aca5debe077f54361') format('svg'); /* Legacy iOS */
-	font-style: normal;
-	font-weight: 700;
-}
-@font-face {
-	font-family: 'Acumin Pro SemiCondensed';
-	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Bold_Italic.eot'); /* IE9 Compat Modes */
-	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Bold_Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold_Italic.woff') format('woff'), /* Modern Browsers */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold_Italic.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/acumin/Acumin_Pro_SemiCond_Bold_Italic.svg#919c10b470e2ecbc958c583a7431d3ba') format('svg'); /* Legacy iOS */
-	font-style: italic;
-	font-weight: 700;
-}
-@font-face {
-	font-family: 'Acumin Pro SemiCondensed';
-	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Book_Italic.eot'); /* IE9 Compat Modes */
-	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Book_Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book_Italic.woff') format('woff'), /* Modern Browsers */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book_Italic.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book_Italic.svg#b49ca0ce051f0520a287dba59cf28448') format('svg'); /* Legacy iOS */
-	font-style: italic;
-	font-weight: 400;
-}
+@import url('//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700');
+@import url('//fonts.googleapis.com/css?family=Crimson+Text:400,400i|EB+Garamond|Karla');
+
 @font-face {
 	font-family: 'Acumin Pro SemiCondensed';
 	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Book.eot'); /* IE9 Compat Modes */
 	src: url('../fonts/acumin/Acumin_Pro_SemiCond_Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book.woff') format('woff'), /* Modern Browsers */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/acumin/Acumin_Pro_SemiCond_Book.svg#2f76f89a72707f5afd0003acd627242a') format('svg'); /* Legacy iOS */
 	font-style: normal;
 	font-weight: 400;
-}
-@font-face {
-	font-family: 'Adobe Garamond Pro Bold';
-	src: url('../fonts/garamond/AGaramondPro-Bold.eot'); /* IE9 Compat Modes */
-	src: url('../fonts/garamond/AGaramondPro-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/garamond/AGaramondPro-Bold.woff') format('woff'), /* Modern Browsers */ url('../fonts/garamond/AGaramondPro-Bold.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/garamond/AGaramondPro-Bold.svg#3ba63f82a1b13c399d199d455e95ce26') format('svg'); /* Legacy iOS */
-	font-style: normal;
-	font-weight: 700;
-}
-@font-face {
-	font-family: 'Adobe Garamond Pro Bold';
-	src: url('../fonts/garamond/AGaramondPro-BoldItalic.eot'); /* IE9 Compat Modes */
-	src: url('../fonts/garamond/AGaramondPro-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/garamond/AGaramondPro-BoldItalic.woff') format('woff'), /* Modern Browsers */ url('../fonts/garamond/AGaramondPro-BoldItalic.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/garamond/AGaramondPro-BoldItalic.svg#fc87d529a9b2a903681f36cd7c9d9a39') format('svg'); /* Legacy iOS */
-	font-style: italic;
-	font-weight: 700;
-}
-@font-face {
-	font-family: 'Adobe Garamond Pro';
-	src: url('../fonts/garamond/AGaramondPro-Italic.eot'); /* IE9 Compat Modes */
-	src: url('../fonts/garamond/AGaramondPro-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/garamond/AGaramondPro-Italic.woff') format('woff'), /* Modern Browsers */ url('../fonts/garamond/AGaramondPro-Italic.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/garamond/AGaramondPro-Italic.svg#e62a4d531f55b2f8bdfd398331ec8604') format('svg'); /* Legacy iOS */
-	font-style: italic;
-	font-weight: 400;
-}
-@font-face {
-	font-family: 'Adobe Garamond Pro';
-	src: url('../fonts/garamond/AGaramondPro-Regular.eot'); /* IE9 Compat Modes */
-	src: url('../fonts/garamond/AGaramondPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/garamond/AGaramondPro-Regular.woff') format('woff'), /* Modern Browsers */ url('../fonts/garamond/AGaramondPro-Regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/garamond/AGaramondPro-Regular.svg#1eabc8b27c1d378ed9b1f5dd58b5095c') format('svg'); /* Legacy iOS */
-	font-style: normal;
-	font-weight: 400;
-}
-@font-face {
-	font-family: 'Learning Curve';
-	src: url('../fonts/learningcurve/LearningCurve_OT-webfont.eot');
-	src: url('../fonts/learningcurve/LearningCurve_OT-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/learningcurve/LearningCurve_OT-webfont.woff') format('woff'), url('../fonts/learningcurve/LearningCurve_OT-webfont.ttf') format('truetype'), url('../fonts/learningcurve/LearningCurve_OT-webfont.svg#learning_curve_proregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
 }
 
 /* group clearfix */
@@ -123,7 +68,7 @@ Add custom fonts here.
 }
 .welcome-panel p {
 	color: #fff !important;
-	font: 400 15px 'Acumin Pro SemiCondensed', 'PT Sans Narrow', sans-serif;
+	font: 400 15px 'Acumin Pro SemiCondensed', sans-serif;
 	letter-spacing: 0.08em;
 	line-height: 1.5;
 }
@@ -138,7 +83,7 @@ Add custom fonts here.
 }
 .theme-specs h4, .theme-specs li {
 	text-transform: uppercase;
-	font-family: "Montserrat", sans-serif;
+	font-family: "Acumin Pro SemiCondensed", sans-serif;
 	font-weight: 400;
 	color: #fff;
 	font-size: 11px;
@@ -156,7 +101,7 @@ Add custom fonts here.
 .welcome-panel h1.heading {
 	color: #fff;
 	display: inline-block;
-	font: 400 44px "Adobe Garamond Pro", serif;
+	font: 400 44px "EB Garamond", serif;
 	letter-spacing: 0;
 	text-transform: lowercase;
 	padding: 20px 48px 20px 0;
@@ -291,7 +236,7 @@ input[type=number]:focus, select:focus, textarea:focus {
 #wpfooter p {
 	text-transform:uppercase;
     letter-spacing: .1em;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Crimson Text', serif;
     color: #1b1b1b;
     font-size: 11px;
 }
