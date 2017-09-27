@@ -25,6 +25,7 @@ require_once( get_template_directory() . '/_includes/extended/admin-post-navigat
 require_once( get_template_directory() . '/_includes/extended/animsition/animsition.php' ); // Add animsition page transitions.
 require_once( get_template_directory() . '/_includes/extended/custom-widgets.php' ); // Add custom widgets.
 require_once( get_template_directory() . '/_includes/extended/re-add-underline-justify/re-add-underline-justify.php' ); // Add Underline and Justified text to TinyMCE Editor.
+require_once( get_template_directory() . '/_includes/extended/woocommerce.php' ); // Add woocommerce support to the theme, including customizations.
 
 
 /*---------------------------------------------
