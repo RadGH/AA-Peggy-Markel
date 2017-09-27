@@ -51,7 +51,7 @@
 
      <!-- Modernizr -->
 	 <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/0globals/modernizr-2.7.1.js"></script>
-     
+    
 
     <!-- Favicon -->
     <?php $image = get_field('site_favicon', 'option');
