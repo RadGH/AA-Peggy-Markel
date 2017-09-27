@@ -13,6 +13,12 @@ function aa_admin_menu() {
 add_action('admin_head','aa_admin_menu_logo');
 function aa_admin_menu_logo() {
 	$admin_logo = get_field('admin_logo','options');
+	
+	// Using get_field on the custom fields page returns the ID as a string, instead of an array. This returns a formatted image array again, if that happens.
+	if ( is_numeric($admin_logo) ) {
+		$admin_logo = acf_get_attachment( (int) $admin_logo );
+	}
+	
 	if( !empty($admin_logo) && is_array($admin_logo) ):
 		echo '<style>#adminmenu a.aa-logo {background: url('.$admin_logo['url'].') no-repeat center center !important;background-size: contain !important;}#adminmenu a.aa-logo div.wp-menu-name{display: none !important;}.folded #adminmenu a.aa-logo {background:none !important;padding:0 !important;}</style>';
 	endif;
