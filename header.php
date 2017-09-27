@@ -11,14 +11,8 @@
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/_static/js/browser-detect.js"></script>
 
 	<!-- Theme Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/_static/styles/fonts/acumin/acumin.css">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/_static/styles/fonts/garamond/garamond.css">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/_static/styles/fonts/learningcurve/stylesheet.css">
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i|EB+Garamond|Karla" rel="stylesheet">
-
-
+	
     <!-- Style Sheets -->
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />

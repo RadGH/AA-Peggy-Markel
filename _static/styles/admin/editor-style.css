@@ -1,7 +1,5 @@
 /* Add custom fonts here.*/
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700');
 @import url('//fonts.googleapis.com/css?family=Crimson+Text:400,400i|EB+Garamond');
-
 
 /*
 Used to style the TinyMCE editor.
@@ -59,7 +57,7 @@ hr {
 /* Text elements */
 p, ul, ol {
     color: #1b1b1b;
-    font-family: "Acumin Pro SemiCondensed","PT Sans Narrow",sans-serif;
+    font-family: "Acumin Pro SemiCondensed", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
