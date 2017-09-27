@@ -415,3 +415,49 @@ ul#adminmenu > li.current > a.current:after {
 #plugins-by-dreihochzwo, #plugins-by-john-huebner{
 	display:none;
 }
+
+/* Flexible Content Fields (Content Areas), dark theme for improved recognition */
+.acf-field-59cae145a8ede {
+	background: #3e4042;
+	box-shadow: inset 0 0 40px #23282d;
+}
+
+.acf-fields > .acf-field.acf-field-59cae145a8ede {
+	margin: 0 12px 0 13px;
+	padding: 15px 22px 15px 22px;
+}
+
+html .acf-field-59cae145a8ede .layout {
+	border: 3px solid #0073aa;
+}
+
+.acf-field-59cae145a8ede > .acf-label {
+	color: #fff;
+}
+
+.acf-field-59cae145a8ede .acf-flexible-content .layout > .acf-fc-layout-handle {
+	background: #0073aa;
+	color: #eee;
+}
+
+.acf-field-59cae145a8ede .layout .acf-fc-layout-order {
+	color: #0073aa;
+	background: #eee;
+}
+
+html .acf-field-59cae145a8ede a.acf-icon.light,
+html .acf-field-59cae145a8ede a.acf-icon.-collapse {
+	color: #0073aa;
+	background: #eee;
+}
+
+html .acf-field-59cae145a8ede .layout .acf-fc-layout-controlls .acf-icon.-collapse {
+	color: #0073aa;
+	background: #eee;
+}
+
+html .acf-field-59cae145a8ede a.acf-icon.light.-plus:hover,
+html .acf-field-59cae145a8ede .layout .acf-fc-layout-controlls .acf-icon.-collapse:hover {
+	color: #0073aa;
+	background: #fff;
+}
