@@ -33,7 +33,7 @@ require_once( get_template_directory() . '/_includes/extended/flexible-content-a
 	REGISTER CUSTOM POST TYPES
 ------------------------------------------------*/
 
-//require_once( get_template_directory() . '/_includes/custom-post-types/custom-post-type-template.php' ); // Add a Custom Post Type.
+require_once( get_template_directory() . '/_includes/custom-post-types/destinations.php' );
 
 /*---------------------------------------------
 	STOP UPDATE NAG ON THESE MODIFIED PLUGINS
