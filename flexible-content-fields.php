@@ -21,10 +21,12 @@ while ( have_posts() ) : the_post();
 		
 		<?php
 		foreach( $fields as $key => $flex_field ) {
-			$layout_key = $flex_field['acf_fc_layout'];
+			$layout_key = strtolower($flex_field['acf_fc_layout']);
+			
+			$spacing = !empty($flex_field['spacing']) ? $flex_field['spacing'] : 'regular';
 			?>
 			
-			<div class="ff field-<?php echo esc_attr($key); ?> layout-<?php echo esc_attr($layout_key); ?>">
+			<div class="ff field-<?php echo esc_attr($key); ?> layout-<?php echo esc_attr($layout_key); ?> spacing-<?php echo esc_attr($spacing); ?>">
 				
 				<?php aa_flexible_background_start( $flex_field, 'ff-background' ); ?>
 				
@@ -33,23 +35,24 @@ while ( have_posts() ) : the_post();
 						<?php
 						// Example:
 						// _template-parts/flex/destinations.php
-						$template = locate_template( '_template-parts/flexible-fields/' . $layout_key );
+						$template = locate_template( '_template-parts/flexible-fields/' . $layout_key . '.php' );
 						
-						echo '<pre>';
-						var_dump($flex_field);
-						echo '</pre>';
-						
+						// Load the field template if it exists, or show html comments if it doesn't.
 						if ( $template ) {
 							
 							include( $template );
 							
 						}else{
 							
-							// Show an html comment if the template isn't found.
 							echo "\n" . '<!-- Unknown flexible content layout: "'. esc_html($layout_key) .'" -->' . "\n";
-							echo "\n" . '<!-- Missing layout path: "'. esc_html( '_template-parts/flexible-fields/' . $layout_key . '.php' ) .'" -->' . "\n";
+							echo "\n" . '<!-- The missing layout path is: "'. esc_html( '_template-parts/flexible-fields/' . $layout_key . '.php' ) .'" -->' . "\n";
 							
 						}
+						
+						echo '<pre>';
+						var_dump($template);
+						var_dump($flex_field);
+						echo '</pre>';
 						?>
 					
 					</div> <!-- /.container -->

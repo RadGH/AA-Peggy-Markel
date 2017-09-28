@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Changes the page template when a singular object is using a flexible content area.
+ *
+ * @param $template
+ *
+ * @return string
+ */
 function aa_replace_flexible_content_field_template( $template ) {
 	if ( !is_singular() ) return $template;
 	if ( is_admin() ) return $template;
@@ -15,6 +22,13 @@ function aa_replace_flexible_content_field_template( $template ) {
 }
 add_filter( "template_include", "aa_replace_flexible_content_field_template" );
 
+/**
+ * Outputs the start tag for a flexible field's background div.
+ *
+ * @param $field
+ * @param $classes
+ * @param string $background_key
+ */
 function aa_flexible_background_start( $field, $classes, $background_key = 'background' ) {
 	if ( !is_array($classes) ) $classes = (array) $classes;
 	
@@ -71,12 +85,23 @@ function aa_flexible_background_start( $field, $classes, $background_key = 'back
 	}
 }
 
+/**
+ * Closes the background div
+ */
 function aa_flexible_background_end() {
 	?>
 	</div> <!-- /.ff-background -->
 	<?php
 }
 
+/**
+ * Converts a hex color with opacity value to an rgba color for CSS.
+ *
+ * @param $color
+ * @param bool $opacity
+ *
+ * @return string
+ */
 // Source: http://mekshq.com/how-to-convert-hexadecimal-color-code-to-rgb-or-rgba-using-php/
 function aa_hex2rgba( $color, $opacity = false ) {
 	$default = 'none';
@@ -112,4 +137,79 @@ function aa_hex2rgba( $color, $opacity = false ) {
 	
 	// Return rgb(a) color string
 	return $output;
+}
+
+/**
+ * Output the title for a flexible content field. The first occurrence is an <h1>, the rest are <h2>.
+ *
+ * @param $fields
+ * @param $key
+ */
+function aa_flexible_field_title( $fields, $key = 'title' ) {
+	$value = !empty($fields[$key]) ? $fields[$key] : false;
+	if ( empty($value) ) return;
+	
+	$tag = 'h1';
+	
+	if ( did_action( 'flexible-field-h1' ) ) $tag = 'h2';
+	else do_action( 'flexible-field-h1' );
+	
+	echo '<'. $tag .' class="h1 ff-title">';
+	echo nl2br(esc_html($value));
+	echo '</'. $tag .'>';
+}
+
+/**
+ * Output the subtitle field for a flexible content field.
+ * @param $fields
+ * @param $key
+ */
+function aa_flexible_field_subtitle( $fields, $key = 'subtitle' ) {
+	$value = !empty($fields[$key]) ? $fields[$key] : false;
+	if ( empty($value) ) return;
+	
+	echo '<h3 class="h3 ff-subtitle">';
+	echo nl2br(esc_html($value));
+	echo '</h3>';
+}
+
+/**
+ * Output the text content for a flexible content field.
+ * @param $fields
+ * @param $key
+ */
+function aa_flexible_field_content( $fields, $key = 'content' ) {
+	$value = !empty($fields[$key]) ? $fields[$key] : false;
+	if ( empty($value) ) return;
+	
+	$value = do_shortcode(wpautop($value));
+	
+	echo '<div class="ff-content">';
+	echo $value;
+	echo '</div>';
+}
+
+/**
+ * Render a button for a flexible content field.
+ *
+ * @param $fields
+ * @param string $key
+ * @param string $enabled
+ */
+function aa_flexible_field_button( $fields, $key = 'button', $enabled = 'button_enabled' ) {
+	$value = !empty($fields[$key]) ? $fields[$key] : false;
+	if ( empty($value) ) return;
+	
+	// A checkbox may be used to enable the button. If the parameter is false, this check is skipped. Otherwise, we check that a field is set with a truthful value.
+	if ( !empty($enabled) ) {
+		if ( empty($fields[$enabled]) ) return;
+	}
+	
+	$url = $value['url'] ? $value['url'] : '#';
+	$text = $value['text'] ? $value['text'] : 'Learn More';
+	$target = $value['target'] ? 'target="_blank"' : '';
+	
+	echo '<div class="ff-button-row">';
+	printf( '<a href="%s" class="button ff-button" %s>%s</a>', esc_attr($url), $target, esc_html($text) );
+	echo '</div>';
 }

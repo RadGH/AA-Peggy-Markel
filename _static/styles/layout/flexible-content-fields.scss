@@ -1,20 +1,57 @@
-/*-----------------------------------------------------------------------------------*/
-/*  Background images with color overlay
-/*-----------------------------------------------------------------------------------*/
-.ff-background {
-  &.image-color-overlay {
-    position: relative;
+.ff {
+	text-align: center;
 
-    .ff-background-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-  }
+	/*-----------------------------------------------------------------------------------*/
+	/*  Spacing (padding) above and below each section
+	/*-----------------------------------------------------------------------------------*/
+	&.spacing-minimal .container {
+		padding-top: 30px;
+		padding-bottom: 30px;
 
-  &.light-theme, &.light-theme a {
-    color: #fff;
-  }
+		@include screen('small') {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+	}
+
+	&.spacing-regular .container {
+		padding-top: 60px;
+		padding-bottom: 60px;
+
+		@include screen('small') {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	}
+
+	&.spacing-large .container {
+		padding-top: 200px;
+		padding-bottom: 200px;
+
+		@include screen('small') {
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+	}
+
+	/*-----------------------------------------------------------------------------------*/
+	/*  Background images with color overlay
+	/*-----------------------------------------------------------------------------------*/
+	.ff-background {
+		&.image-color-overlay {
+			position: relative;
+
+			.ff-background-overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+		}
+
+		&.light-theme, &.light-theme a {
+			color: #fff;
+		}
+	}
 }

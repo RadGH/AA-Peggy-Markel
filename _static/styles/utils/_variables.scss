@@ -5,6 +5,7 @@ Variables (colors etc.)
 /* Colors */
 $accent1: #152b52;
 $accent2: #AE8231;
+
 $text: #1b1b1b;
 
 
@@ -12,3 +13,7 @@ $text: #1b1b1b;
 $body: "Crimson Text", sans-serif;
 $header: 'EB Garamond', serif;
 $menu: "Crimson Text", sans-serif;
+
+/* Device sizes */
+$device_width__phone: 568px;
+$device_width__tablet: 1280px;
