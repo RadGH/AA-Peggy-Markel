@@ -70,11 +70,6 @@ if ( ! function_exists( 'theme_setup' ) ):
 		if ( is_readable( $locale_file ) )
 			require_once( $locale_file );
 
-		//This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-		'primary' => __( 'Main Navigation', 'alchemyaim' )
-		) );
-
 		//Define custom thumbnails
 		set_post_thumbnail_size( 151, 110, true );
 		add_image_size( 'thumb-gallery',  312, 250, true );
@@ -535,7 +530,8 @@ add_filter('the_content', 'formatter', 11);
 	Register Menu Areas
 ------------------------------------*/
 register_nav_menus( array(  
-'primary' => __( 'Main Navigation', 'alchemyaim' ),
+'primary' => __( 'Primary Navigation', 'alchemyaim' ),
+'footer' => __( 'Footer Navigation', 'alchemyaim' ),
 'mobile' => __( 'Mobile Navigation', 'alchemyaim' ),
 ) );
 
