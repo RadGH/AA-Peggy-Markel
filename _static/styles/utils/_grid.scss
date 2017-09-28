@@ -144,3 +144,40 @@
 .clear-fix{
 	clear:both;
 }
+
+/*-----------------------------------------------------------------------------------*/
+/* PREDEFINED GRIDS (2 columns, 3 columns, 4 colums). Examples:
+/* .grid.grid-2-cols
+/* -> .columns.one-half
+/* -> .columns.one-half
+/*-----------------------------------------------------------------------------------*/
+.grid {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+		height: 1px;
+	}
+
+	&.grid-2-cols .column:nth-child(2n+1),
+	&.grid-2-cols .columns:nth-child(2n+1) {
+		clear: left;
+		margin-left: 0;
+	}
+
+	&.grid-3-cols .column:nth-child(3n+1),
+	&.grid-3-cols .columns:nth-child(3n+1) {
+		clear: left;
+		margin-left: 0;
+	}
+
+	&.grid-4-cols .column:nth-child(4n+1),
+	&.grid-4-cols .columns:nth-child(4n+1) {
+		clear: left;
+		margin-left: 0;
+	}
+}
