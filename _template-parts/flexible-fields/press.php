@@ -8,7 +8,7 @@ if ( !isset($flex_field) ) return; // This variable is passed through from "flex
 
 $args = array(
 	'nopaging' => true,
-	'post_type'=> 'destination',
+	'post_type'=> 'press',
 );
 
 $dest_query = new WP_Query($args);
@@ -19,12 +19,12 @@ aa_flexible_field_content( $flex_field );
 
 if ( $dest_query->have_posts() ) {
 	?>
-	<div class="destinations-list grid grid-3-cols">
+	<div class="press-list grid grid-3-cols">
 		<?php
 		while( $dest_query->have_posts() ): $dest_query->the_post();
 			$date_range = get_field( 'date_range' );
 			?>
-			<div class="destination-item columns one-third <?php post_class(); ?>">
+			<div class="press-item columns four columns <?php post_class(); ?>">
 				
 				<?php if ( has_post_thumbnail() ) { ?>
 				<div class="image">
