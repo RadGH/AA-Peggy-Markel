@@ -114,7 +114,7 @@
             <nav id="menu" class="nav-menu" role="navigation">
 				<?php wp_nav_menu( array(
 					'theme_location'  => 'primary',
-					'menu' 			  => get_post_meta( $post->ID, 'meta_box_menu_name_set', true),
+					'menu' 			  => get_post_meta( get_the_ID(), 'meta_box_menu_name_set', true),
 					'container'       => 'none',
 					'container_class' => 'menu-header',
 					'container_id'    => '',

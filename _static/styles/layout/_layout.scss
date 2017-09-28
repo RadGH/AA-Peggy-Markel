@@ -74,10 +74,6 @@ header {
 	color:$accent2 !important;
 	font-weight:400;
 }
-.nav-menu{
-	float: right;
-    margin-top: 15px;
-}
 .menu-item-parent > a:after, .menu-item-has-children > a:after {
 	font-family: 'FontAwesome';
     content: "\f0dd";
@@ -250,6 +246,19 @@ footer{
 	padding: 20px 0 0;
 	margin-top:50px;
 }
+footer .container {
+	max-width: 1120px;
+}
+.footer-col-left {
+	text-align: left;
+}
+.footer-col-middle {
+	text-align: center;
+}
+.footer-col-right {
+	text-align: right;
+}
+
 #credits {
 	padding-top:20px;
 	text-transform: uppercase;
@@ -270,12 +279,4 @@ footer{
 }
 #credits a:hover {
 	color:$accent2;
-}
-#credits .footer-left {
-	width:50%;
-	text-align:left;
-}
-#credits .footer-right {
-	width:50%;
-	text-align:right;
 }
