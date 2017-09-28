@@ -210,6 +210,34 @@ function aa_flexible_field_button( $fields, $key = 'button', $enabled = 'button_
 	$target = $value['target'] ? 'target="_blank"' : '';
 	
 	echo '<div class="ff-button-row">';
-	printf( '<a href="%s" class="button ff-button" %s>%s</a>', esc_attr($url), $target, esc_html($text) );
+	printf( '<a href="%s" class="ff-button" %s>%s</a>', esc_attr($url), $target, esc_html($text) );
 	echo '</div>';
+}
+
+/**
+ * Displays a gallery of a flexible content field.
+ * @param $fields
+ * @param $key
+ */
+function aa_flexible_field_gallery( $fields, $key = 'images' ) {
+	$value = !empty($fields[$key]) ? $fields[$key] : false;
+	if ( empty($value) || !is_array($value) ) return;
+	
+	?>
+	<div class="ff-gallery">
+		<div class="gallery-items">
+			<?php
+			foreach( $value as $image ) {
+				?>
+				<div class="gallery-item columns four">
+					<a href="<?php echo esc_attr($image['url']) ; ?>" title="View full image" target="_blank" rel="lightbox"><?php
+						echo wp_get_attachment_image( $image['ID'], 'thumbnail' );
+					?></a>
+				</div>
+				<?php
+			}
+			?>
+		</div>
+	</div>
+	<?php
 }
