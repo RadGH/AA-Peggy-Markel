@@ -48,11 +48,6 @@ while ( have_posts() ) : the_post();
 							echo "\n" . '<!-- The missing layout path is: "'. esc_html( '_template-parts/flexible-fields/' . $layout_key . '.php' ) .'" -->' . "\n";
 							
 						}
-						
-						echo '<pre>';
-						var_dump($template);
-						var_dump($flex_field);
-						echo '</pre>';
 						?>
 					
 					</div> <!-- /.container -->
