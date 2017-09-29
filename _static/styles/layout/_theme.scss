@@ -97,6 +97,10 @@ form.header-search input[type=search]::placeholder {
 
 #linkbar .left {
 	text-align: right;
+
+	ul {
+		padding-right: 10px;
+	}
 }
 
 #linkbar .center {
@@ -105,6 +109,10 @@ form.header-search input[type=search]::placeholder {
 
 #linkbar .right {
 	text-align: left;
+
+	ul {
+		padding-left: 10px;
+	}
 }
 
 /* Header Link Bar -> Logo */
@@ -164,6 +172,13 @@ form.header-search input[type=search]::placeholder {
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	transition: all 0.3s ease;
+
+	@include screen('large') {
+		width: 90px;
+	}
+	@include screen('med-small') {
+		width: 75px;
+	}
 }
 
 #linkbar .header-nav a:hover {

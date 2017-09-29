@@ -2,7 +2,6 @@
 /*  HEADER
 /*-----------------------------------------------------------------------------------*/
 #header-wrapper {
-	width: 100%;
 	background-color:#fff;
 	padding: 24px 0 26px;
 }
@@ -69,42 +68,58 @@ ul.social-menu li a:hover {
 /*-----------------------------------------------------------------------------------*/
 /*  FOOTER
 /*-----------------------------------------------------------------------------------*/
-footer{
-	background-color:#f6f6f6;
-	padding: 20px 0 0;
-	margin-top:50px;
+footer {
+	padding: 50px;
+
+	font-size: 1.4rem;
+	line-height: 2.0rem;
+
+	background-color: #f7f6f6;
 }
+
 footer .container {
 	max-width: 1120px;
 }
+
 .footer-col-left {
 	text-align: left;
 }
+
 .footer-col-middle {
 	text-align: center;
 }
+
 .footer-col-right {
 	text-align: right;
 }
 
-#credits {
-	padding-top:20px;
-	text-transform: uppercase;
-	letter-spacing: .1em;
-	font-family: $body;
+footer a {
+	text-decoration: none;
 	color: $text;
-	font-size:1.1rem;
 }
-#credits a {
-	color:$text;
-	text-decoration:none;
+
+footer a:hover {
+	text-decoration: none;
+	color: $accent2;
 }
-.social-links a{
-	font-size:1.4rem;
+
+.social-links a {
+	font-size: 1.4rem;
 }
-.social-links i{
+
+.social-links i {
 	width: 32px;
 }
-#credits a:hover {
-	color:$accent2;
+
+.footer-nav,
+.footer-contact {
+	font-family: "EB Garamond", serif;
+}
+
+.footer-nav ul,
+.footer-nav ul li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: block;
 }

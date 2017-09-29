@@ -24,7 +24,7 @@
 				<div id="credits" class="container">
 					<img src="<?php echo get_template_directory_uri(); ?>/_static/images/logo-small.png" alt="Peggy Markel Logo"><br>
 					&copy; <?php echo date('Y'); ?> Peggy Markel. All rights reserved.<br>
-					Site Developed by <a href="http://www.alchemyandaim.com/" target="_blank">Alchemy + Aim</a>
+					Site Developed by <a href="http://www.alchemyandaim.com/" target="_blank">Alchemy + Aim</a>.
 				</div>
 			</div>
 			

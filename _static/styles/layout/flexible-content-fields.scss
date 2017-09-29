@@ -39,6 +39,30 @@
 		}
 	}
 
+	&:last-child .container {
+		padding-bottom: 15px;
+	}
+
+	/*-----------------------------------------------------------------------------------*/
+	/*  Content width - narrow, regular, wide, full
+	/*    -- 40px is added to account for padding --
+	/*-----------------------------------------------------------------------------------*/
+	&.content_width-narrow .container {
+		max-width: 640px + 40px;
+	}
+
+	&.content_width-regular .container {
+		// default, 1160px
+	}
+
+	&.content_width-wide .container {
+		max-width: 1440px + 40px;
+	}
+
+	&.content_width-full .container {
+		max-width: none;
+	}
+
 	/*-----------------------------------------------------------------------------------*/
 	/*  Background images with color overlay
 	/*-----------------------------------------------------------------------------------*/
@@ -81,8 +105,6 @@
 	/*  Text Content
 	/*-----------------------------------------------------------------------------------*/
 	.ff-content {
-		max-width: 640px;
-		margin: 0 auto;
 	}
 
 	/*-----------------------------------------------------------------------------------*/

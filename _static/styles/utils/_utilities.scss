@@ -32,4 +32,9 @@
 .screen-reader-text {
 	position: absolute;
 	top: -1000em;
+
+	display: block;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
 }

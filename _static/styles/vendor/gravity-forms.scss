@@ -1,0 +1,72 @@
+/* Gravity forms - Sign up for newsletter (Front page, form id #1) */
+.gform_wrapper {
+	margin: 0;
+}
+
+#gform_1 {
+	max-width: 380px;
+	margin: -20px auto;
+}
+
+#gform_1:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 1px;
+}
+
+#gform_1 .gform_body {
+	margin: 0;
+	float: left;
+	width: 92%;
+	width: calc(100% - 30px);
+	overflow: hidden;
+	clear: none;
+}
+
+#gform_1 .gform_footer {
+	margin: 0;
+	float: left;
+	width: 8%;
+	width: calc(0% + 30px);
+	overflow: hidden;
+	clear: none;
+	padding: 5px 0 0;
+}
+
+#gform_1 .gform_footer #gform_submit_button_1 {
+	border: none !important;
+	width: 30px !important;
+	padding: 0 6px !important;
+	/*
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAnCAYAAACxMTBTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkJDNkE5RDgzQTRFMDExRTdCNDZEOTdCNjFBMjlGOTA0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkJDNkE5RDg0QTRFMDExRTdCNDZEOTdCNjFBMjlGOTA0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QkM2QTlEODFBNEUwMTFFN0I0NkQ5N0I2MUEyOUY5MDQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QkM2QTlEODJBNEUwMTFFN0I0NkQ5N0I2MUEyOUY5MDQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6J6UtRAAAC3UlEQVR42uSazWsUMRjGJ7vT1q4f1UoRBBHxoILoxZugN72JVz/RWqX6D6hHr4I3T4qHHkTwoOB/IJ5FBFFBq+LBevETROxuJj4vPIEQMkPZmcVkfOFHd7KTZJ5k3uR9s1XGmCwWU0rJn9VgB9gLuuAleAF+1m0/z+KynELPg0OgB96ABfAQfG2T2HGwBxwG21g2AzZzlu+D78M23sniM5mASee6S+FXwRG+5q0QuwxegbdAe8+5FVwDR73BWLnJAhULtCkwS8GFPKKDXL8HJ8DaNogVW89FarFC8CwHJnmxdobPUJgJCJaBuAA2tkGs3XOPgw8BwZqCL65YcORiM+614qPvAq+0FTwPNrRBrNgacLZEcMHyc2BdG8TaRWu+YobFt09W7sMJic3om5coWAf8WAQf46ufvFix6YoZNlzMTgW3pQTFWsFzJfuw4UDM+YuW8mLSVWCC4VmXDdn73Hv9ctuJ32bGcrd+4Xx264buKUpCWsOZk8zoMtjifS/1PoIb4B744mY94tS7wQGwkyNnxfadjKRDX7Fx6xjLBrxPsc2cZQO2McH2NONf4wyqZt0OGXPas33kXtk42xNboi/3ArH0FfZ/F/ywgveBO+AzH2bAhxg4n7VTpr1y+yDaqzfw2gjV9fspSFndfkk9UxJpPQP7ZXByjpLM6kGwKaIMqNtApiZv2nawCzyNMZ8daaK8zDOex4xUpjl6qmTRMc53yikzzqibklEO1c28fpS3CPp1i0A/qmIhW2SO3LeOLxe3wOsEF6gZumEvIPQTuM3J1P/V1pOqDRVUpCp0uHAxMauXCCRk9VO8RKyZ5D0Ba+5YJnJr9sAtYmv+KDXixaj5Q/JIZ3Q0P39EmJhI7vmEsXCZ0MmsBdZjmLdUso+errOP5hEKlhn97VxrrsbXwSPwq+nTgH9lxvFbiYH/gOfgJngAvtVpXEW6t47kH0hUpL5rz8Yy5wCwtv0VYABlunpRdRnSuwAAAABJRU5ErkJggg==);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	*/
+	margin: 0 !important;
+}
+
+#gform_1 label {
+	display: none;
+}
+
+#gform_1 .ginput_container {
+	margin: 0 !important;
+}
+
+#gform_1 #input_1_1 {
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #777777;
+}
+
+#gform_1 #input_1_1::placeholder {
+	color: #d2d2d2;
+	font-style: italic;
+}
+
+#field_1_1 {
+	padding: 0 !important;
+	margin: 0 !important;
+}

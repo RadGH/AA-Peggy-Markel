@@ -182,7 +182,12 @@ function aa_flexible_field_content( $fields, $key = 'content' ) {
 	$value = !empty($fields[$key]) ? $fields[$key] : false;
 	if ( empty($value) ) return;
 	
-	$value = do_shortcode(wpautop($value));
+	// If the content only includes a shortcode, do not perform wpautop.
+	if ( preg_match('/^\s*\[[^\]]+\]\s*$/', $value) ) {
+		$value = do_shortcode(trim($value));
+	}else{
+		$value = do_shortcode(wpautop($value));
+	}
 	
 	echo '<div class="ff-content">';
 	echo $value;
