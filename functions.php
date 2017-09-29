@@ -530,7 +530,8 @@ add_filter('the_content', 'formatter', 11);
 	Register Menu Areas
 ------------------------------------*/
 register_nav_menus( array(  
-'primary' => __( 'Primary Navigation', 'alchemyaim' ),
+'primary_left' => __( 'Primary (Left)', 'alchemyaim' ),
+'primary_right' => __( 'Primary (Right)', 'alchemyaim' ),
 'footer' => __( 'Footer Navigation', 'alchemyaim' ),
 'mobile' => __( 'Mobile Navigation', 'alchemyaim' ),
 ) );
