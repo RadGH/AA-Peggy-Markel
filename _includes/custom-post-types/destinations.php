@@ -36,7 +36,7 @@ function aa_register_destinations_post_type() {
 	$args = array(
 		'label'                 => 'Destination',
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'author', 'revisions' ),
+		'supports'              => array( 'title', 'author', 'thumbnail', 'revisions' ),
 		'taxonomies'            => array(),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -110,7 +110,7 @@ add_shortcode('latest_videos', 'latest_videos_shortcode');
 /**
  * Return the date range in a string format, eg: August 7 - 15, 2016
  */
-function aa_flexible_field_destination_date_range() {
+function aa_destination_date_range() {
 	$start = get_field( 'start_date' );
 	$end = get_field( 'end_date' );
 	if ( !$start ) return false;
