@@ -194,9 +194,39 @@
                                 "id": ""
                             },
                             "choices": {
-                                "minimal": "Minimal",
-                                "regular": "Regular",
-                                "large": "Large"
+                                "small": "Small (30px)",
+                                "medium": "Medium (60px)",
+                                "large": "Large (90px)",
+                                "huge": "Huge (180px)"
+                            },
+                            "default_value": [
+                                "medium"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59cde3d3e586b",
+                            "label": "Content Width",
+                            "name": "content_width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "narrow": "Narrow (640px)",
+                                "regular": "Regular (1160px)",
+                                "wide": "Wide (1440px)",
+                                "full": "Full Width"
                             },
                             "default_value": [
                                 "regular"
@@ -269,12 +299,13 @@
                                 "id": ""
                             },
                             "choices": {
-                                "minimal": "Minimal",
-                                "regular": "Regular",
-                                "large": "Large"
+                                "small": "Small (30px)",
+                                "medium": "Medium (60px)",
+                                "large": "Large (90px)",
+                                "huge": "Huge (180px)"
                             },
                             "default_value": [
-                                "regular"
+                                "medium"
                             ],
                             "allow_null": 0,
                             "multiple": 0,
@@ -457,9 +488,39 @@
                                 "id": ""
                             },
                             "choices": {
-                                "minimal": "Minimal",
-                                "regular": "Regular",
-                                "large": "Large"
+                                "small": "Small (30px)",
+                                "medium": "Medium (60px)",
+                                "large": "Large (90px)",
+                                "huge": "Huge (180px)"
+                            },
+                            "default_value": [
+                                "medium"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59cde438e586d",
+                            "label": "Content Width",
+                            "name": "content_width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "narrow": "Narrow (640px)",
+                                "regular": "Regular (1160px)",
+                                "wide": "Wide (1440px)",
+                                "full": "Full Width"
                             },
                             "default_value": [
                                 "regular"
@@ -611,9 +672,39 @@
                                 "id": ""
                             },
                             "choices": {
-                                "minimal": "Minimal",
-                                "regular": "Regular",
-                                "large": "Large"
+                                "small": "Small (30px)",
+                                "medium": "Medium (60px)",
+                                "large": "Large (90px)",
+                                "huge": "Huge (180px)"
+                            },
+                            "default_value": [
+                                "medium"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59cde443e586e",
+                            "label": "Content Width",
+                            "name": "content_width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "narrow": "Narrow (640px)",
+                                "regular": "Regular (1160px)",
+                                "wide": "Wide (1440px)",
+                                "full": "Full Width"
                             },
                             "default_value": [
                                 "regular"
@@ -776,9 +867,39 @@
                                 "id": ""
                             },
                             "choices": {
-                                "minimal": "Minimal",
-                                "regular": "Regular",
-                                "large": "Large"
+                                "small": "Small (30px)",
+                                "medium": "Medium (60px)",
+                                "large": "Large (90px)",
+                                "huge": "Huge (180px)"
+                            },
+                            "default_value": [
+                                "Medium"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59cde450e586f",
+                            "label": "Content Width",
+                            "name": "content_width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "narrow": "Narrow (640px)",
+                                "regular": "Regular (1160px)",
+                                "wide": "Wide (1440px)",
+                                "full": "Full Width"
                             },
                             "default_value": [
                                 "regular"
@@ -941,9 +1062,39 @@
                                 "id": ""
                             },
                             "choices": {
-                                "minimal": "Minimal",
-                                "regular": "Regular",
-                                "large": "Large"
+                                "small": "Small (30px)",
+                                "medium": "Medium (60px)",
+                                "large": "Large (90px)",
+                                "huge": "Huge (180px)"
+                            },
+                            "default_value": [
+                                "Medium"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_59cde45fe5870",
+                            "label": "Content Width",
+                            "name": "content_width",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "narrow": "Narrow (640px)",
+                                "regular": "Regular (1160px)",
+                                "wide": "Wide (1440px)",
+                                "full": "Full Width"
                             },
                             "default_value": [
                                 "regular"
@@ -991,5 +1142,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1506659569
+    "modified": 1506679562
 }

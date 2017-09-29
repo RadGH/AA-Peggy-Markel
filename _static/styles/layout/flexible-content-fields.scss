@@ -4,7 +4,7 @@
 	/*-----------------------------------------------------------------------------------*/
 	/*  Spacing (padding) above and below each section
 	/*-----------------------------------------------------------------------------------*/
-	&.spacing-minimal .container {
+	&.spacing-small .container {
 		padding-top: 30px;
 		padding-bottom: 30px;
 
@@ -14,7 +14,7 @@
 		}
 	}
 
-	&.spacing-regular .container {
+	&.spacing-medium .container {
 		padding-top: 60px;
 		padding-bottom: 60px;
 
@@ -25,17 +25,32 @@
 	}
 
 	&.spacing-large .container {
-		padding-top: 200px;
-		padding-bottom: 200px;
+		padding-top: 90px;
+		padding-bottom: 90px;
 
 		@include screen('med') {
-			padding-top: 150px;
-			padding-bottom: 150px;
+			padding-top: 70px;
+			padding-bottom: 70px;
 		}
 
 		@include screen('small') {
-			padding-top: 100px;
-			padding-bottom: 100px;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+	}
+
+	&.spacing-huge .container {
+		padding-top: 180px;
+		padding-bottom: 180px;
+
+		@include screen('med') {
+			padding-top: 120px;
+			padding-bottom: 120px;
+		}
+
+		@include screen('small') {
+			padding-top: 80px;
+			padding-bottom: 80px;
 		}
 	}
 
@@ -165,4 +180,33 @@
 		left: 0;
 		right: 0;
 	}
+
+	/*-----------------------------------------------------------------------------------*/
+	/*  Testimonial slider
+	/*-----------------------------------------------------------------------------------*/
+	.testimonial-list {
+		margin-bottom: 28px;
+	}
+
+	.testimonial-list .flickity-page-dots {
+		bottom: -30px;
+	}
+
+	.testimonial-list .testimonial-item {
+		width: 100%;
+		display: block;
+	}
+
+	.light-theme .flickity-page-dots .dot {
+		opacity: 1;
+		background: transparent;
+		border: 1px solid #fff;
+		width: 8px;
+		height: 8px;
+	}
+
+	.light-theme .flickity-page-dots .dot.is-selected {
+		background: #fff;
+	}
+
 }
