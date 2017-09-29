@@ -26,3 +26,10 @@
   display: table;
   clear: both;
 }
+
+/* Screen reader text (same as WP dashboard)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.screen-reader-text {
+	position: absolute;
+	top: -1000em;
+}
