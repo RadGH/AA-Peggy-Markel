@@ -1,0 +1,77 @@
+{
+    "key": "group_59cc8a55ad19e",
+    "title": "Destination Settings",
+    "fields": [
+        {
+            "key": "field_59cdcc3a8efef",
+            "label": "Start Date",
+            "name": "start_date",
+            "type": "date_picker",
+            "instructions": "A date range will appear on the front page using the start and end date.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "Y-m-d",
+            "first_day": 0
+        },
+        {
+            "key": "field_59cdcc638eff0",
+            "label": "End Date",
+            "name": "end_date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "Y-m-d",
+            "first_day": 0
+        },
+        {
+            "key": "field_59cc8ad201d16",
+            "label": "Itinerary PDF",
+            "name": "itinerary_pdf",
+            "type": "file",
+            "instructions": "<strong>Reminder:<\/strong> You must place the shortcode <code class=\"code\"><strong>[itinerary-form]<\/strong><\/code> on the page to allow users to sign up for the newsletter and download the itinerary.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "destination"
+            }
+        ]
+    ],
+    "menu_order": -10,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1506659503
+}
