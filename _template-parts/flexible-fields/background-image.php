@@ -6,6 +6,5 @@
 
 if ( !isset($flex_field) ) return; // This variable is passed through from "flexible-content-areas.php"
 
-
 // This section does not have any content to display.
 echo '&nbsp;';

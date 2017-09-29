@@ -13,10 +13,12 @@ $args = array(
 
 $dest_query = new WP_Query($args);
 
+// Display some common data among the flexible fields
 aa_flexible_field_title( $flex_field );
 aa_flexible_field_subtitle( $flex_field );
 aa_flexible_field_content( $flex_field );
 
+// Display a grid of destination items.
 if ( $dest_query->have_posts() ) {
 	?>
 	<div class="destinations-list grid grid-3-cols">
@@ -24,20 +26,11 @@ if ( $dest_query->have_posts() ) {
 		while( $dest_query->have_posts() ): $dest_query->the_post();
 			$date_range = aa_destination_date_range();
 			?>
-			<div <?php post_class('destination-item columns one-third'); ?>>
+			<div <?php post_class('destination-item columns four'); ?>>
 				
 				<?php
 				if ( has_post_thumbnail() ) {
-					$image_id = get_post_thumbnail_id();
-					$image_full = wp_get_attachment_image_src( $image_id, 'full' );
-					$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
-					if ( !$image_alt ) $image_alt = get_the_title( $image_id );
-					
-					$pinit_url = add_query_arg( array(
-						'url' => urlencode( get_permalink() ),
-					    'media' => urlencode( $image_full[0] ),
-					    'description' => urlencode( $image_alt )
-					), 'https://pinterest.com/pin/create/button/' );
+					$pinit_url = aa_get_pinit_url();
 					?>
 					<div class="image">
 						<a href="<?php echo esc_attr($pinit_url); ?>" class="pin-it" target="_blank" rel="external">
@@ -49,7 +42,9 @@ if ( $dest_query->have_posts() ) {
 				}
 				?>
 				
-				<h4 class="title"><a href="<?php echo esc_attr(get_permalink()); ?>" title="Read more about <?php echo esc_attr(get_the_title()); ?>"><?php echo esc_html(get_the_title()); ?></a></h4>
+				<h4 class="title">
+					<a href="<?php echo esc_attr(get_permalink()); ?>" title="Read more about <?php echo esc_attr(get_the_title()); ?>"><span class="pm-underline"><?php echo esc_html(get_the_title()); ?></span></a>
+				</h4>
 				
 				<?php if ( $date_range ) { ?>
 				<div class="date"><?php echo esc_html($date_range); ?></div>

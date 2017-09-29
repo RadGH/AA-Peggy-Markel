@@ -1,6 +1,27 @@
 /* Add theme page styles here */
 
 /*-----------------------------------------------------------------------------------*/
+/*  GENERAL / GLOBAL
+/*-----------------------------------------------------------------------------------*/
+
+/* Text underline effect using pseudo elements */
+.pm-underline {
+	position: relative;
+	display: inline-block;
+}
+
+.pm-underline:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: #929292;
+}
+
+/*-----------------------------------------------------------------------------------*/
 /*  HEADER BAR
 /*-----------------------------------------------------------------------------------*/
 
@@ -203,6 +224,124 @@ form.header-search input[type=search]::placeholder {
 	right: 0;
 	height: 1px;
 	background: #1b1b1b;
+}
+
+/* --------------------------------
+			Front Page
+-------------------------------- */
+
+/* Front Page Destinations list */
+.destination-item {
+	margin: 2rem 0 5rem;
+}
+
+.destination-item:nth-last-child(1),
+.destination-item:nth-last-child(2),
+.destination-item:nth-last-child(3) {
+	margin-bottom: 2rem;
+}
+
+/* Destinations -> Title */
+.destination-item h4.title {
+	font-size: 1.8rem;
+	font-style: italic;
+	margin-bottom: 5px;
+}
+
+.destination-item h4.title a {
+	color: #000;
+	text-decoration: none;
+}
+
+.destination-item h4.title a:hover {
+	color: $accent2;
+}
+
+/* Destinations -> Date */
+.destination-item .date {
+	font-size: 1.4rem;
+}
+
+
+/* Destinations -> Featured Image */
+.destination-item .image {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.destination-item .image a {
+	position: relative;
+	display: inline-block;
+}
+
+.destination-item .image a:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,0.5);
+}
+
+.destination-item .image a .pin-it-label {
+	display: block;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.destination-item .image a:before,
+.destination-item .image a .pin-it-label {
+	opacity: 0;
+	visibility: hidden;
+	animation: destination-fade-out 0.2s linear;
+}
+
+.destination-item .image a:hover:before,
+.destination-item .image a:hover .pin-it-label {
+	opacity: 1;
+	visibility: visible;
+	animation: destination-fade-in 0.2s linear;
+}
+
+@keyframes destination-fade-in {
+	0% {
+		visibility: hidden;
+		opacity: 0;
+	}
+	1% {
+		visibility: visible;
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes destination-fade-out {
+	0% {
+		visibility: visible;
+		opacity: 1;
+	}
+	99% {
+		visibility: visible;
+		opacity: 0;
+	}
+	100% {
+		visibility: hidden;
+		opacity: 0;
+	}
 }
 
 /* --------------------------------

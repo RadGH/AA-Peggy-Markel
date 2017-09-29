@@ -13,10 +13,12 @@ $args = array(
 
 $dest_query = new WP_Query($args);
 
+// Display some common data among the flexible fields
 aa_flexible_field_title( $flex_field );
 aa_flexible_field_subtitle( $flex_field );
 aa_flexible_field_content( $flex_field );
 
+// Display a grid of press items.
 if ( $dest_query->have_posts() ) {
 	?>
 	<div class="press-list grid grid-3-cols">
@@ -46,5 +48,5 @@ if ( $dest_query->have_posts() ) {
 	</div>
 	<?php
 }else{
-	echo '<p><em>No destinations have been posted yet.</em></p>';
+	echo '<p><em>No press items have been posted yet.</em></p>';
 }

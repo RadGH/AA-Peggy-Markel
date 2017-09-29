@@ -154,9 +154,9 @@ function aa_flexible_field_title( $fields, $key = 'title' ) {
 	if ( did_action( 'flexible-field-h1' ) ) $tag = 'h2';
 	else do_action( 'flexible-field-h1' );
 	
-	echo '<'. $tag .' class="h2 ff-title"><span>';
+	echo '<'. $tag .' class="h2 ff-title">';
 	echo nl2br(esc_html($value));
-	echo '</span></'. $tag .'>';
+	echo '</'. $tag .'>';
 }
 
 /**
@@ -168,7 +168,7 @@ function aa_flexible_field_subtitle( $fields, $key = 'subtitle' ) {
 	$value = !empty($fields[$key]) ? $fields[$key] : false;
 	if ( empty($value) ) return;
 	
-	echo '<h3 class="h3 ff-subtitle"><span>';
+	echo '<h3 class="h3 ff-subtitle"><span class="pm-underline">';
 	echo nl2br(esc_html($value));
 	echo '</span></h3>';
 }

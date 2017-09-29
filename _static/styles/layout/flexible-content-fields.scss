@@ -76,21 +76,6 @@
 		font-style: italic;
 	}
 
-	.ff-subtitle span {
-		position: relative;
-		display: inline-block;
-	}
-
-	.ff-subtitle span:after {
-		content: '';
-		display: block;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
-		height: 1px;
-		background: #929292;
-	}
 
 	/*-----------------------------------------------------------------------------------*/
 	/*  Text Content
