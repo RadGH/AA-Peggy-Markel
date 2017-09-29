@@ -1,1 +1,355 @@
 /* Add theme page styles here */
+
+/*-----------------------------------------------------------------------------------*/
+/*  HEADER BAR
+/*-----------------------------------------------------------------------------------*/
+
+/* Header Control Bar */
+#header-bar {
+	padding: 0 0 5px;
+	background: #f7f6f6;
+}
+
+#header-bar .container {
+	max-width: 1140px;
+}
+#header-bar .left {
+	float: left;
+	text-align: left;
+}
+#header-bar .right {
+	float: right;
+	text-align: right;
+}
+
+#header-bar .social-icons {
+	position: relative;
+	top: 5px;
+}
+
+/* Header Bar -> Search Form */
+form.header-search {
+	line-height: 18px;
+	margin-bottom: 0;
+}
+
+form.header-search button[type=submit] {
+	height: 27px;
+	padding: 0 7px;
+	float: left;
+	color: #3b3b3b;
+	border: none;
+	margin: 0;
+	background: none;
+	text-decoration: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+form.header-search input[type=search] {
+	height: 27px;
+	padding: 7px 0 0;
+	border: none;
+	border-bottom: 1px solid #919191;
+	color: #000000;
+
+	font-size: 15px;
+
+	margin: 0;
+	background: none;
+	text-decoration: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+form.header-search input[type=search]::placeholder {
+	font-style: italic;
+}
+
+/* Header Link Bar */
+#linkbar .left,
+#linkbar .center,
+#linkbar .right {
+	width: 40%;
+	display: block;float: left;
+}
+
+#linkbar .left {
+	text-align: right;
+}
+
+#linkbar .center {
+	width: 20%;
+}
+
+#linkbar .right {
+	text-align: left;
+}
+
+/* Header Link Bar -> Logo */
+#linkbar .nav-logo a {
+	display: block;
+}
+
+#linkbar .nav-logo a img {
+	display: block;
+	margin: 0 auto;
+}
+
+/* Header Link Bar -> Navigation Menu */
+#linkbar ul,
+#linkbar ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#linkbar ul {
+	display: block;
+}
+
+#linkbar li {
+	display: inline-block;
+}
+
+#linkbar .nav-menu {
+	display: block;
+}
+
+#linkbar .nav-menu:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 1px;
+}
+
+#linkbar .header-nav {
+	margin-top: 30px;
+}
+
+#linkbar .header-nav a {
+	display: inline-block;
+	width: 116px;
+	text-align: center;
+	padding: 20px 0;
+
+	color: $text;
+	font-size: 16px;
+	font-family: $header;
+	font-weight: 400;
+	text-decoration: none;
+	letter-spacing: 0.025em;
+
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+#linkbar .header-nav a:hover {
+	color: $accent2;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+#linkbar .header-nav .current-menu-item a {
+	color: $accent2 !important;
+	font-weight: 400;
+}
+
+.menu-item-parent > a:after, .menu-item-has-children > a:after {
+	font-family: 'FontAwesome';
+	content: "\f0dd";
+	font-size: 1.6rem;
+	padding-left: 5px;
+}
+
+/* Header Link Bar -> Navigation Menu (Submenu dropdowns) */
+#linkbar ul li ul {
+	display: none;
+	top: 100%;
+	left: 0;
+	white-space: nowrap;
+	position: absolute;
+	background: #fff;
+	padding: 10px;
+	z-index: 1;
+}
+
+#linkbar li:hover > ul {
+	display: block;
+}
+
+#linkbar li ul li {
+	display: block;
+	margin: 20px 0;
+}
+
+/* Header Link Bar -> Emphasized menu item.
+/* This is the "Register" button, in italic with an underline.
+/* Add a class "emphasized-link" within the Appearance > Menus settings (make sure to go to screen options and enable css classes)
+*/
+#linkbar .menu-item.emphasized-link a span {
+	position: relative;
+	font-style: italic;
+}
+
+#linkbar .menu-item.emphasized-link a span:after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: #1b1b1b;
+}
+
+/* --------------------------------
+			Mobile Nav
+-------------------------------- */
+#slideout-menu {
+	position: fixed;
+	padding: 100px 50px;
+	min-width: 150px;
+	top: 0;
+	right: -350px;
+	min-height: 100vh;
+	z-index: 10000;
+	max-height: calc(100vh - 100px);
+	overflow-y: scroll;
+	background-color: $accent1;
+}
+
+#slideout-menu #nav-close {
+	position: absolute;
+	top: 3.5%;
+	right: 30px;
+	height: 20px;
+	width: 20px;
+}
+
+.close-lines1 {
+	width: 20px;
+	background-color: #fff;
+	height: 2px;
+	transition: 300ms ease all;
+	-webkit-transition-delay: 400ms; /* Safari */
+	transition-delay: 400ms;
+	position: relative;
+	top: 8px;
+	-ms-transform: rotate(-180deg); /* IE 9 */
+	-webkit-transform: rotate(-180deg); /* Chrome, Safari, Opera */
+	transform: rotate(-180deg);
+}
+
+.close-lines2 {
+	display: block;
+	width: 20px;
+	background-color: #fff;
+	height: 2px;
+	transition: 300ms ease all;
+	-webkit-transition-delay: 400ms; /* Safari */
+	transition-delay: 400ms;
+	position: relative;
+	top: 6px;
+}
+
+#slideout-menu.open .close-lines1 {
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+	transform: rotate(45deg);
+}
+
+#slideout-menu.open .close-lines2 {
+	-ms-transform: rotate(-45deg); /* IE 9 */
+	-webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+	transform: rotate(-45deg);
+}
+
+a#slideout-trigger {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 20px;
+	top: 5px;
+	display: none;
+}
+
+#slideout-bar {
+	width: 20px;
+	height: 2px;
+	top: 6px;
+	position: relative;
+	background-color: $text;
+}
+
+#slideout-bar:before {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 2px;
+	position: relative;
+	bottom: 5px;
+	background-color: $text;
+}
+
+#slideout-bar:after {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 2px;
+	position: relative;
+	top: 3px;
+	background-color: $text;
+}
+
+#slideout-menu .menu-item-has-children > a:after {
+	position: relative;
+}
+
+#slideout-menu a {
+	color: #fff;
+	font-weight: 400;
+	letter-spacing: .15em;
+	font-size: 1.4rem;
+	text-transform: lowercase;
+	text-decoration: none;
+}
+
+#slideout-menu a:hover {
+	text-decoration: none;
+}
+
+#slideout-menu ul {
+	text-align: right;
+	list-style: none;
+}
+
+#slideout-menu li {
+	margin-bottom: 1em;
+}
+
+#slideout-menu ul.sub-menu {
+	display: none;
+	margin: 2em 0;
+}
+
+#slideout-menu .widget {
+	border-bottom: 0;
+	text-align: right;
+}
+
+#slideout-menu .social-links i {
+	font-size: 1.6rem;
+	margin-left: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+	a#slideout-trigger {
+		display: block;
+	}
+	#linkbar nav {
+		display: none;
+	}
+}

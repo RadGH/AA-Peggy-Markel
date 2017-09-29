@@ -59,4 +59,103 @@
 			color: #fff;
 		}
 	}
+
+
+	/*-----------------------------------------------------------------------------------*/
+	/*  Title
+	/*-----------------------------------------------------------------------------------*/
+	.ff-title {
+		margin-bottom: 3.0rem;
+	}
+
+	/*-----------------------------------------------------------------------------------*/
+	/*  Subtitle
+	/*-----------------------------------------------------------------------------------*/
+	.ff-subtitle {
+		font-size: 1.8rem;
+		font-style: italic;
+	}
+
+	.ff-subtitle span {
+		position: relative;
+		display: inline-block;
+	}
+
+	.ff-subtitle span:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: #929292;
+	}
+
+	/*-----------------------------------------------------------------------------------*/
+	/*  Text Content
+	/*-----------------------------------------------------------------------------------*/
+	.ff-content {
+		max-width: 640px;
+		margin: 0 auto;
+	}
+
+	/*-----------------------------------------------------------------------------------*/
+	/*  Button
+	/*-----------------------------------------------------------------------------------*/
+	.ff-button-row {
+		margin-top: 2.0rem;
+	}
+
+	a.ff-button {
+		position: relative;
+
+		display: inline-block;
+		line-height: 25px;
+		padding: 5px 10px 0;
+
+		font-style: italic;
+		text-transform: lowercase;
+		text-decoration: none;
+
+		color: $text;
+		background: rgba(0,0,0,0);
+
+		transition: background 0.2s linear;
+	}
+
+	.light-theme a.ff-button {
+		color: #fff;
+		background: rgba(255,255,255,0);
+	}
+
+	a.ff-button:hover {
+		background: rgba(0,0,0,0.25);
+	}
+
+	.light-theme a.ff-button:hover {
+		background: rgba(255,255,255,0.25);
+	}
+
+	a.ff-button:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 100%;
+		left: 10px;
+		right: 10px;
+		height: 1px;
+		background: rgba(0,0,0,0.5);
+
+		transition: left 0.2s linear, right 0.2s linear;
+	}
+
+	.light-theme a.ff-button:after {
+		background: rgba(255,255,255,0.5);
+	}
+
+	a.ff-button:hover:after {
+		left: 0;
+		right: 0;
+	}
 }

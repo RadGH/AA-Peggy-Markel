@@ -54,7 +54,7 @@
 		if( !empty($image) ): ?>
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo $image['url']; ?>" />
     	<?php else: ?>
-    <link rel="shortcut icon" type="image/x-icon" href="http://alchemyandaim.com/wp-content/uploads/2016/06/favicon.png" />        
+    <link rel="shortcut icon" type="image/x-icon" href="http://alchemyandaim.com/wp-content/uploads/2016/06/favicon.png" />
 	<?php endif; ?>
 
 	<?php //Apple Touch Icons
@@ -93,55 +93,108 @@
 
 <body <?php body_class(); ?>>
 <div class="animsition">
-
+	
 	<div id="outer-wrapper">
 		
-
-			<!-- Begin Header -->
-			<header>
-            <div id="header-wrapper">
-            <div class="header-inner container">
+		
+		<!-- Begin Header -->
+		<header>
+			<div id="header-bar">
+				<div class="container">
+					<div class="left">
+						<form action="<?php echo esc_attr(site_url()); ?>" method="GET" class="header-search">
+							<label for="header-search-input" class="screen-reader-text">Enter search terms:</label>
+							<input type="search" name="s" id="header-search-input" placeholder="search" value="<?php if ( get_query_var('s') ) echo esc_attr(get_query_var('s')); ?>">
+							<button type="submit">
+								<i class="fa fa-search"></i>
+								<span class="screen-reader-text">Search</span>
+							</button>
+						</form>
+					</div>
+					
+					<?php
+					// Display social menu navigation
+					if ( $social_menu_html = aa_get_social_navigation() ) {
+					?>
+					<div class="right">
+						<nav class="social-icons" role="navigation">
+							<?php echo $social_menu_html; ?>
+						</nav>
+					</div>
+					<?php
+					}
+					?>
+				</div>
+			</div>
+			<div id="header-wrapper">
+				<div class="header-inner container">
+					
+					<!-- Begin Header -->
+					<div id="linkbar" class="nav-bar">
+						<nav id="menu" class="nav-menu" role="navigation">
+							<?php
+							if ( $menu = aa_get_nav_menu( 'primary_left' ) ) {
+								?>
+								<div class="left header-nav">
+									<?php echo $menu; ?>
+								</div>
+								<?php
+							}
+							?>
+							
+							<?php
+							$image = get_field( 'site_header_logo', 'option' );
+							if ( !empty( $image ) ) {
+								?>
+								<div class="center nav-logo">
+									<a href="<?php echo home_url(); ?>" target="_self"><img src="<?php echo $image['url']; ?>" alt="<?php bloginfo( 'name' ); ?>" /></a>
+								</div>
+								<?php
+							}
+							?>
+							
+							<?php
+							if ( $menu = aa_get_nav_menu( 'primary_right' ) ) {
+								?>
+								<div class="right header-nav">
+									<?php echo $menu; ?>
+								</div>
+								<?php
+							}
+							?>
+						</nav>
+						<a href="#" id="slideout-trigger">
+							<div id="slideout-bar"></div>
+						</a>
+					</div>
+				</div>
+			</div><!--HEADER WRAPPER-->
+		</header>
+		
+		<div id="slideout-menu">
+			<nav id="slideout-nav">
+				<h2 class="menu-title">Menu</h2>
+				
+				<?php wp_nav_menu( array( 'theme_location' => 'mobile' ) ); ?>
+				
 				<?php
-				$image = get_field('site_header_logo', 'option');
-				if( !empty($image) ): ?>
-					<a href="<?php echo home_url(); ?>" target="_self"><img class="logo" src="<?php echo $image['url']; ?>" alt="<?php bloginfo('name'); ?>" /></a>
-                    <?php else: ?>
-                    <a href="<?php echo home_url(); ?>" target="_self"><img class="logo" src="http://alchemyandaim.com/wp-content/uploads/2016/06/alchemy-and-aim-logo.png" alt="<?php bloginfo('name'); ?>" /></a>
-				<?php endif; ?>
-						 
-             <!-- Begin Header -->
-          <div id="linkbar" class="nav-bar">
-            <nav id="menu" class="nav-menu" role="navigation">
-				<?php wp_nav_menu( array(
-					'theme_location'  => 'primary',
-					'menu' 			  => get_post_meta( get_the_ID(), 'meta_box_menu_name_set', true),
-					'container'       => 'none',
-					'container_class' => 'menu-header',
-					'container_id'    => '',
-					'menu_class'      => 'nav',
-					'menu_id'         => 'main-nav',
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'before'          => '',
-					'after'           => '',
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-					'depth'           => 3,
-					'walker'		  => new theme_walker_nav_menu()
-					) ); ?>
+				// Display social menu navigation
+				if ( $social_menu_html = aa_get_social_navigation() ) {
+					?>
+					<div class="right">
+						<nav class="social-icons" role="navigation">
+							<?php echo $social_menu_html; ?>
+						</nav>
+					</div>
+					<?php
+				}
+				?>
+				
+				<a href="#" id="nav-close">
+					<div class="close-lines1"></div>
+					<div class="close-lines2"></div>
+				</a>
 			</nav>
-			<a href="#" id="slideout-trigger"><div id="slideout-bar"></div></a> 
-  </div>
-        </div>
-        </div><!--HEADER WRAPPER-->
-</header>
-
-<div id="slideout-menu">
-		<nav id="slideout-nav">
-			<?php wp_nav_menu( array('theme_location' => 'mobile') ); ?>
-			<a href="#" id="nav-close"><div class="close-lines1"></div><div class="close-lines2"></div></a>
-		</nav>
-	</div>
-
-    <div id="content-wrapper">
+		</div>
+		
+		<div id="content-wrapper">

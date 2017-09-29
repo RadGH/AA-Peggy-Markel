@@ -9,26 +9,15 @@
 	<div class="container">
 		<div class="grid grid-3-cols">
 			<div class="columns four footer-col-left">
-				<nav class="nav-menu footer-nav" role="navigation">
-					<?php wp_nav_menu( array(
-						'theme_location'  => 'footer',
-						'menu' 			  => get_post_meta( get_the_ID(), 'meta_box_menu_name_set', true),
-						'container'       => 'none',
-						'container_class' => 'menu-header',
-						'container_id'    => '',
-						'menu_class'      => 'nav',
-						'menu_id'         => 'main-nav',
-						'echo'            => true,
-						'fallback_cb'     => 'wp_page_menu',
-						'before'          => '',
-						'after'           => '',
-						'link_before'     => '',
-						'link_after'      => '',
-						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-						'depth'           => 3,
-						'walker'		  => new theme_walker_nav_menu()
-					) ); ?>
-				</nav>
+				<?php
+				if ( $menu = aa_get_nav_menu( 'footer' ) ) {
+					?>
+					<nav class="nav-menu footer-nav" role="navigation">
+						<?php echo $menu; ?>
+					</nav>
+					<?php
+				}
+				?>
 			</div>
 			
 			<div class="columns four footer-col-middle">
@@ -40,12 +29,25 @@
 			</div>
 			
 			<div class="columns four footer-col-right">
-				<div class="contact-footer">
+				<div class="footer-contact">
 					<p>Call us: <a href="tel:+18009882851" target="_blank">(800) 988-2851</a><br>
 					   Email: <a href="mailto:info@peggymarkel.com" target="_blank">info@peggymarkel.com</a><br>
 					   Join Our Mailing List
 					</p>
 				</div>
+				
+				<?php
+				// Display social menu navigation
+				if ( $social_menu_html = aa_get_social_navigation() ) {
+					?>
+					<div class="footer-social">
+						<nav class="social-icons" role="navigation">
+							<?php echo $social_menu_html; ?>
+						</nav>
+					</div>
+					<?php
+				}
+				?>
 			</div>
 		</div>
 	</div>
