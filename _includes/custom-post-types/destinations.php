@@ -105,3 +105,50 @@ function latest_videos_shortcode($atts, $content){
 	return $html;
 }
 add_shortcode('latest_videos', 'latest_videos_shortcode');
+
+
+/**
+ * Return the date range in a string format, eg: August 7 - 15, 2016
+ */
+function aa_flexible_field_destination_date_range() {
+	$start = get_field( 'start_date' );
+	$end = get_field( 'end_date' );
+	if ( !$start ) return false;
+	
+	// Get a timestamp to benefit from PHP's date() format.
+	$start_timestamp = strtotime($start);
+	if ( $start_timestamp < 1 ) return false;
+	
+	// Verify that end timestamp is after the start time.
+	if ( $end ) {
+		$end_timestamp = strtotime($end);
+		
+		if ( $end_timestamp < $start_timestamp ) {
+			// End date shouldn't come first.
+			$end = false;
+		}
+	}
+	
+	// Pick from four possible formats to display the time range in.
+	if ( $end ) {
+		if ( date('n', $start_timestamp) === date('n', $end_timestamp) ) {
+			// Same month
+			// Return format: August 3 - 5, 2017
+			return date('F j', $start_timestamp) . ' - ' . date('j, Y', $end_timestamp);
+		}else{
+			if ( date('Y', $start_timestamp) === date('Y', $end_timestamp) ) {
+				// Same year, different months
+				// Return format: August 28 - June 1, 2017
+				return date('F j', $start_timestamp) . ' - ' . date('F j, Y', $end_timestamp);
+			}else{
+				// Different months, different years.
+				// Return format: December 28, 2017 - January 2, 2018
+				return date('F j, Y', $start_timestamp) . ' - ' . date('F j, Y', $end_timestamp);
+			}
+		}
+	}else{
+		// Only start time
+		// Return format: August 3, 2017
+		return date('F j, Y', $start_timestamp);
+	}
+}

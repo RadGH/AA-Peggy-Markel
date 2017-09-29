@@ -22,7 +22,7 @@ if ( $dest_query->have_posts() ) {
 	<div class="destinations-list grid grid-3-cols">
 		<?php
 		while( $dest_query->have_posts() ): $dest_query->the_post();
-			$date_range = get_field( 'date_range' );
+			$date_range = aa_flexible_field_destination_date_range();
 			?>
 			<div class="destination-item columns one-third <?php post_class(); ?>">
 				
