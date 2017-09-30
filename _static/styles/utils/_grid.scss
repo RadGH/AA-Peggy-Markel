@@ -79,14 +79,52 @@
 
 
 /* Phones to tablets -- 767px and below  /  Fluid columns  /  No fixed widths */
-@media only screen and (max-width: 768px) {
-.one.column,  .one.columns, .two.columns,  .three.columns, .four.columns, .five.columns, .six.columns, .seven.columns, .eight.columns, .nine.columns, .ten.columns, .eleven.columns, .twelve.columns,  .one-third.column,  .two-thirds.column , .one-half.column, .offset-by-one.column,  .offset-by-one.columns, .offset-by-two.columns,  .offset-by-three.columns, .offset-by-four.columns, .offset-by-five.columns, .offset-by-six.columns, .offset-by-seven.columns, .offset-by-eight.columns, .offset-by-nine.columns, .offset-by-ten.columns, .offset-by-eleven.columns, .offset-by-twelve.columns,  .offset-by-one-third.column,  .offset-by-two-thirds.column , .offset-by-one-half.column  { 
-	width:100%;
-	float: none;
-  	margin-left: 0%;
+@include screen('med') {
+	.one.column, .one.columns,
+	.two.columns,
+	.three.columns,
+	.four.columns,
+	.five.columns,
+	.six.columns,
+	.seven.columns,
+	.eight.columns,
+	.nine.columns,
+	.ten.columns,
+	.eleven.columns,
+	.twelve.columns,
+	.one-third.column,
+	.two-thirds.column,
+	.one-half.column,
+	.offset-by-one.column,
+	.offset-by-one.columns,
+	.offset-by-two.columns,
+	.offset-by-three.columns,
+	.offset-by-four.columns,
+	.offset-by-five.columns,
+	.offset-by-six.columns,
+	.offset-by-seven.columns,
+	.offset-by-eight.columns,
+	.offset-by-nine.columns,
+	.offset-by-ten.columns,
+	.offset-by-eleven.columns,
+	.offset-by-twelve.columns,
+	.offset-by-one-third.column,
+	.offset-by-two-thirds.column,
+	.offset-by-one-half.column {
+		width: 100%;
+		float: none;
+		margin-left: 0%;
+	}
+	.content-area {
+		float: none;
+		width: 100%;
+	}
+	.aside {
+		float: none;
+		width: 98%;
+		margin-top: 50px;
+	}
 }
-.content-area {float: none; width: 100%;}
-.aside {float: none; width:98%; margin-top:50px;}}
 
 /*-----------------------------------------------------------------------------------*/
 /* COLUMNS
@@ -145,10 +183,10 @@
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* PREDEFINED GRIDS (2 columns, 3 columns, 4 colums). Examples:
+/* FIXED GRIDS (2 columns, 3 columns, 4 colums). Examples:
 /* .grid.grid-2-cols
-/* -> .columns.one-half
-/* -> .columns.one-half
+/* -> .columns
+/* -> .columns
 /*-----------------------------------------------------------------------------------*/
 .grid {
 	position: relative;
@@ -162,21 +200,61 @@
 		height: 1px;
 	}
 
-	&.grid-2-cols .column:nth-child(2n+1),
-	&.grid-2-cols .columns:nth-child(2n+1) {
-		clear: left;
-		margin-left: 0;
+	.cell {
+		box-sizing: border-box;
 	}
 
-	&.grid-3-cols .column:nth-child(3n+1),
-	&.grid-3-cols .columns:nth-child(3n+1) {
-		clear: left;
-		margin-left: 0;
+	/* Large screens: Two, three, or four column layout */
+	@media screen and (min-width: $breakpoint-med + 1px) {
+		.cell {
+			float: left;
+		}
+
+		&.grid-2-cols .cell {
+			width: 50%;
+
+			&:nth-child(2n+1) {
+				clear: left;
+				margin-left: 0;
+			}
+		}
+
+		&.grid-3-cols .cell {
+			width: 33.33%;
+
+			&:nth-child(3n+1) {
+				clear: left;
+				margin-left: 0;
+			}
+		}
+
+		&.grid-4-cols .cell {
+			width: 25%;
+
+			&:nth-child(4n+1) {
+				clear: left;
+				margin-left: 0;
+			}
+		}
 	}
 
-	&.grid-4-cols .column:nth-child(4n+1),
-	&.grid-4-cols .columns:nth-child(4n+1) {
-		clear: left;
-		margin-left: 0;
+	/* Medium to Small screens: Two column layout */
+	@media screen and (max-width: $breakpoint-med) and (min-width: $breakpoint-small + 1px) {
+		.cell {
+			float: left;
+		}
+
+		&.grid-2-cols .cell,
+		&.grid-3-cols .cell,
+		&.grid-4-cols .cell {
+			width: 50%;
+
+			&:nth-child(2n+1) {
+				clear: left;
+				margin-left: 0;
+			}
+		}
 	}
+
+	/* Small screens: No grid layout, single column. No CSS needed */
 }

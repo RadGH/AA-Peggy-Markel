@@ -26,7 +26,7 @@ if ( $dest_query->have_posts() ) {
 		while( $dest_query->have_posts() ): $dest_query->the_post();
 			$date_range = get_field( 'date_range' );
 			?>
-			<div class="press-item columns four columns <?php post_class(); ?>">
+			<div <?php post_class('press-item cell'); ?>>
 				
 				<?php if ( has_post_thumbnail() ) { ?>
 				<div class="image">

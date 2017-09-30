@@ -26,7 +26,7 @@ if ( $dest_query->have_posts() ) {
 		while( $dest_query->have_posts() ): $dest_query->the_post();
 			$date_range = aa_destination_date_range();
 			?>
-			<div <?php post_class('destination-item columns four'); ?>>
+			<div <?php post_class('destination-item cell'); ?>>
 				
 				<?php
 				if ( has_post_thumbnail() ) {

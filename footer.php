@@ -8,7 +8,7 @@
 	
 	<div class="container">
 		<div class="grid grid-3-cols">
-			<div class="columns four footer-col-left">
+			<div class="cell footer-col-left">
 				<?php
 				if ( $menu = aa_get_nav_menu( 'footer' ) ) {
 					?>
@@ -20,7 +20,7 @@
 				?>
 			</div>
 			
-			<div class="columns four footer-col-middle">
+			<div class="cell footer-col-middle">
 				<div id="credits" class="container">
 					<img src="<?php echo get_template_directory_uri(); ?>/_static/images/logo-small.png" alt="Peggy Markel Logo"><br>
 					&copy; <?php echo date('Y'); ?> Peggy Markel. All rights reserved.<br>
@@ -28,7 +28,7 @@
 				</div>
 			</div>
 			
-			<div class="columns four footer-col-right">
+			<div class="cell footer-col-right">
 				<div class="footer-contact">
 					<p>Call us: <a href="tel:+18009882851" target="_blank">(800) 988-2851</a><br>
 					   Email: <a href="mailto:info@peggymarkel.com" target="_blank">info@peggymarkel.com</a><br>

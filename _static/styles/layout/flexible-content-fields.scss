@@ -14,13 +14,15 @@
 		}
 	}
 
-	&.spacing-medium .container {
-		padding-top: 60px;
-		padding-bottom: 60px;
+	&.spacing-medium {
+		.container {
+			padding-top: 60px;
+			padding-bottom: 60px;
 
-		@include screen('small') {
-			padding-top: 30px;
-			padding-bottom: 30px;
+			@include screen('small') {
+				padding-top: 30px;
+				padding-bottom: 30px;
+			}
 		}
 	}
 
@@ -52,10 +54,6 @@
 			padding-top: 80px;
 			padding-bottom: 80px;
 		}
-	}
-
-	&:last-child .container {
-		padding-bottom: 15px;
 	}
 
 	/*-----------------------------------------------------------------------------------*/
@@ -120,6 +118,23 @@
 	/*  Text Content
 	/*-----------------------------------------------------------------------------------*/
 	.ff-content {
+		h3 {
+			font-size: 1.8rem;
+			font-style: italic;
+			position: relative;
+			display: inline-block
+		}
+
+		h3:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			height: 1px;
+			background: #929292
+		}
 	}
 
 	/*-----------------------------------------------------------------------------------*/

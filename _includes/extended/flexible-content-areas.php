@@ -234,7 +234,7 @@ function aa_flexible_field_gallery( $fields, $key = 'images' ) {
 			<?php
 			foreach( $value as $image ) {
 				?>
-				<div class="gallery-item columns four columns">
+				<div class="gallery-item cell">
 					<a href="<?php echo esc_attr($image['url']) ; ?>" title="View full image" target="_blank" rel="lightbox"><?php
 						echo wp_get_attachment_image( $image['ID'], 'thumbnail' );
 					?></a>
