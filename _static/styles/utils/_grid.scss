@@ -218,11 +218,12 @@
 				margin-left: 0;
 			}
 
-			/* Center the last row if it is alone */
+			/* Center the last cell if it is alone */
+			/*
 			&:nth-child(odd):last-child {
-				margin: 0 auto;
-				float: none;
+				margin-left: 25%; // Half of a cell when alone on the last line
 			}
+			*/
 		}
 
 		&.grid-3-cols .cell {
@@ -232,6 +233,13 @@
 				clear: left;
 				margin-left: 0;
 			}
+
+			/* Center the last row if it is alone */
+			/*
+			&:nth-child(3n+1):nth-last-child(1) {
+				margin-left: 33.33%; // Half of the remaining space for a 1/4 width cell.
+			}
+			*/
 		}
 
 		&.grid-4-cols .cell {
@@ -243,17 +251,19 @@
 			}
 
 			/* Center the last line of cells */
+			/*
 			&:nth-child(4n+1):nth-last-child(1) {
-				margin-left: 37.5%; /* Half of the remaining space for a 1/4 width cell. */
+				margin-left: 37.5%; // Half of the remaining space for a 1/4 width cell.
 			}
 
 			&:nth-child(4n+1):nth-last-child(2) {
-				margin-left: 25%; /* One quarter of the space when two cells are on the last line */
+				margin-left: 25%; // One quarter of the space when two cells are on the last line
 			}
 
 			&:nth-child(4n+1):nth-last-child(3) {
-				margin-left: 12.5%; /* Half of a cell when three cells are on a line */
+				margin-left: 12.5%; // Half of a cell when three cells are on a line
 			}
+			*/
 		}
 	}
 
@@ -274,9 +284,11 @@
 			}
 
 			/* Center the last cell if it is alone */
+			/*
 			&:nth-child(odd):last-child {
-				margin-left: 25%; /* Half of a cell when alone on the last line */
+				margin-left: 25%; // Half of a cell when alone on the last line
 			}
+			*/
 		}
 	}
 
