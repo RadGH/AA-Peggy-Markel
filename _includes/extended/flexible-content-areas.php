@@ -143,34 +143,50 @@ function aa_hex2rgba( $color, $opacity = false ) {
  * Output the title for a flexible content field. The first occurrence is an <h1>, the rest are <h2>.
  *
  * @param $fields
- * @param $key
+ * @param string $key
+ * @param null $tag
+ * @param null $tag_appearance
  */
-function aa_flexible_field_title( $fields, $key = 'title' ) {
+function aa_flexible_field_title( $fields, $key = 'title', $tag = null, $tag_appearance = null ) {
 	$value = !empty($fields[$key]) ? $fields[$key] : false;
 	if ( empty($value) ) return;
 	
-	$tag = 'h1';
+	// If tag is not defined, use an <h1> for the first title and <h2> thereafter.
+	if ( $tag === null ) {
+		$tag = 'h1';
+		
+		if ( did_action( 'flexible-field-h1' ) ) $tag = 'h2';
+		else do_action( 'flexible-field-h1' );
+		
+		// In case we automatically set an h1, style it like an h2 for consistency
+		if ( $tag_appearance === null ) $tag_appearance = 'h2';
+	}
 	
-	if ( did_action( 'flexible-field-h1' ) ) $tag = 'h2';
-	else do_action( 'flexible-field-h1' );
+	// Tag appearance will style the header to look like a different type of header using a class, while still benefiting from proper SEO.
+	if ( $tag_appearance === null ) $tag_appearance = $tag;
 	
-	echo '<'. $tag .' class="h2 ff-title">';
+	echo '<'. $tag .' class="'. $tag_appearance .' ff-title">';
 	echo nl2br(esc_html($value));
 	echo '</'. $tag .'>';
 }
 
 /**
  * Output the subtitle field for a flexible content field.
+ *
  * @param $fields
- * @param $key
+ * @param string $key
+ * @param string $tag
+ * @param null $tag_appearance
  */
-function aa_flexible_field_subtitle( $fields, $key = 'subtitle' ) {
+function aa_flexible_field_subtitle( $fields, $key = 'subtitle', $tag = 'h3', $tag_appearance = null ) {
 	$value = !empty($fields[$key]) ? $fields[$key] : false;
 	if ( empty($value) ) return;
 	
-	echo '<h3 class="h3 ff-subtitle"><span class="pm-underline">';
+	if ( $tag_appearance === null ) $tag_appearance = $tag;
+	
+	echo '<'. $tag .' class="'. $tag_appearance .' ff-subtitle"><span class="pm-underline">';
 	echo nl2br(esc_html($value));
-	echo '</span></h3>';
+	echo '</span></'. $tag .'>';
 }
 
 /**
