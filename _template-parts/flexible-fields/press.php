@@ -1,7 +1,8 @@
 <?php
-/* Flexible field: Text
+/* Flexible field: Press
  *
- * Displays title, subtitle, a block of text, and a button. All of these are optional.
+ * Displays title, subtitle, a block of text, and a list of press items.
+ * When used on a destination page, only press items for that destination will be displayed.
  */
 
 if ( !isset($flex_field) ) return; // This variable is passed through from "flexible-content-areas.php"

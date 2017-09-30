@@ -1,7 +1,7 @@
 <?php
 /* Flexible field: Text
  *
- * Displays title, subtitle, a block of text, and a button. All of these are optional.
+ * Displays title, subtitle, a block of text, and a button.
  */
 
 if ( !isset($flex_field) ) return; // This variable is passed through from "flexible-content-areas.php"
