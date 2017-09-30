@@ -228,15 +228,21 @@
 	/*  Columns
 	/*-----------------------------------------------------------------------------------*/
 	.ff-columns {
-		margin-top: 4rem;
+		margin-top: 2rem;
 
 		.cell {
-			padding: 0 10px;
+			padding: 1rem 25px;
+
+			@include screen('med') {
+				padding: 1rem 10px;
+			}
 		}
 
 		.ff-title {
 			font-size: 1.4rem;
 			margin: 0 0 1rem;
+			text-transform: uppercase;
+			letter-spacing: 0.2rem;
 		}
 	}
 
