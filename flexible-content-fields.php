@@ -23,11 +23,14 @@ while ( have_posts() ) : the_post();
 		foreach( $fields as $key => $flex_field ) {
 			$layout_key = strtolower($flex_field['acf_fc_layout']);
 			
-			$spacing = !empty($flex_field['spacing']) ? $flex_field['spacing'] : 'regular';
-			$content_width = !empty($flex_field['content_width']) ? $flex_field['content_width'] : 'regular'; // narrow, regular, wide, full
+			$classes = array( 'ff' );
+			$classes[] = 'field-' . esc_attr($key);
+			$classes[] = 'layout-' . $layout_key;
+			$classes[] = 'spacing-' . (!empty($flex_field['spacing']) ? $flex_field['spacing'] : 'regular');
+			$classes[] = 'content_align-' . (!empty($flex_field['content_alignment']) ? $flex_field['content_alignment'] : 'left');
+			$classes[] = 'content_width-' . (!empty($flex_field['content_width']) ? $flex_field['content_width'] : 'regular');
 			?>
-			
-			<div class="ff field-<?php echo esc_attr($key); ?> layout-<?php echo esc_attr($layout_key); ?> spacing-<?php echo esc_attr($spacing); ?> content_width-<?php echo esc_attr($content_width); ?>">
+			<div class="<?php echo esc_attr( implode(' ', $classes) ); ?>">
 				
 				<?php aa_flexible_background_start( $flex_field, 'ff-background' ); ?>
 				

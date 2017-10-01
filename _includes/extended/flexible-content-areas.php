@@ -1,6 +1,16 @@
 <?php
 
 /**
+ * Add a custom image sizes:
+ *  -> Staff Photo (300x450)
+ */
+function aa_flexible_content_image_sizes() {
+	add_image_size( 'flex-field-staff-photo', 300, 450, true );
+	add_image_size( 'flex-field-staff-photo-thumbnail', 100, 150, true );
+}
+add_action( 'after_setup_theme', 'aa_flexible_content_image_sizes' );
+
+/**
  * Changes the page template when a singular object is using a flexible content area.
  *
  * @param $template
@@ -181,6 +191,15 @@ function aa_flexible_field_title( $fields, $key = 'title', $tag = null, $tag_app
 function aa_flexible_field_subtitle( $fields, $key = 'subtitle', $tag = 'h3', $tag_appearance = null ) {
 	$value = !empty($fields[$key]) ? $fields[$key] : false;
 	if ( empty($value) ) return;
+	
+	// If tag is not defined, use an <h1> for the first subtitle and <h3> thereafter.
+	if ( $tag === 'h3' && !did_action( 'flexible-field-h1' ) ) {
+		// Keep original tag style, even though we set it to an h1
+		if ( $tag_appearance === null ) $tag_appearance = $tag;
+		
+		$tag = 'h1';
+		do_action( 'flexible-field-h1' );
+	}
 	
 	if ( $tag_appearance === null ) $tag_appearance = $tag;
 	

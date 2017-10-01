@@ -57,11 +57,30 @@
 	}
 
 	/*-----------------------------------------------------------------------------------*/
+	/*  Content alignment
+	/*-----------------------------------------------------------------------------------*/
+	&.content_align-left .ff-content {
+		text-align: left;
+	}
+
+	&.content_align-center .ff-content {
+		text-align: center;
+	}
+
+	&.content_align-right .ff-content {
+		text-align: right;
+	}
+
+	/*-----------------------------------------------------------------------------------*/
 	/*  Content width - narrow, regular, wide, full
 	/*    -- 40px is added to account for padding --
 	/*-----------------------------------------------------------------------------------*/
 	&.content_width-narrow .container {
 		max-width: 640px + 40px;
+	}
+
+	&.content_width-small .container {
+		max-width: 730px + 40px;
 	}
 
 	&.content_width-regular .container {
@@ -122,18 +141,31 @@
 			font-size: 1.8rem;
 			font-style: italic;
 			position: relative;
-			display: inline-block
+			display: inline-block;
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				height: 1px;
+				background: #929292
+			}
 		}
 
-		h3:after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 100%;
-			left: 0;
-			right: 0;
-			height: 1px;
-			background: #929292
+		h4 {
+			font-size: 1.4rem;
+			text-transform: uppercase;
+			letter-spacing: 0.25rem;
+			margin: 2.5rem 0 1rem;
+		}
+
+		h5 {
+			font-size: 1.4rem;
+			font-style: italic;
+			margin: 2.5rem 0 1rem;
 		}
 	}
 
@@ -194,6 +226,49 @@
 	a.ff-button:hover:after {
 		left: 0;
 		right: 0;
+	}
+
+	/*-----------------------------------------------------------------------------------*/
+	/*  Staff
+	/*-----------------------------------------------------------------------------------*/
+	.staff-list {
+		max-width: 890px;
+		margin: 70px auto 0;
+
+		.photo {
+			float: left;
+			width: 300px;
+			margin: 0 40px 0 0;
+		}
+	
+		.photo img {
+			display: block;
+			width: auto;
+			height: auto;
+			max-width: 100%;
+		}
+	
+		.ff-content {
+			overflow: hidden;
+
+			h4 {
+				line-height: 1.6rem;
+				margin: 0 0 0.8rem;
+			}
+
+			h5 {
+				line-height: 1.6rem;
+				margin: 0 0 3rem;
+			}
+		}
+
+		.staff-member:after {
+			content: '';
+			display: block;
+			clear: both;
+			height: 1px;
+			margin-bottom: 100px;
+		}
 	}
 
 	/*-----------------------------------------------------------------------------------*/
