@@ -234,12 +234,6 @@
 	.staff-list {
 		max-width: 890px;
 		margin: 70px auto 0;
-
-		.photo {
-			float: left;
-			width: 300px;
-			margin: 0 40px 0 0;
-		}
 	
 		.photo img {
 			display: block;
@@ -249,8 +243,6 @@
 		}
 	
 		.ff-content {
-			overflow: hidden;
-
 			h4 {
 				line-height: 1.6rem;
 				margin: 0 0 0.8rem;
@@ -260,6 +252,11 @@
 				line-height: 1.6rem;
 				margin: 0 0 3rem;
 			}
+
+			@include screen('small', 'min') {
+				// Do not let text wrap below the photo on larger screens.
+				overflow: hidden;
+			}
 		}
 
 		.staff-member:after {
@@ -268,6 +265,18 @@
 			clear: both;
 			height: 1px;
 			margin-bottom: 100px;
+		}
+
+		.photo {
+			float: left;
+			width: 33.7%;
+			margin: 0 40px 0 0;
+			max-width: 300px;
+
+			@include screen('small') {
+				width: 45%;
+				margin: 0 5% 0 0;
+			}
 		}
 	}
 
