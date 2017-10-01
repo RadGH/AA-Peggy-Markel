@@ -1,0 +1,82 @@
+{
+    "key": "group_59cf3743d526e",
+    "title": "Configuration",
+    "fields": [
+        {
+            "key": "field_59cf4463c1614",
+            "label": "Itinerary",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_59cf37668fe44",
+            "label": "Itinerary Form ID",
+            "name": "itinerary_form_id",
+            "type": "number",
+            "instructions": "The gravity forms <strong>form ID<\/strong> that ties in to the [itinerary_form] shortcode. Within the confirmation and notifications you can use the short tags: [itinerary_title] and [itinerary_download] to refer to the itinerary that was invoked.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_59cf446fc1615",
+            "label": "Destination Field ID",
+            "name": "itinerary_destination_field_id",
+            "type": "number",
+            "instructions": "The gravity form <strong>field ID<\/strong> for a hidden field that allows to be pre-fillable with the name \"destination_id\". This field will populate with the destination information when using the [itinerary_form] shortcode on a destination page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1506755798
+}

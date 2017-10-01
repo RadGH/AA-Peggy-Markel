@@ -36,7 +36,8 @@ require_once( get_template_directory() . '/_includes/extended/flexible-content-a
 	REGISTER CUSTOM POST TYPES
 ------------------------------------------------*/
 
-require_once( get_template_directory() . '/_includes/custom-post-types/destinations.php' );
+require_once( get_template_directory() . '/_includes/custom-post-types/destinations.php' ); // The destination post type
+require_once( get_template_directory() . '/_includes/extended/destinations-itinerary.php' ); // Additional feature for destinations to include itinerary download/signup form.
 
 /*---------------------------------------------
 	STOP UPDATE NAG ON THESE MODIFIED PLUGINS
