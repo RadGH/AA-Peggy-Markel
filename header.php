@@ -31,19 +31,11 @@
     <!-- Load FontAwesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Load Flickity -->
-	<?php /*
-    <link rel="stylesheet" href="<?php echo esc_attr(get_template_directory_uri()); ?>/_static/js/flickity/flickity.css">
-	<script src="<?php echo esc_attr(get_template_directory_uri()); ?>/_static/js/flickity/flickity.pkgd.min.js"></script>
-    */ ?>
+    <!-- Load Flickity CSS -->
 	<link rel="stylesheet" href="//unpkg.com/flickity@2/dist/flickity.min.css">
-	<script src="//unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-    <!-- Load Photoswipe (Lightbox) -->
-	<link rel="stylesheet" href="<?php echo esc_attr(get_template_directory_uri()); ?>/_static/js/photoswipe/photoswipe.css">
-	<link rel="stylesheet" href="<?php echo esc_attr(get_template_directory_uri()); ?>/_static/js/photoswipe/default-skin/default-skin.css">
-	<script src="<?php echo esc_attr(get_template_directory_uri()); ?>/_static/js/photoswipe/photoswipe.min.js"></script>
-	<script src="<?php echo esc_attr(get_template_directory_uri()); ?>/_static/js/photoswipe/photoswipe-ui-default.min.js"></script>
+    <!-- Load Swipebox CSS -->
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.swipebox/1.4.4/css/swipebox.min.css">
 	
 	<?php //Custom CSS
 		$css = get_field('custom_css' ,'option');

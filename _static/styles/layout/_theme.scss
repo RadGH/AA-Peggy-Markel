@@ -284,12 +284,14 @@ form.header-search input[type=search]::placeholder {
 	margin-bottom: 15px;
 }
 
-.destination-item .image a {
+
+/* Pin It Labels */
+a.pin-it {
 	position: relative;
 	display: inline-block;
 }
 
-.destination-item .image a:before {
+a.pin-it:before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -302,7 +304,7 @@ form.header-search input[type=search]::placeholder {
 	background: rgba(255,255,255,0.5);
 }
 
-.destination-item .image a .pin-it-label {
+a.pin-it .pin-it-label {
 	display: block;
 
 	position: absolute;
@@ -316,15 +318,15 @@ form.header-search input[type=search]::placeholder {
 	letter-spacing: 2px;
 }
 
-.destination-item .image a:before,
-.destination-item .image a .pin-it-label {
+a.pin-it:before,
+a.pin-it .pin-it-label {
 	opacity: 0;
 	visibility: hidden;
 	animation: destination-fade-out 0.2s linear;
 }
 
-.destination-item .image a:hover:before,
-.destination-item .image a:hover .pin-it-label {
+a.pin-it:hover:before,
+a.pin-it:hover .pin-it-label {
 	opacity: 1;
 	visibility: visible;
 	animation: destination-fade-in 0.2s linear;

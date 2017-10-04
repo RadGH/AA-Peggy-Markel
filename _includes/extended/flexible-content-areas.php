@@ -263,9 +263,13 @@ function aa_flexible_field_gallery( $fields, $key = 'images' ) {
 	$value = !empty($fields[$key]) ? $fields[$key] : false;
 	if ( empty($value) || !is_array($value) ) return;
 	
+	static $galleryid = null;
+	if ( $galleryid === null ) $galleryid = 0;
+	$galleryid++;
+	
 	?>
 	<div class="ff-gallery">
-		<div class="gallery-items grid grid-3-cols" itemscope itemtype="http://schema.org/ImageGallery">
+		<div class="gallery-items grid grid-3-cols">
 			<?php
 			foreach( $value as $image ) {
 				$thumb_src = isset($image['sizes']['thumbnail']) ? $image['sizes']['thumbnail'] : $image['sizes']['url'];
@@ -276,13 +280,13 @@ function aa_flexible_field_gallery( $fields, $key = 'images' ) {
 				$alt = $image['alt'];
 				if ( !$alt ) $alt = $caption;
 				?>
-				<figure class="gallery-item cell" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-					<a href="<?php echo esc_attr($image['url']) ; ?>" title="View full image" target="_blank" itemprop="contentUrl" data-size="<?php echo esc_attr($image['width']); ?>x<?php echo esc_attr($image['height']); ?>">
-						<img src="<?php echo esc_attr($thumb_src); ?>" alt="<?php echo esc_attr($alt); ?>" itemprop="thumbnail">
+				<div class="gallery-item cell">
+					<a href="<?php echo esc_attr($image['url']) ; ?>" title="<?php echo esc_attr($caption); ?>" target="_blank"  rel="gallery-<?php echo esc_attr($galleryid); ?>" class="swipebox">
+						<img src="<?php echo esc_attr($thumb_src); ?>" alt="<?php echo esc_attr($alt); ?>">
+						
+						<span class="screen-reader-text"><?php echo esc_html($caption); ?></span>
 					</a>
-					
-					<figcaption class="screen-reader-text" itemprop="caption description"><?php echo esc_html($caption); ?></figcaption>
-				</figure>
+				</div>
 				<?php
 			}
 			?>
