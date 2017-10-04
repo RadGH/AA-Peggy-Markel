@@ -206,3 +206,9 @@ body.admin-bar .pswp__container{
     top: 0;
   }
 }
+
+/* Disable top bar fix on full screen */
+body.admin-bar .pswp--fs .pswp__top-bar,
+body.admin-bar .pswp--fs .pswp__container{
+  top: 0;
+}
