@@ -265,15 +265,24 @@ function aa_flexible_field_gallery( $fields, $key = 'images' ) {
 	
 	?>
 	<div class="ff-gallery">
-		<div class="gallery-items grid grid-3-cols">
+		<div class="gallery-items grid grid-3-cols" itemscope itemtype="http://schema.org/ImageGallery">
 			<?php
 			foreach( $value as $image ) {
+				$thumb_src = isset($image['sizes']['thumbnail']) ? $image['sizes']['thumbnail'] : $image['sizes']['url'];
+				
+				$caption = $image['caption'];
+				if ( !$caption ) $caption = $image['title'];
+				
+				$alt = $image['alt'];
+				if ( !$alt ) $alt = $caption;
 				?>
-				<div class="gallery-item cell">
-					<a href="<?php echo esc_attr($image['url']) ; ?>" title="View full image" target="_blank" rel="lightbox"><?php
-						echo wp_get_attachment_image( $image['ID'], 'thumbnail' );
-					?></a>
-				</div>
+				<figure class="gallery-item cell" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+					<a href="<?php echo esc_attr($image['url']) ; ?>" title="View full image" target="_blank" itemprop="contentUrl" data-size="<?php echo esc_attr($image['width']); ?>x<?php echo esc_attr($image['height']); ?>">
+						<img src="<?php echo esc_attr($thumb_src); ?>" alt="<?php echo esc_attr($alt); ?>" itemprop="thumbnail">
+					</a>
+					
+					<figcaption class="screen-reader-text" itemprop="caption description"><?php echo esc_html($caption); ?></figcaption>
+				</figure>
 				<?php
 			}
 			?>
