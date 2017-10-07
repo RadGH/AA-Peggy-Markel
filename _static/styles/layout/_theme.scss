@@ -285,13 +285,13 @@ form.header-search input[type=search]::placeholder {
 }
 
 
-/* Pin It Labels */
-a.pin-it {
+/* Image Label Overlay */
+a.image-overlay-label {
 	position: relative;
 	display: inline-block;
 }
 
-a.pin-it:before {
+a.image-overlay-label:before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -304,7 +304,7 @@ a.pin-it:before {
 	background: rgba(255,255,255,0.5);
 }
 
-a.pin-it .pin-it-label {
+a.image-overlay-label .overlay {
 	display: block;
 
 	position: absolute;
@@ -318,15 +318,15 @@ a.pin-it .pin-it-label {
 	letter-spacing: 2px;
 }
 
-a.pin-it:before,
-a.pin-it .pin-it-label {
+a.image-overlay-label:before,
+a.image-overlay-label .overlay {
 	opacity: 0;
 	visibility: hidden;
 	animation: destination-fade-out 0.2s linear;
 }
 
-a.pin-it:hover:before,
-a.pin-it:hover .pin-it-label {
+a.image-overlay-label:hover:before,
+a.image-overlay-label:hover .overlay {
 	opacity: 1;
 	visibility: visible;
 	animation: destination-fade-in 0.2s linear;
@@ -359,6 +359,53 @@ a.pin-it:hover .pin-it-label {
 		visibility: hidden;
 		opacity: 0;
 	}
+}
+
+/* --------------------------------
+  Custom checkbox/radio buttons
+  See scripts.js
+-------------------------------- */
+
+label.aa-cb,
+label.aa-rd,
+html .gform_wrapper .gform_body label.aa-cb,
+html .gform_wrapper .gform_body label.aa-rd {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #bdbcbc;
+	overflow: hidden;
+	background:#fff;
+}
+
+label.aa-rd,
+html .gform_wrapper label.aa-rd {
+	border-radius: 100%;
+}
+
+label.aa-cb input:checked + span,
+label.aa-rd input:checked + span {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 2px;
+
+	vertical-align: top;
+	background: #1b1b1b;
+}
+
+label.aa-rd input:checked + span {
+	border-radius: 100%;
+}
+
+label.aa-cb input,
+label.aa-rd input {
+	opacity: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+	-webkit-appearance: none;
+	position: absolute;
 }
 
 /* --------------------------------

@@ -349,4 +349,52 @@
 		}
 	}
 
+	/*-----------------------------------------------------------------------------------*/
+	/*  Press
+	/*-----------------------------------------------------------------------------------*/
+	&.layout-press-items .ff-content {
+		max-width: 680px;
+		margin: 0 auto;
+	}
+
+	.press-list {
+		.cell {
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+
+		.item-inner {
+			max-width: 300px;
+			margin: 0 auto;
+		}
+
+		.title {
+			margin: 15px 0 10px;
+			font-size: 1.8rem;
+			font-style: italic;
+		}
+
+		.press-download a {
+			font-size: 1.4rem;
+			line-height: 2rem;
+			font-style: italic;
+			text-decoration: none;
+			color: #8e8e8e;
+			position: relative;
+			display: inline-block;
+			text-transform: lowercase;
+
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				right: 0;
+				height: 1px;
+				background: #8e8e8e;
+			}
+		}
+	}
+
 }

@@ -38,6 +38,7 @@ require_once( get_template_directory() . '/_includes/extended/flexible-content-a
 
 require_once( get_template_directory() . '/_includes/custom-post-types/destinations.php' ); // The destination post type
 require_once( get_template_directory() . '/_includes/extended/destinations-itinerary.php' ); // Additional feature for destinations to include itinerary download/signup form.
+require_once( get_template_directory() . '/_includes/custom-post-types/press.php' ); // The press post type
 
 /*---------------------------------------------
 	STOP UPDATE NAG ON THESE MODIFIED PLUGINS

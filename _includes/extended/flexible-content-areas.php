@@ -281,10 +281,10 @@ function aa_flexible_field_gallery( $fields, $key = 'images' ) {
 				if ( !$alt ) $alt = $caption;
 				?>
 				<div class="gallery-item cell">
-					<a href="<?php echo esc_attr($image['url']) ; ?>" title="<?php echo esc_attr($caption); ?>" target="_blank"  rel="gallery-<?php echo esc_attr($galleryid); ?>" class="swipebox">
+					<a href="<?php echo esc_attr($image['url']) ; ?>" title="<?php echo esc_attr($caption); ?>" target="_blank"  rel="gallery-<?php echo esc_attr($galleryid); ?>" class="swipebox image-overlay-label">
 						<img src="<?php echo esc_attr($thumb_src); ?>" alt="<?php echo esc_attr($alt); ?>">
 						
-						<span class="screen-reader-text"><?php echo esc_html($caption); ?></span>
+						<span class="overlay">View Gallery</span>
 					</a>
 				</div>
 				<?php

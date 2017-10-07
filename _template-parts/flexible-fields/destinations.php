@@ -33,9 +33,9 @@ if ( $dest_query->have_posts() ) {
 					$pinit_url = aa_get_pinit_url();
 					?>
 					<div class="image">
-						<a href="<?php echo esc_attr($pinit_url); ?>" class="pin-it" target="_blank" rel="external">
+						<a href="<?php echo esc_attr($pinit_url); ?>" class="image-overlay-label" target="_blank" rel="external">
 							<?php the_post_thumbnail( get_the_ID(), 'thumbnail' ); ?>
-							<span class="pin-it-label">Pin It</span>
+							<span class="overlay">Pin It</span>
 						</a>
 					</div>
 					<?php
