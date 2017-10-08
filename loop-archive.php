@@ -1,22 +1,24 @@
 <?php
 /**
- * Index Page
- * 
+ * The loop
  */
 
-get_header();
+global $more
 ?>
-<div class="container">
-<?php get_sidebar(); ?>
 
-<article>
-	<div class="content-area">
-		<?php if (have_posts()) : ?>
-			<?php while (have_posts()) : the_post(); ?>
+<?php //If there are no posts to display, such as an empty archive page
+	if ( ! have_posts() ) : ?>
+		<h1>There are currently no entries for this archive.</h1>
+		<?php get_search_form(); ?>
+<?php endif; ?>
 
-				<?php
+<?php while ( have_posts() ) : the_post(); ?>
+
+	<!-- Display All Posts -->
+		<div id="post-<?php the_ID(); ?>" <?php post_class('post clearfix'); ?>>
+			<?php 
 				the_post_thumbnail('blog-posts'); ?>
-    <div class="post-preview">
+<div class="post-preview">
   <h4 class="post-title"><a href="<?php the_permalink(); ?>">
     <?php the_title(); ?>
     </a></h4>
@@ -27,23 +29,13 @@ get_header();
       </span> &ensp;|&ensp;
       <?php comments_number(__('No Comments')); ?>
     </div>
-  <?php the_excerpt(__('new_excerpt_length')); ?>
+  <?php the_excerpt(); ?>
   <?php if(has_tag()) : ?><div class="tags"><?php the_tags('Tags: ', ', '); ?></div><?php endif; ?>
   <div class="read-more"><a href="<?php the_permalink(); ?>" class="button">read more</a></div>
 </div>
+		</div>
+	
 
-			<?php endwhile; ?>
-           
-            <?php get_template_part( '_template-parts/part', 'navigation' ); ?>
-
-		<?php else : ?>
-
-			<h1 class="heading">Not Found</h1>
-			<p class="center">Sorry, but you are looking for something that isn't here.</p>
-			<?php get_search_form(); ?>
-
-		<?php endif; ?>
-	</div>
-</article>
-</div>
-<?php get_footer(); ?>
+<?php endwhile;
+wp_reset_query();
+?>
