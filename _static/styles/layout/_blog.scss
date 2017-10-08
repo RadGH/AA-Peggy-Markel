@@ -382,13 +382,18 @@ img.alignleft {
 
 /* Clear filter button (used on category intro titles) */
 .clear-filter {
-	margin-left: 6px;
-	text-decoration: none;
-	font-size: 1.5rem;
-	color: #5c5f63;
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 10px;
+
 	border: 1px solid #5c5f63;
 	padding: 1px 4px 2px;
+
+	color: #5c5f63;
+	font-size: 1.5rem;
 	line-height: 1.5rem;
+	font-style: normal;
+	text-decoration: none;
 }
 
 .clear-filter:hover {
@@ -406,12 +411,12 @@ img.alignleft {
 /*-----------------------------------------------------------------------------------*/
 
 .journal-header {
-	padding: 8.75% 0;
+	padding: 8.75% 0 6%;
 	margin: 0 0 60px;
 	text-align: center;
 
 	@media ( min-width: 1440px ) {
-		padding: 120px 0;
+		padding: 120px 0 90px;
 	}
 
 	@include screen('med') {
@@ -419,9 +424,13 @@ img.alignleft {
 	}
 
 	@include screen('small') {
-		padding: 30px 0;
+		padding: 30px 0 10px;
 		margin: 0 0 20px;
 	}
+}
+
+.journal-header .archive-intro {
+	font-style: italic;
 }
 
 /*-----------------------------------------------------------------------------------*/
