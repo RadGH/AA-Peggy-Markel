@@ -44,7 +44,7 @@ if ( !is_search() && (is_post_type_archive('post') || is_home() || is_category()
 			<?php
 			while ( have_posts() ) : the_post();
 				
-				get_template_part( 'loop', get_post_type() );
+				get_template_part( 'loop', 'archive' );
 			
 			endwhile; // End of the loop.
 			
@@ -55,4 +55,6 @@ if ( !is_search() && (is_post_type_archive('post') || is_home() || is_category()
 	</article>
 	
 </div>
-<?php get_footer(); ?>
+<?php
+
+get_footer();

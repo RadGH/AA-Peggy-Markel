@@ -109,6 +109,23 @@ jQuery(function($) {
 	});
 });
 
+// Allow sidebar to be toggled on mobile
+jQuery(function($) {
+	var $sidebar = jQuery('#sidebar');
+	if ( $sidebar.length < 1 ) return;
+
+	var $toggle_button = jQuery('.mobile-sidebar-button');
+
+	$toggle_button.find('a').on('click', function() {
+
+		$toggle_button.toggleClass('msb-active');
+		$sidebar.toggleClass('msb-active');
+
+		return false;
+
+	});
+});
+
 // Reorganize the structure of the Contact Us Gravity Form
 jQuery(function($) {
 	var $form = jQuery('#gform_3');

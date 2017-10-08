@@ -37,4 +37,6 @@ new WP_Widget_Search()
 </article>
 <?php get_sidebar(); ?>
 </div>
-<?php get_footer(); ?>
+<?php
+
+get_footer();

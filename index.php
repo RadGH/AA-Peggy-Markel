@@ -29,4 +29,6 @@ get_header();
 	</div>
 </article>
 </div>
-<?php get_footer(); ?>
+<?php
+
+get_footer();

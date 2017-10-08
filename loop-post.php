@@ -4,9 +4,9 @@
 			<span class="pm-underline"><?php the_title(); ?></span>
 		</h2>
 		
-		<?php the_post_thumbnail( 'blog-posts' ); ?>
+		<div class="post-thumbnail"><?php the_post_thumbnail( 'blog-posts' ); ?></div>
 		
-		<?php the_excerpt(); ?>
+		<div class="post-excerpt"><?php the_content(); ?></div>
 		
 		<div class="post-meta">
 			<p>Posted by
