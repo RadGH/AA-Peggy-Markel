@@ -108,7 +108,7 @@
 			<div id="header-bar">
 				<div class="container">
 					<div class="left">
-						<?php get_template_part( 'searchform', 'mini' ); ?>
+						<?php get_search_form(); ?>
 					</div>
 					
 					<?php
@@ -178,7 +178,7 @@
 						
 						<?php wp_nav_menu( array( 'theme_location' => 'mobile' ) ); ?>
 						
-						<?php get_template_part( 'searchform', 'mini' ); ?>
+						<?php get_search_form(); ?>
 						
 						<?php
 						// Display social menu navigation

@@ -13,7 +13,7 @@ global $more
 <?php endif; ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
-
+	
 	<div id="post-<?php the_ID(); ?>" <?php post_class( 'post clearfix' ); ?>>
 		<div class="post-preview">
 			<h4 class="post-title">
@@ -26,6 +26,7 @@ global $more
 			
 			<div class="read-more"><a href="<?php the_permalink(); ?>" class="button">read more</a></div>
 			
+			<?php if ( in_array( get_post_type(), array( 'product', 'post' ) ) ) { ?>
 			<div class="post-meta">
 				<p>Posted by
 					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a> on <?php the_time( 'n/j/Y' ); ?> | Filed under: <?php the_category( ', ' ); ?>
@@ -35,6 +36,7 @@ global $more
 					<?php endif; ?>
 				</p>
 			</div>
+			<?php } ?>
 		</div>
 	</div>
 	

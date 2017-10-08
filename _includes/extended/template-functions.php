@@ -93,3 +93,47 @@ function aa_get_pinit_url( $image_id = null, $page_url = null ) {
 	
 	return add_query_arg( $args, 'https://pinterest.com/pin/create/button/' );
 }
+
+/**
+ * Displays related posts for the current post of the loop.
+ */
+function aa_the_related_posts() {
+	global $post;
+	$orig_post = $post;
+	global $post;
+	$categories = get_the_category($post->ID);
+	if ($categories) {
+		$category_ids = array();
+		foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+		$args=array(
+			'category__in' => $category_ids,
+			'post__not_in' => array($post->ID),
+			'posts_per_page'=> 3, // Number of related posts that will be shown.
+			'caller_get_posts'=>1
+		);
+		$my_query = new wp_query( $args );
+		if( $my_query->have_posts() ) {
+			echo '<div id="related_posts"><h3>Related Posts</h3><ul>';
+			while( $my_query->have_posts() ) {
+				$my_query->the_post();?>
+				<li>
+					<div class="relatedthumb"><a href="<? the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>">
+							<?php the_post_thumbnail('related-blog-posts'); ?>
+						</a></div>
+					<div class="relatedcontent">
+						<h3><a href="<? the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>">
+								<?php the_title(); ?>
+							</a></h3>
+						<div class="post-meta post-date">
+							<?php the_time('F j') ?>
+						</div>
+					</div>
+				</li>
+				<?
+			}
+			echo '</ul></div>';
+		}
+	}
+	$post = $orig_post;
+	wp_reset_query();
+}

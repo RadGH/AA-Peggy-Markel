@@ -3,6 +3,18 @@
  * Archives Page
  */
 
+if ( !have_posts() ) {
+	get_template_part( '404' );
+	return;
+}
+
+$archive_title = 'Archives';
+if ( is_category() ) $archive_title = single_term_title( '', false );
+else if ( is_tag() ) $archive_title = single_term_title( '', false );
+else if ( is_date() ) $archive_title = get_the_time('F Y');
+else if ( is_month() ) $archive_title = get_the_time('F Y');
+else if ( is_year() ) $archive_title = get_the_time('Y');
+
 get_header();
 ?>
 <div class="container">
@@ -11,35 +23,20 @@ get_header();
 	
 	<article>
 		<div class="content-area">
-			<?php if ( have_posts() ) : ?>
+			<div class="archive-intro">
+				<h1 class="archive-title h3"><?php echo esc_html($archive_title); ?> <a href="<?php echo esc_attr(get_post_type_archive_link('post')); ?>" class="clear-filter">Clear filter</a></h1>
 				
-				<?php /* If this is a category archive */ if (is_category()) { ?>
-					<h3 class="archive_head"><?php echo single_cat_title(); ?></h3>
-				<?php /* If this is a tag archive */ } elseif (is_tag()) { ?>
-					<h3 class="archive_head"><?php echo single_tag_title() ?></h3>
-				<?php /* If this is a date archive */ } elseif (is_date()) { ?>
-					<h3 class="archive_head">Entries from <?php the_time('F Y'); ?></h3>
-				<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-					<h3 class="archive_head">Entries from <?php the_time('F Y'); ?></h3>
-				<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-					<h3 class="archive_head">Entries from <?php the_time('Y'); ?></h3>
+				<?php if ( is_category() || is_tag() ) { ?>
+					<div class="archive-content"><?php echo category_description( get_queried_object_id() ); ?></div>
 				<?php } ?>
-				
-				<div class="post-body entry-content">
-					<?php get_template_part( 'loop', 'archive' ); ?>
-				</div>
-				
-				<?php get_template_part( '_template-parts/part', 'navigation' ); ?>
+			</div>
 			
-			<?php else : ?>
-				
-				<h1 class="heading">Not Found</h1>
-				<p class="center">Sorry, but you are looking for something that isn't here.</p>
-				<?php get_search_form(); ?>
+			<?php get_template_part( 'loop', 'archive' ); ?>
 			
-			<?php endif; ?>
+			<?php get_template_part( '_template-parts/part', 'navigation' ); ?>
 		
 		</div>
 	</article>
+	
 </div>
 <?php get_footer(); ?>

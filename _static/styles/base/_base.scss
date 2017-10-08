@@ -5,15 +5,18 @@
 #content-wrapper {
 }
 .content-area {
-	float:left;
-	width: 62%;
-	margin-bottom:25px;
+	float: right;
+	width: 76%;
+	padding-left: 40px;
+	box-sizing: border-box;
 	word-wrap: break-word;
+	margin-bottom:25px;
 }
 .aside {
-	float:right;
-	width: 32.2%;
-	margin-right:10px;
+	float:left;
+	width: 24%;
+	padding-right: 40px;
+	box-sizing: border-box;
 	word-wrap: break-word;
 }
 img {

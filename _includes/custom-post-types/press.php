@@ -47,9 +47,9 @@ function aa_register_press_post_type() {
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
 		'has_archive'           => false, // Use the flexible field instead
-		'exclude_from_search'   => false,
+		'exclude_from_search'   => true, // No search, just link to a file
 		'publicly_queryable'    => true,
-		'rewrite'               => true,
+		'rewrite'               => false, // No page, just link to a file
 	);
 	
 	register_post_type( 'press', $args );

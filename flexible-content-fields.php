@@ -3,6 +3,11 @@
 //
 // See: _includes/extended/flexible-content-fields.php
 
+if ( !have_posts() ) {
+	get_template_part( '404' );
+	return;
+}
+
 // Flexible content fields are required for this template, otherwise use a single page template.
 $fields = get_field( 'content-areas' );
 if ( empty($fields) ) {

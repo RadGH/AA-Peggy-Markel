@@ -14,15 +14,16 @@ global $more
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+	<!-- Display All Posts -->
 	<div id="post-<?php the_ID(); ?>" <?php post_class( 'post clearfix' ); ?>>
 		<div class="post-preview">
 			<h4 class="post-title">
-				<span class="pm-underline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
+				<span class="pm-underline"><?php the_title(); ?></span>
 			</h4>
 			
-			<div class="post-thumbnail"><?php the_post_thumbnail( 'blog-posts' ); ?></div>
+			<?php the_post_thumbnail( 'blog-posts' ); ?>
 			
-			<div class="post-excerpt"><?php the_excerpt(); ?></div>
+			<?php the_excerpt(); ?>
 			
 			<div class="read-more"><a href="<?php the_permalink(); ?>" class="button">read more</a></div>
 			

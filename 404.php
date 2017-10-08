@@ -10,7 +10,8 @@ get_header();
 <article>
 	<div class="container">
 		<?php the_field('error_page_text', 'option'); ?>
-        <?php get_search_form(); ?>
+		
+		<?php get_search_form(); ?>
 	</div>
 </article>
 
