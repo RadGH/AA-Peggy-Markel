@@ -4,6 +4,11 @@
 #header-wrapper {
 	background-color:#fff;
 	padding: 24px 0 26px;
+
+	@include screen('small') {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 }
 header {	
 }
@@ -122,4 +127,38 @@ footer a:hover {
 	margin: 0;
 	padding: 0;
 	display: block;
+}
+
+// Don't let the grid system collapse to 2-col
+@media ( min-width: $breakpoint-small ) {
+	footer .grid.grid-3-cols .cell.footer-col-middle,
+	footer .grid.grid-3-cols .cell.footer-col-left,
+	footer .grid.grid-3-cols .cell.footer-col-right {
+		width: 33.333%;
+		clear: none;
+	}
+}
+
+/* Footer -> Responsive */
+@include screen('small') {
+	footer {
+		padding: 20px 10px;
+	}
+
+	.footer-col-left {
+		display: none;
+	}
+
+	.footer-col-right {
+		text-align: center;
+		margin-top: 2rem;
+	}
+
+	.footer-contact {
+		font-family: "Crimson Text", serif;
+	}
+
+	.footer-social {
+		display: none;
+	}
 }

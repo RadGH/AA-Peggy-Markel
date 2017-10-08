@@ -108,14 +108,7 @@
 			<div id="header-bar">
 				<div class="container">
 					<div class="left">
-						<form action="<?php echo esc_attr(site_url()); ?>" method="GET" class="header-search">
-							<label for="header-search-input" class="screen-reader-text">Enter search terms:</label>
-							<input type="search" name="s" id="header-search-input" placeholder="search" value="<?php if ( get_query_var('s') ) echo esc_attr(get_query_var('s')); ?>">
-							<button type="submit">
-								<i class="fa fa-search"></i>
-								<span class="screen-reader-text">Search</span>
-							</button>
-						</form>
+						<?php get_template_part( 'searchform', 'mini' ); ?>
 					</div>
 					
 					<?php
@@ -178,29 +171,28 @@
 		</header>
 		
 		<div id="slideout-menu">
-			<nav id="slideout-nav">
-				<h2 class="menu-title">Menu</h2>
-				
-				<?php wp_nav_menu( array( 'theme_location' => 'mobile' ) ); ?>
-				
-				<?php
-				// Display social menu navigation
-				if ( $social_menu_html = aa_get_social_navigation() ) {
-					?>
-					<div class="right">
-						<nav class="social-icons" role="navigation">
-							<?php echo $social_menu_html; ?>
-						</nav>
-					</div>
-					<?php
-				}
-				?>
-				
-				<a href="#" id="nav-close">
-					<div class="close-lines1"></div>
-					<div class="close-lines2"></div>
-				</a>
-			</nav>
+			<div class="slideout-collapse">
+				<div class="slideout-content">
+					<nav id="slideout-nav">
+						<h2 class="menu-title">Menu</h2>
+						
+						<?php wp_nav_menu( array( 'theme_location' => 'mobile' ) ); ?>
+						
+						<?php get_template_part( 'searchform', 'mini' ); ?>
+						
+						<?php
+						// Display social menu navigation
+						if ( $social_menu_html = aa_get_social_navigation() ) {
+							?>
+							<nav class="social-icons" role="navigation">
+								<?php echo $social_menu_html; ?>
+							</nav>
+							<?php
+						}
+						?>
+					</nav>
+				</div>
+			</div>
 		</div>
 		
 		<div id="content-wrapper">

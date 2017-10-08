@@ -11,63 +11,52 @@
 ------------------------------------------------------------- */
 /*SLIDE OUT MENU*/	
 jQuery(function($) {
-		// Slideout Menu
+	// Slideout Menu
 	"use strict";
-    $('#slideout-trigger').on('click', function(event){
+
+	var $body = jQuery('body').addClass('slideout-menu-hidden');
+
+	var $trigger = jQuery('#slideout-trigger');
+
+	var $menu = jQuery('#slideout-menu');
+	var $collapse = $menu.find('.slideout-collapse');
+	var $content = $menu.find('.slideout-content');
+
+	var updateSlideoutHeight = function() {
+		$collapse.css('height', $content.outerHeight());
+	};
+
+	// Toggle the menu by adding a body class, adjust a max-height value for proper transitions
+	$trigger.on('click', function(event){
     	event.preventDefault();
-    	// create menu variables
-    	var slideoutMenu = $('#slideout-menu');
-    	var slideoutMenuWidth = $('#slideout-menu').outerWidth();
 
-    	// toggle open class
-    	slideoutMenu.toggleClass("open");
+		updateSlideoutHeight();
 
-    	// slide menu
-    	if (slideoutMenu.hasClass("open")) {
-	    	slideoutMenu.animate({
-		    	right: "0px"
-	    	});
-    	} else {
-	    	slideoutMenu.animate({
-		    	right: -slideoutMenuWidth
-	    	}, 250);
-    	}
-    });
-
-		$('#nav-close').on('click', function(event){
-			event.preventDefault();
-			// create menu variables
-    	var slideoutMenu = $('#slideout-menu');
-    	var slideoutMenuWidth = $('#slideout-menu').outerWidth();
-
-    	// toggle open class
-    	slideoutMenu.toggleClass("open");
-
-    	// slide menu
-    	if (slideoutMenu.hasClass("open")) {
-	    	slideoutMenu.animate({
-		    	right: "0px"
-	    	});
-    	} else {
-	    	slideoutMenu.animate({
-		    	right: -slideoutMenuWidth
-	    	}, 250);
-    	}
+	    $body
+		    .toggleClass('slideout-menu-visible')
+		    .toggleClass('slideout-menu-hidden');
     });
 	
-	/*SLIDE OUT MENU DROPDOWN*/	
-    $('#slideout-menu ul ul').hide();
-    if ($('#slideout-menu .menu-item-has-children').length > 0) {
-        $('#slideout-menu .menu-item-has-children').click(
+	/*SLIDE OUT MENU DROPDOWN*/
+	var $submenus = $content.find('ul ul');
+	var $item_with_children = $content.find('.menu-item-has-children');
 
-        function () {
-            $(this).addClass('toggled');
-            if ($(this).hasClass('toggled')) {
-                $(this).children('ul').slideToggle();
-            }
-            //return false;
+	$submenus.css('display', 'none');
 
-        });
+    if ($item_with_children.length > 0) {
+	    $item_with_children.click(function () {
+	    	var $this = jQuery(this);
+
+		    $this.toggleClass('toggled');
+		    if ( $this.hasClass('toggled') ) {
+			    $this.children('ul').slideToggle();
+		    }
+
+		    updateSlideoutHeight();
+
+		    //return false;
+
+	    });
     }
 });
   
