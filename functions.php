@@ -603,18 +603,6 @@ class theme_walker_nav_menu extends walker_nav_menu {
 
 
 /*---------------------------------
-	Fix empty search issue
-------------------------------------*/
-
-function request_filter( $query_vars ) {
-    if( isset( $_GET['s'] ) && empty( $_GET['s'] ) ) {
-        $query_vars['s'] = " ";
-    }
-    return $query_vars;
-}
-add_filter('request', 'request_filter');
-
-/*---------------------------------
 	Enqueue custom admin scripts & styles
 ------------------------------------*/
 
