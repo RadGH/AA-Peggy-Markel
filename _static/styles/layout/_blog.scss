@@ -6,19 +6,9 @@ body.single-post #content-wrapper .container,
 body.blog #content-wrapper .container {
 	max-width: 850px;
 }
-
-.content-area .post-cat-comments, .content-area .post-title, .content-area .post-meta{
-	text-align:center;
-	margin-bottom:.5%;
-}
 .content-area .post-meta{
 	font-size:1.4rem;
 	margin-bottom:25px;
-}
-.content-area .read-more{
-	text-align:center;
-	margin:25px 0;
-	padding-bottom:25px;
 }
 .content-area .read-more a{
 	text-decoration:none;
@@ -30,49 +20,96 @@ body.blog #content-wrapper .container {
 .latest-post-img img{
 }
 .post{
-	margin-bottom:50px;
-	padding-bottom:25px;
-	border-bottom:thin solid $accent2;
+	margin-bottom: 80px;
 }
-.post:last-child {
-	margin-bottom: 0;
-	padding-bottom: 0;
-	border-bottom: none;
-}
-.post-title{
-	margin-top:20px;
+.post .post-title {
+	margin: 0 0 20px;
+	font-style: italic;
 }
 .post-title a{
-	 color:$accent1;
+	 color: $text;
 	 text-decoration:none;
 	 letter-spacing:.025rem;
-	 -webkit-transition: all 0.3s ease;  
-	-moz-transition: all 0.3s ease;
-	-ms-transition: all 0.3s ease;
-	transition: all 0.3s ease;
+	 -webkit-transition: color 0.3s ease;
+	-moz-transition: color 0.3s ease;
+	-ms-transition: color 0.3s ease;
+	transition: color 0.3s ease;
 }
 .post-title a:hover{
 	color: $accent2;
-	-webkit-transition: all 0.3s ease;  
-	-moz-transition: all 0.3s ease;
-	-ms-transition: all 0.3s ease;
-	transition: all 0.3s ease;
+	-webkit-transition: color 0.3s ease;
+	-moz-transition: color 0.3s ease;
+	-ms-transition: color 0.3s ease;
+	transition: color 0.3s ease;
 }
-.post-meta{
-	font-size:1.8rem;
-	letter-spacing:.01rem;
+
+.post .post-thumbnail {
+	margin: 20px 0;
+	text-align: center;
 }
-.post-meta a{
+
+.post .post-excerpt,
+.post .post-content {
+	font-family: "EB Garamond", serif;
+}
+
+.post .post-meta{
+	margin-bottom: 25px;
+	padding-top: 10px;
+	border-top: 1px solid #1b1b1b;
+
+	color: #545454;
+	font-size: 1.0rem;
+	line-height: 1.4rem;
+	text-transform: uppercase;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: 0.05rem;
+}
+.post .post-meta a {
+	color: $text;
 	text-decoration:none;
 }
-.post-meta a:hover{
-	text-decoration: underline;
+.post .post-meta a:hover {
+	color: $accent2;
+	text-decoration:none;
 }
 .intro{
 	margin-bottom:75px;
 }
 .tags a{
 	text-decoration:none;
+}
+
+.post .read-more {
+	text-align: right;
+	font-size: 1.2rem;
+	line-height: 20px;
+	margin: 15px 0;
+}
+
+.post .read-more a {
+	display: inline-block;
+
+	color: #1b1b1b;
+	font-family: "EB Garamond", serif;
+	font-size: 1.2rem;
+	line-height: 20px;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.2rem;
+}
+
+.post .read-more a:after {
+	content: '';
+	display: inline-block;
+	margin-left: 8px;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAkCAYAAADGrhlwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjJGRTJBMDI4QTRFMjExRTc4MDExQjE3Q0YxNDdFNzVCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjJGRTJBMDI5QTRFMjExRTc4MDExQjE3Q0YxNDdFNzVCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MkZFMkEwMjZBNEUyMTFFNzgwMTFCMTdDRjE0N0U3NUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MkZFMkEwMjdBNEUyMTFFNzgwMTFCMTdDRjE0N0U3NUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz67XvBEAAAB8UlEQVR42tyZO07DQBCGd+NNCJDw6BAFJRV34Ab0lFwACcEB6IIsI0sUUCLxOAEFZ+AWiIoWRIgIBjODfksry7YS25JnPdIn7LX38Wd2x7OLjuNYNWFaa/7jEdvEAbFJPBCPxHvphllQE8CGRMDDAG/EiFgtq6ejmjV204Z1v0IcEqfEwEUPGWIfnoktpkRILLsmKJl2I4ioLkqAIIU14xeIGromKPFUmBKUiPJnDhSCBClMr4sMUWOIWnNNUCIqyJh+45k8JVCQ/X3KWlMBwrtTgpJAkeepMPc7JViQwpoJICK9rrJDunBBRZ6KEUAGrglKUiI/R1TmmtICKBoH55zrxFVOSA/x/P/lXaTxv/gF2BbQyA8RoayHsgjvcd0u8jEu+0YbfbTHdb/Qad9qb4prD/Ujq9+e1Z49Fg/XW8QRsZNyCPd9Q5xoJIbGGrixXoysZ8Yq4wYWrfu0mZy6KtVPF9eTnLqTjH64fCmjTx7TscYv2BZ76qiWmcF2ty1T7p4f7rUoKNy2Lmy7YnN/WCXbfKmPcJs/OXXQM8XbB6FWfoMn0KptwQWKqXZIImyaVT/GEhQA6jloFOKZ+o6CBSTH9R7WC0hp7ur8zpiGBbGAV+uetzKXxBnxUaZBr2FBvJ14IT6JZ+KcuFYV/iX5J8AAU/EuDDLxvv4AAAAASUVORK5CYII=);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	width: 16px;
+	height: 20px;
+	vertical-align: bottom;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -174,6 +211,10 @@ img.alignleft {
 /*-----------------------------------------------------------------------------------*/
 .sidebar {
 	text-align: right;
+
+	@include screen('med') {
+		text-align: center;
+	}
 }
 .widget{
 	padding: 0;
@@ -279,6 +320,29 @@ img.alignleft {
 .h3 .clear-filter {
 	position: relative;
 	top: -5px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*	PEGGY'S JOURNAL / JOURNAL HEADER
+/*-----------------------------------------------------------------------------------*/
+
+.journal-header {
+	padding: 8.75% 0;
+	margin: 0 0 60px;
+	text-align: center;
+
+	@media ( min-width: 1440px ) {
+		padding: 120px 0;
+	}
+
+	@include screen('med') {
+		margin: 0 0 30px;
+	}
+
+	@include screen('small') {
+		padding: 30px 0;
+		margin: 0 0 20px;
+	}
 }
 
 /*-----------------------------------------------------------------------------------*/

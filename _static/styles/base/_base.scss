@@ -11,13 +11,29 @@
 	box-sizing: border-box;
 	word-wrap: break-word;
 	margin-bottom:25px;
+
+	@include screen('med') {
+		float: none;
+		width: auto;
+		padding: 0;
+	}
 }
+
 .aside {
 	float:left;
 	width: 24%;
 	padding-right: 40px;
 	box-sizing: border-box;
 	word-wrap: break-word;
+
+	@include screen('med') {
+		float: none;
+		width: auto;
+		padding: 0;
+
+		max-width: 160px;
+		margin: 0 auto;
+	}
 }
 img {
 	max-width:100%;

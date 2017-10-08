@@ -468,7 +468,7 @@ add_filter('next_posts_link_attributes', 'posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 
 function posts_link_attributes() {
-    return 'class="button button-primary"';
+    return 'class="button"';
 }
 
 
@@ -476,7 +476,7 @@ add_filter('next_post_link', 'post_link_attributes');
 add_filter('previous_post_link', 'post_link_attributes');
 
 function post_link_attributes($output) {
-    $injection = 'class="button button-primary"';
+    $injection = 'class="button"';
     return str_replace('<a href=', '<a '.$injection.' href=', $output);
 }
 

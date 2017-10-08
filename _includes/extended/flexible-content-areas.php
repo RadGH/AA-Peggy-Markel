@@ -43,7 +43,7 @@ function aa_flexible_background_start( $field, $classes, $background_key = 'back
 	if ( !is_array($classes) ) $classes = (array) $classes;
 	
 	// Shorthand of the background field
-	$b = !empty($field[$background_key]) ? $field[$background_key] : false;
+	$b = !empty($field[$background_key]) ? $field[$background_key] : $field;
 	
 	// Get the style. This, and other fields like it, come from the "[Clone] Background" field group.
 	$_style = !empty($b['style']) ? $b['style'] : 'No Background';
