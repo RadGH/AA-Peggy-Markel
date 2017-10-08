@@ -22,18 +22,33 @@
 			
 			<div class="cell footer-col-middle">
 				<div id="credits" class="container">
-					<img src="<?php echo get_template_directory_uri(); ?>/_static/images/logo-small.png" alt="Peggy Markel Logo"><br>
-					&copy; <?php echo date('Y'); ?> Peggy Markel. All rights reserved.<br>
-					Site Developed by <a href="http://www.alchemyandaim.com/" target="_blank">Alchemy + Aim</a>.
+					<?php
+					// Footer Logo
+					if ( $footer_logo = get_field( 'footer_logo', 'options', false ) ) {
+						echo wp_get_attachment_image( $footer_logo, 'full' );
+						echo '<br>';
+					}
+					
+					// Copyright Text -- (c) Peggy Markel 2017
+					if ( $footer_copyright_text = get_field( 'footer_copyright_text', 'options', false ) ) {
+						$footer_copyright_text = str_ireplace( '[year]', date('Y'), $footer_copyright_text );
+						echo nl2br(esc_html($footer_copyright_text));
+						echo '<br>';
+					}
+					
+					// Un-editable By-Line
+					echo 'Site Developed by <a href="http://www.alchemyandaim.com/" target="_blank">Alchemy + Aim</a>.';
+					?>
 				</div>
 			</div>
 			
 			<div class="cell footer-col-right">
 				<div class="footer-contact">
-					<p>Call us: <a href="tel:+18009882851" target="_blank">(800) 988-2851</a><br>
-					   Email: <a href="mailto:info@peggymarkel.com" target="_blank">info@peggymarkel.com</a><br>
-					   Join Our Mailing List
-					</p>
+					<?php
+					if ( $footer_contact_text = get_field( 'footer_contact_text', 'options', false ) ) {
+						echo wpautop($footer_contact_text);
+					}
+					?>
 				</div>
 				
 				<?php
