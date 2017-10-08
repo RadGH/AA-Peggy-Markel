@@ -140,7 +140,20 @@ footer a:hover {
 }
 
 /* Footer -> Responsive */
-@include screen('small') {
+@media ( min-width: $breakpoint-med + 1px ) {
+	footer .nav-menu .nav {
+		columns: 3;
+		column-gap: 10px;
+	}
+}
+
+@media ( max-width: $breakpoint-med ) and ( min-width: $breakpoint-med-small ) {
+	footer .nav-menu .nav {
+		columns: 2;
+	}
+}
+
+@media ( max-width: $breakpoint-small ) {
 	footer {
 		padding: 20px 10px;
 	}
