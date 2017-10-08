@@ -29,7 +29,7 @@ global $more
       </span> &ensp;|&ensp;
       <?php comments_number(__('No Comments')); ?>
     </div>
-  <?php the_excerpt(__('new_excerpt_length')); ?>
+  <?php the_excerpt(); ?>
   <?php if(has_tag()) : ?><div class="tags"><?php the_tags('Tags: ', ', '); ?></div><?php endif; ?>
   <div class="read-more"><a href="<?php the_permalink(); ?>" class="button">read more</a></div>
 </div>
