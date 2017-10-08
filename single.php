@@ -17,31 +17,34 @@ if ( get_post_type() == 'post' ) {
 
 ?>
 <div class="container">
-<article class="blog-container">
-<div class="content-area">
-
-	<?php
-    while ( have_posts() ) : the_post();
-
-        get_template_part( 'loop', get_post_type() );
 	
-	    // aa_the_related_posts();
-
-	    /*
-        // If comments are open or we have at least one comment, load up the comment template.
-        if ( comments_open() || get_comments_number() ) :
-            comments_template();
-        endif;
-	    */
-
-    endwhile; // End of the loop.
+	<?php get_sidebar(); ?>
 	
-	get_template_part( '_template-parts/part', 'navigation' );
-    ?>
-
-</div>
-</article>
-<?php get_sidebar(); ?>
+	<article class="blog-container">
+		<div class="content-area">
+		
+			<?php
+		    while ( have_posts() ) : the_post();
+		
+		        get_template_part( 'loop', get_post_type() );
+			
+			    // aa_the_related_posts();
+		
+			    /*
+		        // If comments are open or we have at least one comment, load up the comment template.
+		        if ( comments_open() || get_comments_number() ) :
+		            comments_template();
+		        endif;
+			    */
+		
+		    endwhile; // End of the loop.
+			
+			get_template_part( '_template-parts/part', 'navigation' );
+		    ?>
+		
+		</div>
+	</article>
+	
 </div>
 <?php
 
