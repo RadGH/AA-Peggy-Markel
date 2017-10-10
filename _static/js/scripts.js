@@ -181,8 +181,26 @@ jQuery(function($) {
 	$body.append( $grid );
 });
 
+// Wrap all checkboxes in a span so that we can style the checkbox
 jQuery(function($) {
-	// Wrap all checkboxes in a span so that we can style the checkbox
 	jQuery('input:checkbox').wrap( jQuery('<label class="aa-cb"></label>') ).after( jQuery('<span class="aa-ind"></span>') );
 	jQuery('input:radio').wrap( jQuery('<label class="aa-rd"></label>') ).after( jQuery('<span class="aa-ind"></span>') );
+});
+
+// Add class to indicate checkbox/radio status on parent elements for gravity forms
+jQuery(function($) {
+	jQuery('.gform_body')
+		.on('change', '.gfield_checkbox input:checkbox', function() {
+			jQuery(this).closest('li').toggleClass('checked', jQuery(this).prop('checked'));
+		})
+		.on('change', '.gfield_radio input:radio', function( e, internal ) {
+			jQuery(this).closest('li').toggleClass('checked', jQuery(this).prop('checked'));
+
+			// Uncheck other radios by triggering the change event
+			// Note that this could trigger an infinite loop, so we pass an internal parameter that reads "do not recurse" so we know we're triggering this programmatically.
+			if ( internal !== "do not recurse" ) {
+				jQuery(this).closest('ul').find('input:radio').not(this).trigger('change', "do not recurse");
+			}
+		})
+		.find('input:checkbox, input:radio').trigger('change');
 });

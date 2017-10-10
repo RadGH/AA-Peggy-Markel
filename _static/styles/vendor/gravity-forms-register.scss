@@ -1,0 +1,147 @@
+/*
+
+Gravity Forms adjustments specifically for the Register page. There's a lot of customizations here, so I decided to make this separate from the main file.
+
+Form ID: #4
+
+*/
+
+/* Hide checkbox label for "Agree to Terms" and "Payment Method" */
+#field_4_41 label.gfield_label,
+#field_4_45 label.gfield_label {
+	display: none;
+}
+
+/* Put terms and conditions html in a scrollable legal-format box */
+#field_4_44 {
+	height: 350px;
+	max-height: 80vh;
+	padding: 10px 15px;
+
+	font-family: "EB Garamond", serif;
+
+	overflow: auto;
+	resize: vertical;
+	background: #fff;
+	border: 1px solid #c3c3c3;
+}
+
+/* Italicize and add margin to "We strongly agree..." at the end of the first page. */
+#field_4_54 .gfield_label {
+	font-style: italic;
+	margin-top: 30px;
+}
+
+
+@media ( min-width: 960px ) {
+	/* Fields in a multi-column layout */
+	#field_4_3,
+	#field_4_6,
+	#field_4_7,
+	#field_4_8,
+
+	#field_4_11,
+	#field_4_12,
+	#field_4_13,
+
+	#field_4_17,
+	#field_4_18,
+	#field_4_21,
+
+	#field_4_53,
+	#field_4_23,
+
+	#field_4_24,
+	#field_4_25,
+
+	#field_4_29,
+	#field_4_30 {
+		float: left;
+		clear: none;
+	}
+
+	/* Address, City, State, Zip */
+	#field_4_3 { width: 47%; clear: left; }
+	#field_4_6 { width: 25%; }
+	#field_4_7 { width: 13%; }
+	#field_4_8 { width: 15%; }
+
+	/* Phone number, email, date of birth */
+	#field_4_11 { width: 38%; clear: left; }
+	#field_4_12 { width: 34%; }
+	#field_4_13 { width: 28%; }
+
+	/* Passport number, Nationality, Date Issued */
+	#field_4_17 { width: 43%; clear: left; }
+	#field_4_18 { width: 29%; }
+	#field_4_21 { width: 28%; }
+
+	/* Expiration Date, Name on passport */
+	#field_4_53 { width: 28%; clear: left; }
+	#field_4_23 { width: 72%; }
+
+	/* Emergency Contact, Phone Number */
+	#field_4_24 { width: 50%; clear: left; }
+	#field_4_25 { width: 50%; }
+
+	/* Dates, Occupancy */
+	#field_4_29 { width: 50%; clear: left; }
+	#field_4_30 { width: 50%; }
+
+	/* Date fields are not 100%, and need to be for the columns to look right */
+	#field_4_53 input,
+	#field_4_21 input { width: 100%; }
+}
+
+/* Payment Method */
+#field_4_41,
+#field_4_41 .ginput_container,
+#field_4_41 .gfield_radio {
+	margin: 0;
+	padding: 0;
+}
+
+#field_4_54 .gfield_radio li label.aa-rd {
+	vertical-align: top;
+	position: relative;
+	top: 2px;
+	margin-right: 7px;
+}
+
+#field_4_45 .aa-cb {
+	margin-right: 9px;
+}
+
+/* Payment Method Checkboxes - Checked class on <li> elements is provided by scripts.js */
+#field_4_41 .aa-rd, #field_4_41 input[type=radio] {
+	position:  absolute;
+	visibility: hidden;
+	top: -100%;
+}
+
+#field_4_41 .gfield_radio li {
+	border: 1px solid #bdbcbc;
+	margin: 0 0 8px;
+}
+
+#field_4_41 .gfield_radio li.checked {
+	background: #737373;
+	border-color: #737373;
+	color: #fff;
+}
+
+#field_4_41 .gfield_radio li label {
+	display: block;
+	margin: 0;
+	padding: 0 10px !important;
+	line-height: 40px;
+	font-size: 1.5rem;
+	max-width: none;
+}
+
+/* Payment method explanation text */
+#field_4_59 {
+	margin: 20px 0 0 20px !important;
+	font-size: 1.6rem;
+	font-style: italic;
+}

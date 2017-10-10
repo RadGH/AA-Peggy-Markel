@@ -34,6 +34,10 @@ html .gform_wrapper div.validation_error {
 	padding: 15px 20px;
 }
 
+html .gform_wrapper li.gfield.gfield_error.gfield_contains_required {
+	padding-right: 16px; /* Why does this have to change when there is an error? */
+}
+
 html .gform_wrapper li.gfield.gfield_error,
 html .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
 	border: none;
@@ -60,6 +64,57 @@ html .gform_wrapper .field_description_below .gfield_description {
 	html .gform_wrapper.gform_validation_error .top_label select.medium {
 		width: 100%;
 	}
+}
+
+/* Gravity Forms - Generic Styles */
+html .gform_wrapper ul.gform_fields li.gfield.gsection {
+	margin: 0;
+	padding: 50px 0 24px;
+	border-bottom: none;
+}
+
+html .gform_wrapper li.gfield.field_description_below+li.gsection {
+	margin-top: 0 !important; /* Gravity Forms uses an !important here. of course... */
+}
+
+html .gform_wrapper ul.gform_fields li.gfield.gsection:first-child {
+	padding-top: 0;
+}
+
+html .gform_wrapper ul.gform_fields li.gfield.gsection h2 {
+	font-size: 1.8rem;
+	font-weight: normal;
+	font-style: italic;
+}
+
+html .gform_wrapper .gsection h2 {
+	position: relative;
+	display: inline-block;
+}
+
+html .gform_wrapper .gsection h2:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	width: 100%;
+	margin-top: 3px;
+	height: 1px;
+	background: #737373;
+}
+
+html body .gform_wrapper div.gform_body ul.gform_fields li.gfield.gfield_html {
+	font-size: 1.5rem;
+	line-height: 1.6;
+}
+
+html .gform_wrapper .gfield_radio li label,
+html .gform_wrapper .gfield_checkbox li label {
+	font-weight: normal;
+	font-size: 1.5rem;
+	line-height: 1.3;
 }
 
 /*-----------------------------------------------------------------------------------
