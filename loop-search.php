@@ -24,7 +24,7 @@ global $more
 			
 			<div class="post-excerpt"><?php the_excerpt(); ?></div>
 			
-			<div class="read-more"><a href="<?php the_permalink(); ?>" class="button">read more</a></div>
+			<div class="read-more"><a href="<?php the_permalink(); ?>">read more</a></div>
 			
 			<?php if ( in_array( get_post_type(), array( 'product', 'post' ) ) ) { ?>
 			<div class="post-meta">

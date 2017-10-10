@@ -10,11 +10,9 @@ if ( !have_posts() ) {
 
 get_header();
 
-// Blog post header
-if ( !is_search() && (is_post_type_archive('post') || is_home() || is_category() || is_tag() || get_post_type() == 'post' ) ) {
+if ( !is_search() && (is_home() || is_post_type_archive('post') || is_tax('category') || is_category()) ) {
 	get_template_part( '_template-parts/journal-header', 'archive' );
 }
-
 ?>
 <div class="container">
 	
