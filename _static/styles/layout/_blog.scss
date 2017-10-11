@@ -407,25 +407,32 @@ img.alignleft {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/*	PEGGY'S JOURNAL / JOURNAL HEADER
+/*	PEGGY'S JOURNAL / PAGE HEADER
 /*-----------------------------------------------------------------------------------*/
 
 .page-header {
-	padding: 8.75% 0 6%;
 	margin: 0 0 60px;
-	text-align: center;
-
-	@media ( min-width: 1440px ) {
-		padding: 120px 0 90px;
-	}
-
-	@include screen('med') {
-		margin: 0 0 30px;
-	}
 
 	@include screen('small') {
-		padding: 30px 0 10px;
 		margin: 0 0 20px;
+	}
+
+	.container {
+		padding: 8.75% 0 6%;
+		text-align: center;
+
+		@media ( min-width: 1440px ) {
+			padding: 120px 0 90px;
+		}
+
+		@include screen('med') {
+			margin: 0 0 30px;
+		}
+
+		@include screen('small') {
+			padding: 30px 0 10px;
+			margin: 0 0 20px;
+		}
 	}
 }
 
