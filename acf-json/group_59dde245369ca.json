@@ -1,11 +1,11 @@
 {
-    "key": "group_59d9b973700a2",
-    "title": "Journal Settings",
+    "key": "group_59dde245369ca",
+    "title": "Shop Settings",
     "fields": [
         {
-            "key": "field_59d9b97fa5abc",
-            "label": "Journal Title",
-            "name": "journal_title",
+            "key": "field_59dde27f50a83",
+            "label": "Shop Title",
+            "name": "shop_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -22,9 +22,28 @@
             "maxlength": ""
         },
         {
-            "key": "field_59d9b984a5abd",
-            "label": "Header Background",
-            "name": "header_background",
+            "key": "field_59dde28a50a84",
+            "label": "Shop Description",
+            "name": "shop_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_59dde29550a85",
+            "label": "Background",
+            "name": "background",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -51,14 +70,14 @@
                 "value": "page"
             },
             {
-                "param": "page_type",
+                "param": "page",
                 "operator": "==",
-                "value": "posts_page"
+                "value": "48"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "acf_after_title",
+    "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -67,5 +86,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1507713778
+    "modified": 1507713767
 }
