@@ -39,7 +39,7 @@ add_filter( "template_include", "aa_replace_flexible_content_field_template" );
  * @param $classes
  * @param string $background_key
  */
-function aa_flexible_background_start( $field, $classes, $background_key = 'background' ) {
+function aa_flexible_background_start( $field, $classes = array(), $background_key = 'background' ) {
 	if ( !is_array($classes) ) $classes = (array) $classes;
 	
 	// Shorthand of the background field
@@ -54,6 +54,7 @@ function aa_flexible_background_start( $field, $classes, $background_key = 'back
 	$_scaling = !empty($b['image_scaling']) ? $b['image_scaling'] : 'cover';
 	$_position = !empty($b['image_position']) ? $b['image_position'] : 'center';
 	
+	$classes[] = 'ff-background';
 	if ( !empty($b['light_theme']) ) $classes[] = 'light-theme';
 	
 	switch( $_style ) {

@@ -11,7 +11,7 @@ if ( !have_posts() ) {
 get_header();
 
 if ( !is_search() && (is_home() || is_post_type_archive('post') || is_tax('category') || is_category()) ) {
-	get_template_part( '_template-parts/journal-header', 'archive' );
+	get_template_part( '_template-parts/header', 'journal' );
 }
 ?>
 <div class="container">

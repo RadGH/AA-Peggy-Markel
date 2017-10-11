@@ -37,7 +37,7 @@ while ( have_posts() ) : the_post();
 			?>
 			<div class="<?php echo esc_attr( implode(' ', $classes) ); ?>">
 				
-				<?php aa_flexible_background_start( $flex_field, 'ff-background' ); ?>
+				<?php aa_flexible_background_start( $flex_field ); ?>
 				
 					<div class="container">
 						

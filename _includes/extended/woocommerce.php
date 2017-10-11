@@ -5,45 +5,6 @@ if ( !class_exists('WooCommerce') ) return;
 
 add_theme_support( 'woocommerce' );
 
-/*
-Customizations for WooCommerce
-
-	aa_wc_reorganize_woocommerce_hooks()
-		Moves/adds/deletes various woocommerce template hooks
-
-	aa_wc_rename_sort_dropdown_verbiage()
-		Renames the values of the "Sort By" dropdown on the store page
-
-	aa_wc_remove_default_woocommerce_stylesheets()
-		Removes the general stylesheet for woocommerce. This is replaced by woocommerce-custom.css in the theme.
-
-	aa_wc_woocommerce_body_class_for_pages()
-		Adds the "woocommerce" class to woocommerce cart and checkout screens
-
-	aa_wc_woocommerce_display_tracking_code_header()
-	aa_wc_woocommerce_display_tracking_code_body()
-		Displays tracking codes when checkout is completed for WooCommerce
-
-	aa_wc_woocommerce_template_hooks()
-		Modifies template hooks for WooCommerce, removing uneeded ones, adding new ones, or moving them around.
-
-	aa_wc_woocommerce_before()
-	aa_wc_woocommerce_after()
-		Adds markup before and after woocommerce, to give our theme's sidebar and other features.
-
-	aa_wc_woocommerce_custom_title()
-		Custom WooCommerce title, to replace the default
-
-	aa_wc_woocommerce_disable_title_breadcrumbs()
-		Disable default title & breadcrumbs, and replace hook with a custom title
-
-	aa_wc_woocommerce_filter_shortcodes()
-		Enable shortcodes on specific WooCommerce filters
-
-	aa_wc_woocommerce_update_header_image_email()
-		Update the header image used for WooCommerce emails
-*/
-
 function aa_wc_reorganize_woocommerce_hooks() {
 	// Disable WooCommerce "On Sale" div
 	// add_filter( 'woocommerce_sale_flash', '__return_false' );
@@ -125,16 +86,21 @@ add_action( 'wp', 'aa_wc_woocommerce_template_hooks' );
 
 // Hooks used before and after WooCommerce template content
 function aa_wc_woocommerce_before() {
+	
+	if ( !is_cart() && !is_checkout() ) {
+		get_template_part( '_template-parts/header', 'shop' );
+	}
+	
 	?>
-	<div class="inside site-content">
-	<main id="main">
+	<div class="container">
+		<article>
 	<?php
 }
 function aa_wc_woocommerce_after() {
 	?>
-	</main>
-	<?php do_action( 'aa_wc_woocommerce_sidebar_area' ); ?>
+		</article>
 	</div>
+	<!-- /.container -->
 	<?php
 }
 
