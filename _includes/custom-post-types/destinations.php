@@ -36,7 +36,7 @@ function aa_register_destinations_post_type() {
 	$args = array(
 		'label'                 => 'Destination',
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'author', 'thumbnail', 'revisions' ),
+		'supports'              => array( 'title', 'editor', 'author', 'thumbnail', 'revisions' ),
 		'taxonomies'            => array(),
 		'hierarchical'          => false,
 		'public'                => true,

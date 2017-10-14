@@ -124,7 +124,7 @@ add_action( 'wp', 'aa_wc_woocommerce_template_hooks' );
 function aa_wc_woocommerce_before() {
 	
 	if ( !is_cart() && !is_checkout() && !is_singular('product') ) {
-		get_template_part( '_template-parts/header', 'shop' );
+		get_template_part( '_template-parts/hero-section', 'shop' );
 	}
 	
 	?>

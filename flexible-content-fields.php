@@ -1,4 +1,9 @@
 <?php
+/*
+ * Template Name: Custom Layout
+ * Template Post Type: page, destination
+ */
+
 // This template overrides the regular template for single pages (and other post types) which are using flexible fields.
 //
 // See: _includes/extended/flexible-content-fields.php
