@@ -39,8 +39,20 @@ while ( have_posts() ) : the_post();
 			$classes[] = 'spacing-' . (!empty($flex_field['spacing']) ? $flex_field['spacing'] : 'regular');
 			$classes[] = 'content_align-' . (!empty($flex_field['content_alignment']) ? $flex_field['content_alignment'] : 'left');
 			$classes[] = 'content_width-' . (!empty($flex_field['content_width']) ? $flex_field['content_width'] : 'regular');
+			
+			$id = false;
+			
+			// Custom classes
+			if ( !empty($flex_field['advanced_css']['html_class']) ) {
+				$classes[] = $flex_field['advanced_css']['html_class'];
+			}
+			
+			// Custom ID
+			if ( !empty($flex_field['advanced_css']['html_class']) ) {
+				$id = $flex_field['advanced_css']['html_id'];
+			}
 			?>
-			<div class="<?php echo esc_attr( implode(' ', $classes) ); ?>">
+			<div <?php if ( $id ) echo 'id="'. esc_attr($id) .'"'; ?> class="<?php echo esc_attr( implode(' ', $classes) ); ?>">
 				
 				<?php aa_flexible_background_start( $flex_field ); ?>
 				
