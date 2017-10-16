@@ -93,6 +93,11 @@ Form ID: #4
 	#field_4_21 input { width: 100%; }
 }
 
+/* Date Field */
+.gform_wrapper #field_4_13 input.datepicker {
+	width: 100%;
+}
+
 /* Payment Method */
 #field_4_41,
 #field_4_41 .ginput_container,
