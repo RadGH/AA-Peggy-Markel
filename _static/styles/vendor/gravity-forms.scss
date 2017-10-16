@@ -223,18 +223,6 @@ Gravity forms - Itinerary Download form (Destination singular pages via [itinera
 			color: #d2d2d2;
 		}
 	}
-
-	.gform_button {
-		border-color: #bbbbbb;
-		text-transform: none;
-		letter-spacing: 0;
-	}
-
-	.gform_button:hover {
-		border-color: #777777;
-		background: #f7f6f6;
-		color: $text;
-	}
 }
 
 /*-----------------------------------------------------------------------------------
@@ -248,11 +236,6 @@ Gravity forms - Contact Page (Form ID #3, also see scripts.js, the creation of d
 	.gf_contact .cell:nth-child(2) {
 		padding-left: 18px;
 	}
-}
-
-.gform_wrapper #gform_3 .gform_footer input[type=submit] {
-	margin: 0 auto;
-	display: block;
 }
 
 #field_3_5 .gfield_checkbox {
@@ -301,13 +284,6 @@ Gravity forms - Contact Page (Form ID #3, also see scripts.js, the creation of d
 	height: 0;
 }
 
-#gform_3 .gform_footer input.gform_button {
-	text-transform: uppercase;
-	font-size: 1.4rem;
-	padding: 14px 32px 15px;
-	line-height: 1;
-}
-
 html .gform_wrapper .gf_contact .gfield_checkbox li input[type="checkbox"] {
 	margin-top: 0;
 }
@@ -321,4 +297,29 @@ html .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submi
 html ul.gfield_checkbox li > br,
 html ul.gfield_radio li > br {
 	display: none;
+}
+
+// Submit buttons
+html .gform_wrapper .gform_footer,
+html .gform_wrapper .gform_page_footer {
+	text-align: center;
+	padding: 0;
+	margin: 40px 0 0;
+	border: none;
+}
+
+html .gform_wrapper .gform_footer .button,
+html .gform_wrapper .gform_page_footer .button {
+	padding: 14px 32px;
+	border: 1px solid #cccccc;
+	font-size: 1.4rem;
+	line-height: 1.4rem;
+	text-transform: uppercase;
+	font-style: normal;
+	letter-spacing: 0.2rem;
+}
+
+html .gform_wrapper #gform_2 .gform_footer .button {
+	letter-spacing: 0;
+	text-transform: none;
 }

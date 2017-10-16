@@ -24,6 +24,10 @@ Form ID: #4
 	resize: vertical;
 	background: #fff;
 	border: 1px solid #c3c3c3;
+
+	&> :last-child {
+		margin-bottom: 0;
+	}
 }
 
 /* Italicize and add margin to "We strongly agree..." at the end of the first page. */
@@ -125,7 +129,7 @@ Form ID: #4
 }
 
 #field_4_41 .gfield_radio li {
-	border: 1px solid #bdbcbc;
+	border: 1px solid #cccccc;
 	margin: 0 0 8px;
 }
 
