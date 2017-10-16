@@ -329,9 +329,11 @@ form.search-form input[type=search]::placeholder {
 
 /* Destinations -> Title */
 .destination-item h4.title {
-	font-size: 1.8rem;
-	font-style: italic;
 	margin-bottom: 5px;
+
+	font-size: 1.8rem;
+	font-family: "Crimson Text", serif;
+	font-style: italic;
 }
 
 .destination-item h4.title a {
