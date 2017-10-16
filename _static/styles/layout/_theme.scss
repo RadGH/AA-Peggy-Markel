@@ -79,7 +79,8 @@ form.search-form input[type=search] {
 	border-bottom: 1px solid #919191;
 	color: #000000;
 
-	font-size: 1.5rem;
+	font-size: 1.3rem;
+	letter-spacing: -0.01rem;
 
 	margin: 0;
 	background: none;
@@ -90,6 +91,32 @@ form.search-form input[type=search] {
 
 form.search-form input[type=search]::placeholder {
 	font-style: italic;
+}
+
+/* Search page */
+.archive-intro.search-intro {
+	margin-bottom: 40px;
+}
+
+.search-result .post-thumbnail {
+	float: left;
+	margin: 0 15px 10px 0;
+	max-width: 200px;
+}
+
+.search-result .read-more {
+	float: right;
+	margin: 0;
+}
+
+.search-result .post-meta {
+	clear: both;
+}
+
+.search-result .post-meta:after {
+	content: '';
+	display: block;
+	clear: both;
 }
 
 /* Header Link Bar */
@@ -128,6 +155,7 @@ form.search-form input[type=search]::placeholder {
 #linkbar .nav-logo a img {
 	display: block;
 	margin: 0 auto;
+	max-width: 165px;
 }
 
 /* Header Container */
@@ -765,21 +793,4 @@ body.error404 article .container {
 	max-width: 960px;
 	margin: 40px auto;
 	padding: 0 10px;
-}
-
-body.error404 article form.search-form {
-	margin: 30px 0 0;
-}
-
-body.error404 article .search-form input[type=search] {
-	height: 40px;
-	font-size: 2.5rem;
-	width: 400px;
-	max-width: 90%;
-}
-
-body.error404 article .search-form button {
-	height: 40px;
-	padding-top: 7px;
-	max-width: 10%;
 }
