@@ -511,7 +511,7 @@ acf_add_local_field_group(array (
 			'label' => 'Footer Logo',
 			'name' => 'footer_logo',
 			'type' => 'image',
-			'instructions' => 'Suggested size: 65&times;55',
+			'instructions' => 'Suggested size: 130&times;110',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
