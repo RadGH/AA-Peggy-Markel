@@ -14,7 +14,7 @@
 
 class Orphan_Word {
 	public function __construct() {
-		add_filter( 'the_title', array( $this, 'orphan_filer' ), 999, 1 );
+		// add_filter( 'the_title', array( $this, 'orphan_filer' ), 999, 1 );
 		add_filter( 'widget_title', array( $this, 'orphan_filer' ), 999, 1 );
 		add_filter( 'widget_text', array( $this, 'orphan_filer' ), 999, 1 );
 		add_filter( 'get_comment_text', array( $this, 'orphan_filer' ), 999, 1 );

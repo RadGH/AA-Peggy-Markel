@@ -25,6 +25,8 @@ body.blog #content-wrapper .container {
 .post .post-title {
 	margin: 0 0 20px;
 	font-style: italic;
+	font-family: "Crimson Text", serif;
+	letter-spacing: 0.05rem;
 }
 .post-title a{
 	 color: $text;
@@ -412,6 +414,10 @@ img.alignleft {
 
 .hero-section {
 	margin: 0 0 60px;
+
+	.hero-title:last-child {
+		margin-bottom: 0;
+	}
 
 	@include screen('small') {
 		margin: 0 0 20px;
