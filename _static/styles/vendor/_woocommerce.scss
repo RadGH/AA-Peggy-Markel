@@ -318,3 +318,14 @@ ul.wc_payment_methods li {
 body.woocommerce .hero-section .journal-header {
 	height: 400px;
 }
+
+// Custom product column widths
+@media ( min-width: 769px ) {
+	html .woocommerce div.product div.images {
+		width: 40%;
+	}
+
+	html .woocommerce div.product div.summary {
+		width: 55.4%;
+	}
+}

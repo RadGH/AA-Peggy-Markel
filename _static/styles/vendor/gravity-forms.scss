@@ -5,7 +5,7 @@ html .gform_wrapper {
 html .gform_wrapper .gfield_error .gfield_label,
 html .gform_wrapper .top_label .gfield_label {
 	font-weight: normal;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	margin: 0;
 }
 
@@ -22,7 +22,7 @@ html .gform_wrapper textarea {
 
 html .gform_wrapper .gfield_checkbox li label {
 	font-weight: normal;
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 }
 
 html .gform_wrapper div.validation_error {
@@ -257,8 +257,12 @@ Gravity forms - Contact Page (Form ID #3, also see scripts.js, the creation of d
 	columns: 2;
 }
 
-#field_3_5 .gfield_checkbox label {
+#field_3_5 .gfield_checkbox li {
 	white-space: nowrap;
+}
+
+#field_3_5 .gfield_checkbox label.aa-cb {
+	margin-right: 10px;
 }
 
 .gf_contact {
@@ -298,10 +302,21 @@ Gravity forms - Contact Page (Form ID #3, also see scripts.js, the creation of d
 #gform_3 .gform_footer input.gform_button {
 	text-transform: uppercase;
 	font-size: 1.4rem;
-	padding: 10px 32px;
+	padding: 14px 32px 15px;
 	line-height: 1;
 }
 
 html .gform_wrapper .gf_contact .gfield_checkbox li input[type="checkbox"] {
 	margin-top: 0;
+}
+
+// Override padding for inputs
+html .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+	padding: 1px 4px;
+}
+
+// Fix <br> in radio/checkbox list
+html ul.gfield_checkbox li > br,
+html ul.gfield_radio li > br {
+	display: none;
 }

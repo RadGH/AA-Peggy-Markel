@@ -86,9 +86,11 @@ p {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
 	color: $accent2;
+	text-decoration: none;
 }
 a:hover {
 	color: $accent1;
+	text-decoration: underline;
 }
 
 /* Lists
@@ -166,10 +168,10 @@ input[type="url"],
 input[type="password"],
 textarea,
 select {
-	height: 38px;
-	padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+	height: 27px;
+	padding: 1px 10px; /* The 1px vertically centers text on FF, ignored by Webkit */
 	background-color: #fff;
-	border: 1px solid #E1E1E1;
+	border: 1px solid #ccc;
 	border-radius: 0;
 	box-shadow: none;
 	box-sizing: border-box;
