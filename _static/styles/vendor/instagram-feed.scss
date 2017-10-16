@@ -7,3 +7,37 @@
 #sb_instagram {
 	padding-bottom: 0 !important;
 }
+
+@media ( min-width: 801px ) {
+	#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
+		width: 16.66% !important;
+	}
+	#sb_instagram.sbi_col_6 #sbi_images .sbi_item:nth-child(6n+1) {
+		clear: both !important;
+	}
+}
+
+@media ( max-width: 800px ) and ( min-width: 481px ) {
+	#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
+		width: 33.33% !important;
+	}
+	#sb_instagram.sbi_col_6 #sbi_images .sbi_item:nth-child(3n+1) {
+		clear: both !important;
+	}
+}
+
+@media ( max-width: 480px ) and ( min-width: 321px ) {
+	#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
+		width: 50% !important;
+	}
+	#sb_instagram.sbi_col_6 #sbi_images .sbi_item:nth-child(2n+1) {
+		clear: both !important;
+	}
+}
+
+@media ( max-width: 320px ) {
+	#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
+		width: 100% !important;
+		clear: both !important;
+	}
+}

@@ -222,9 +222,6 @@ form.search-form input[type=search]::placeholder {
 	@include screen('large') {
 		width: 90px;
 	}
-	@include screen('med-small') {
-		width: 75px;
-	}
 }
 
 #linkbar .header-nav a:hover {
@@ -288,7 +285,7 @@ form.search-form input[type=search]::placeholder {
 }
 
 #linkbar .menu-item.current-menu-item.emphasized-link a span:after {
-	background: #AE8231;
+	background: $accent2;
 }
 
 /* Header -> Responsive */
@@ -824,7 +821,11 @@ body.error404 article .container {
 	max-width: 965px; /* add 40px for padding */
 }
 
-@include screen( 'med', 'min' ) {
+.ff.max-width-700 .container {
+	max-width: 740px; /* add 40px for padding */
+}
+
+@media screen and ( min-width: $breakpoint-med + 1px )  {
 	.ff.fixed-hero .ff-background {
 		display: flex;
 		align-items: center;

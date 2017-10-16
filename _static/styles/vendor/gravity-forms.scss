@@ -10,6 +10,7 @@ html .gform_wrapper .top_label .gfield_label {
 }
 
 html .gform_wrapper .top_label input.medium,
+html .gform_wrapper .top_label input.medium.datepicker,
 html .gform_wrapper .top_label select.medium {
 	width: 100%;
 }
@@ -322,4 +323,10 @@ html .gform_wrapper .gform_page_footer .button {
 html .gform_wrapper #gform_2 .gform_footer .button {
 	letter-spacing: 0;
 	text-transform: none;
+}
+
+// Fix radio/checkbox lists too wide
+html .gform_wrapper .top_label li ul.gfield_checkbox,
+html .gform_wrapper .top_label li ul.gfield_radio {
+	width: auto;
 }

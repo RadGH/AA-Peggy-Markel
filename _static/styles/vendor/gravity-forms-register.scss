@@ -37,7 +37,7 @@ Form ID: #4
 }
 
 
-@media ( min-width: 960px ) {
+@media ( min-width: $breakpoint-med-small ) {
 	/* Fields in a multi-column layout */
 	#field_4_3,
 	#field_4_6,
@@ -95,6 +95,35 @@ Form ID: #4
 	/* Date fields are not 100%, and need to be for the columns to look right */
 	#field_4_53 input,
 	#field_4_21 input { width: 100%; }
+
+	/* Remove right padding on the last fields of every row */
+	#field_4_2,
+	#field_4_8,
+	#field_4_13,
+	#field_4_21,
+	#field_4_23,
+	#field_4_25,
+	#field_4_26,
+
+	#field_4_28,
+	#field_4_30,
+
+	#field_4_33,
+	#field_4_34,
+	#field_4_35,
+	#field_4_36,
+	#field_4_37,
+	#field_4_38,
+	#field_4_39 {
+		padding-right: 0;
+	}
+}
+
+/* Remove right padding on mobile */
+@media ( min-width: 641px ) and ( max-width: $breakpoint-med-small - 1px ) {
+	html .gform_wrapper ul.gform_fields li.gfield {
+		padding-right: 0;
+	}
 }
 
 /* Date Field */

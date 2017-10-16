@@ -139,7 +139,7 @@ html .woocommerce ul.products li {
 	text-align: center;
 }
 
-@media ( max-width: $breakpoint-small ) {
+@media ( max-width: 320px ) {
 	html .woocommerce ul.products li.product {
 		width: auto;
 		float: none !important;
@@ -172,9 +172,15 @@ html .woocommerce ul.products li {
 	}
 }
 
-@media ( max-width: $breakpoint-med ) and ( min-width: $breakpoint-small + 1px ) {
+@media ( max-width: $breakpoint-med ) and ( min-width: 321px ) {
+	html .woocommerce ul.products {
+		margin: 0 -5px;
+	}
+
 	html .woocommerce ul.products li.product {
 		width: 50%;
+		padding: 0 5px;
+		box-sizing: border-box;
 	}
 
 	html .woocommerce ul.products li.product:nth-child(2n+1) {
@@ -315,8 +321,10 @@ ul.wc_payment_methods li {
 }
 
 // Larger hero image on shop pages
-body.woocommerce .hero-section .journal-header {
-	height: 400px;
+@media screen and ( min-width: $breakpoint-med + 1px ) {
+	body.woocommerce .hero-section .journal-header {
+		height: 400px;
+	}
 }
 
 // Custom product column widths

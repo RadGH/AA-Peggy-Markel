@@ -290,27 +290,26 @@ img.alignleft {
 }
 
 .mobile-sidebar-button a:after {
-	content: '';
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 2rem;
+	content: "\f078";
 
 	position: absolute;
 	top: 50%;
-	margin-top: -6px;
-	right: 20px;
+	margin-top: -10px;
+	right: 15px;
 
 	display: block;
-	width: 12px;
-	height: 12px;
+	width: 20px;
+	height: 20px;
 
-	border: 2px solid #1b1b1b;
-	transform: rotate(45deg) skewX(15deg) skewY(12deg) translateX(-1px) translateY(-1px);
-	border-top: none;
-	border-left: none;
+	transform: rotate(0deg);
 
 	transition: transform 0.2s linear;
 }
 
 .mobile-sidebar-button.msb-active a:after {
-	transform: rotate(225deg) skewX(15deg) skewY(12deg) translateX(1px) translateY(1px);
+	transform: rotate(180deg);
 }
 
 @include screen('med') {
@@ -430,7 +429,8 @@ img.alignleft {
 	}
 
 	.container {
-		padding: 8.75% 0 6%;
+		padding: 8.75% 0 8.75%;
+		margin: 0 auto;
 		text-align: center;
 
 		@media ( min-width: 1440px ) {
@@ -438,12 +438,10 @@ img.alignleft {
 		}
 
 		@include screen('med') {
-			margin: 0 0 30px;
 		}
 
 		@include screen('small') {
-			padding: 30px 0 10px;
-			margin: 0 0 20px;
+			padding: 30px 0;
 		}
 	}
 
