@@ -798,6 +798,13 @@ body.error404 article .container {
 }
 
 /* Specific fixes to flexible fields, using classes/IDs in design tab */
+.ff.minimal-button-spacing .ff-title {
+	margin-bottom: 0.7rem;
+}
+.ff.minimal-button-spacing .ff-button-row {
+	margin-top: 0;
+}
+
 @include screen( 'med', 'min' ) {
 	.ff.fixed-hero .ff-background {
 		display: flex;

@@ -319,8 +319,12 @@
 		.cell {
 			padding: 1rem 25px;
 
+			/* Do not collapse this module to 2 columns */
 			@include screen('med') {
+				margin: 0;
 				padding: 1rem 10px;
+				width: auto;
+				clear: both;
 			}
 		}
 
