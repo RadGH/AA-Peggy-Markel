@@ -316,6 +316,15 @@
 		margin: 60px auto 0;
 		max-width: 750px;
 		padding: 0 10px;
+
+		@media ( max-width: $grid_medium ) {
+			margin-top: 30px;
+		}
+
+		@media ( max-width: $grid_small ) {
+			padding: 0;
+		}
+
 		.day-label {
 			float: left;
 			width: 16%;
@@ -324,23 +333,15 @@
 			letter-spacing: 0.2rem;
 		}
 
-		.itinerary-list .day-description {
+		.day-description {
 			overflow: hidden;
 
 			font-size: 1.8rem;
 			line-height: 2.4rem;
 		}
 
-		.itinerary-list .day:last-child .day-description > :last-child {
+		.day:last-child .day-description > :last-child {
 			margin-bottom: 0;
-		}
-
-		@media ( max-width: $grid_medium ) {
-			margin-top: 30px;
-		}
-
-		@media ( max-width: $grid_small ) {
-			padding: 0;
 		}
 	}
 
