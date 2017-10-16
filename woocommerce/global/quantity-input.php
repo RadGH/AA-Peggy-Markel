@@ -13,23 +13,30 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.5.0
+ * @version     3.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+	exit;
 }
 
-// CUSTOM FEATURE: Input type hidden on single product pages
-$class = 'quantity';
-$input_type = 'number';
+// CUSTOM FEATURE: Input is hidden when quantity can't be changed. Let's also hide it on single product pages by default.
+$hide_quantity_input = false;
 
-if ( is_singular('product') ) {
-	$class.= ' screen-reader-text';
-	$input_type = 'hidden';
+if ( $max_value && $min_value === $max_value) $hide_quantity_input = true;
+else if ( is_singular('product') ) $hide_quantity_input = true;
+
+if ( $hide_quantity_input ) {
+	?>
+	<div class="quantity hidden">
+		<input type="hidden" id="<?php echo esc_attr( $input_id ); ?>" class="qty" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $min_value ); ?>" />
+	</div>
+	<?php
+} else {
+	?>
+	<div class="quantity">
+		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></label>
+		<input type="number" id="<?php echo esc_attr( $input_id ); ?>" class="input-text qty text" step="<?php echo esc_attr( $step ); ?>" min="<?php echo esc_attr( $min_value ); ?>" max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $input_value ); ?>" title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) ?>" size="4" pattern="<?php echo esc_attr( $pattern ); ?>" inputmode="<?php echo esc_attr( $inputmode ); ?>" />
+	</div>
+	<?php
 }
-
-?>
-<div class="<?php echo esc_attr($class); ?>">
-	<input type="<?php echo esc_attr($input_type); ?>" step="<?php echo esc_attr( $step ); ?>" min="<?php echo esc_attr( $min_value ); ?>" max="<?php echo esc_attr( $max_value ); ?>" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $input_value ); ?>" title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) ?>" class="input-text qty text" size="4" pattern="<?php echo esc_attr( $pattern ); ?>" inputmode="<?php echo esc_attr( $inputmode ); ?>" />
-</div>
