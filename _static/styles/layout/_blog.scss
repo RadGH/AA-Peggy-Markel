@@ -25,7 +25,7 @@ body.blog #content-wrapper .container {
 .post .post-title {
 	margin: 0 0 20px;
 	font-style: italic;
-	font-family: "Crimson Text", serif;
+	font-family: $font_text;
 	letter-spacing: 0.05rem;
 }
 .post-title a{

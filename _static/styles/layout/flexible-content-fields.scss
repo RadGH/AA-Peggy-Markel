@@ -134,7 +134,7 @@
 	.ff-subtitle {
 		font-size: 1.8rem;
 		font-style: italic;
-		font-family: "Crimson Text", serif;
+		font-family: $font_text;
 		letter-spacing: 0.05rem;
 
 		&:last-child {
@@ -166,6 +166,7 @@
 		}
 
 		h4 {
+			font-family: $font_title;
 			font-size: 1.4rem;
 			text-transform: uppercase;
 			letter-spacing: 0.25rem;
@@ -176,7 +177,7 @@
 			font-size: 1.4rem;
 			font-style: italic;
 			margin: 2.5rem 0 1rem;
-			font-family: "Crimson Text", serif;
+			font-family: $font_text;
 			letter-spacing: 0.05rem;
 		}
 	}
@@ -344,6 +345,7 @@
 		}
 
 		.ff-title {
+			font-family: $font_title;
 			font-size: 1.4rem;
 			margin: 0 0 1rem;
 			text-transform: uppercase;
@@ -390,6 +392,7 @@
 		}
 
 		.title {
+			font-family: $font_title;
 			margin: 15px 0 10px;
 			font-size: 1.8rem;
 			font-style: italic;
