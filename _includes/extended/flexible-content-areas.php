@@ -222,7 +222,7 @@ function aa_flexible_field_content( $fields, $key = 'content' ) {
 	if ( preg_match('/^\s*\[[^\]]+\]\s*$/', $value) ) {
 		$value = do_shortcode(trim($value));
 	}else{
-		$value = do_shortcode(wpautop($value));
+		$value = do_shortcode($value);
 	}
 	
 	echo '<div class="ff-content">';
