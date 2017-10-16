@@ -256,6 +256,10 @@
 		}
 	
 		.ff-content {
+			& > :last-child {
+				margin-bottom: 0;
+			}
+
 			h4 {
 				line-height: 1.6rem;
 				margin: 0 0 0.8rem;

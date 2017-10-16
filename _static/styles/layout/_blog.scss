@@ -419,6 +419,10 @@ img.alignleft {
 		margin-bottom: 0;
 	}
 
+	.hero-content > :last-child {
+		margin-bottom: 0;
+	}
+
 	@include screen('small') {
 		margin: 0 0 20px;
 	}
@@ -452,6 +456,10 @@ img.alignleft {
 				padding-top: 20px;
 				padding-bottom: 20px;
 			}
+		}
+
+		.hero-filter-title {
+			white-space: nowrap;
 		}
 	}
 }
