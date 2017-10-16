@@ -377,6 +377,7 @@
 			a img {
 				display: block;
 				margin: 0 auto;
+				max-width: 266px;
 			}
 		}
 	}
@@ -401,10 +402,13 @@
 		}
 
 		.title {
-			font-family: $font_title;
 			margin: 15px 0 10px;
 			font-size: 1.8rem;
 			font-style: italic;
+		}
+
+		.image img {
+			max-width: 266px;
 		}
 
 		.press-download a {

@@ -43,7 +43,7 @@ hr {
 	margin-bottom: 4.5%;
 	margin-top: 4.5%;
 	border-width: 0;
-	border-top: 1px solid $accent2;
+	border-top: 1px solid $text;
 }
 .clear-fix {
 	clear:both;
@@ -96,7 +96,7 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-	color: $accent2;
+	color: $text;
 	text-decoration: none;
 }
 a:hover {
