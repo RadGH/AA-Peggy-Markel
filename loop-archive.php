@@ -4,7 +4,7 @@
 			<span class="pm-underline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
 		</h2>
 		
-		<div class="post-thumbnail"><?php the_post_thumbnail( 'blog-posts' ); ?></div>
+		<div class="post-thumbnail"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'blog-posts' ); ?></a></div>
 		
 		<div class="post-excerpt"><?php the_excerpt(); ?></div>
 		
