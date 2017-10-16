@@ -204,6 +204,7 @@ html .woocommerce ul.products li {
 
 .woocommerce ul.products h2 {
 	font-size: 1.8rem;
+	font-family: "Crimson Text", serif;
 	text-decoration: underline;
 	font-style: italic;
 
@@ -310,4 +311,9 @@ ul.wc_payment_methods, ul.wc_payment_methods li {
 
 ul.wc_payment_methods li {
 	margin: 15px 20px;
+}
+
+// Larger hero image on shop pages
+body.woocommerce .hero-section .journal-header {
+	height: 400px;
 }
