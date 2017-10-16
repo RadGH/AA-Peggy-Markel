@@ -434,6 +434,20 @@ img.alignleft {
 			margin: 0 0 20px;
 		}
 	}
+
+	/* Fixed height for large screens */
+	@include screen( 'med', 'min' ) {
+		.ff-background {
+			display: flex;
+			align-items: center;
+			height: 300px;
+
+			.container {
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+		}
+	}
 }
 
 /*-----------------------------------------------------------------------------------*/
