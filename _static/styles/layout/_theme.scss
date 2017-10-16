@@ -796,3 +796,29 @@ body.error404 article .container {
 	margin: 40px auto;
 	padding: 0 10px;
 }
+
+/* Specific fixes to flexible fields, using classes/IDs in design tab */
+@include screen( 'med', 'min' ) {
+	.ff.fixed-hero .ff-background {
+		display: flex;
+		align-items: center;
+
+		.container {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	}
+
+	.ff.height-565 .ff-background {
+		height: 565px;
+	}
+	.ff.height-550 .ff-background {
+		height: 550px;
+	}
+	.ff.height-400 .ff-background {
+		height: 400px;
+	}
+	.ff.height-300 .ff-background {
+		height: 300px;
+	}
+}
