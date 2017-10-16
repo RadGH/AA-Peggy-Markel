@@ -60,6 +60,8 @@ form.search-form {
 }
 
 form.search-form button[type=submit] {
+	position: relative;
+	top: 7px;
 	height: 27px;
 	padding: 0 7px;
 	float: left;

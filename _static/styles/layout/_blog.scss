@@ -376,6 +376,8 @@ img.alignleft {
 }
 
 .widget_search form.search-form button[type=submit] {
+	position: relative;
+	top: 8px;
 	width: 10%;
 	width: calc(24px); /* Calc may not be supported */
 	text-align: left;
