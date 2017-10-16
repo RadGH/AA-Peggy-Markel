@@ -157,16 +157,10 @@ footer a:hover {
 }
 
 /* Footer -> Responsive */
-@media ( min-width: $breakpoint-med + 1px ) {
-	footer .nav-menu .nav {
-		columns: 3;
-		column-gap: 10px;
-	}
-}
-
-@media ( max-width: $breakpoint-med ) and ( min-width: $breakpoint-med-small ) {
+@media ( min-width: $breakpoint-med-small ) {
 	footer .nav-menu .nav {
 		columns: 2;
+		column-gap: 20px;
 	}
 }
 
