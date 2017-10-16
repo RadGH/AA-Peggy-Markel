@@ -154,7 +154,7 @@ footer a:hover {
 	}
 }
 
-@media ( max-width: 800px ) {
+@media ( max-width: $grid_large ) {
 	footer {
 		padding: 20px 10px;
 	}

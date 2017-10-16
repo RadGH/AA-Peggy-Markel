@@ -165,7 +165,7 @@
 }
 
 /*  GO FULL WIDTH BELOW 480 PIXELS */
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: $grid_medium) {
 	.one-half, .one-third, .one-fourth, .two-third, .three-fourth, .one-fifth, .two-fifth, .three-fifth, .one-sixth { width: 100%; }
 }
 
@@ -196,7 +196,7 @@
 	}
 
 	/* Large screens: Two, three, or four column layout */
-	@media screen and (min-width: 801px) {
+	@media screen and (min-width: $grid_medium + 1px) {
 		.cell {
 			float: left;
 		}
@@ -259,7 +259,7 @@
 	}
 
 	/* Medium to Small screens: Two column layout */
-	@media screen and (max-width: 800px) and (min-width: 320px) {
+	@media screen and (max-width: $grid_medium) and (min-width: $grid_small) {
 		.cell {
 			float: left;
 		}

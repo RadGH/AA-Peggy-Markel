@@ -139,7 +139,7 @@ html .woocommerce ul.products li {
 	text-align: center;
 }
 
-@media ( max-width: 320px ) {
+@media ( max-width: $grid_small ) {
 	html .woocommerce ul.products li.product {
 		width: auto;
 		float: none !important;
@@ -162,7 +162,7 @@ html .woocommerce ul.products li {
 	}
 }
 
-@media ( min-width: $breakpoint-med + 1px ) {
+@media ( min-width: $grid_large + 1px ) {
 	html .woocommerce ul.products li.product {
 		width: 33.33%;
 	}
@@ -172,7 +172,7 @@ html .woocommerce ul.products li {
 	}
 }
 
-@media ( max-width: $breakpoint-med ) and ( min-width: 321px ) {
+@media ( max-width: $grid_large ) and ( min-width: $grid_small ) {
 	html .woocommerce ul.products {
 		margin: 0 -5px;
 	}

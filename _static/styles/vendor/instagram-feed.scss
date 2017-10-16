@@ -8,7 +8,7 @@
 	padding-bottom: 0 !important;
 }
 
-@media ( min-width: 801px ) {
+@media ( min-width: $grid_large + 1px ) {
 	#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
 		width: 16.66% !important;
 	}
@@ -17,7 +17,7 @@
 	}
 }
 
-@media ( max-width: 800px ) and ( min-width: 481px ) {
+@media ( max-width: $grid_large ) and ( min-width: $grid_medium + 1px ) {
 	#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
 		width: 33.33% !important;
 	}
@@ -26,7 +26,7 @@
 	}
 }
 
-@media ( max-width: 480px ) and ( min-width: 321px ) {
+@media ( max-width: $grid_medium ) and ( min-width: $grid_small + 1px ) {
 	#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
 		width: 50% !important;
 	}
@@ -35,7 +35,7 @@
 	}
 }
 
-@media ( max-width: 320px ) {
+@media ( max-width: $grid_small ) {
 	#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
 		width: 100% !important;
 		clear: both !important;
