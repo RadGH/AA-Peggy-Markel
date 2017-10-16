@@ -204,3 +204,14 @@ jQuery(function($) {
 		})
 		.find('input:checkbox, input:radio').trigger('change');
 });
+
+// Add span tag to "We strongly recommend you purchase travel insurance..." field on register form
+jQuery(function($) {
+	jQuery('#field_4_54').find('.gfield_label').html(function() {
+		var html = jQuery(this).html();
+
+		html = html.replace( 'within 15 days of your first payment.', '<span class="no-italic">within 15 days of your first payment.</span>');
+
+		return html;
+	});
+});

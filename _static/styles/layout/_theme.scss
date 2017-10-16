@@ -805,6 +805,11 @@ body.error404 article .container {
 	padding: 0 10px;
 }
 
+// Ability to set non-italic (used in gravity form label for payment due date, see scripts.js)
+.no-italic {
+	font-style: normal;
+}
+
 /* Specific fixes to flexible fields, using classes/IDs in design tab */
 .ff.minimal-button-spacing .ff-title {
 	margin-bottom: 0.7rem;
