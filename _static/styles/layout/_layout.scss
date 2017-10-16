@@ -129,6 +129,17 @@ footer a:hover {
 	display: block;
 }
 
+// Footer logo should be 65 wide, natural image should be at least 2x
+#credits img {
+	max-width: 65px;
+	margin-bottom: 3px;
+
+	@media ( max-width: $breakpoint-small ) {
+		max-width: 97px;
+		margin-bottom: 2rem;
+	}
+}
+
 // Don't let the grid system collapse to 2-col
 @media ( min-width: $breakpoint-small ) {
 	footer .grid.grid-3-cols .cell.footer-col-middle,
