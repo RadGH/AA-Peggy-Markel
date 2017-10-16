@@ -308,6 +308,43 @@
 	}
 
 	/*-----------------------------------------------------------------------------------*/
+	/*  Itinerary day list
+	/*-----------------------------------------------------------------------------------*/
+	.itinerary-list {
+		font-family: "Crimson Text", serif;
+		text-align: left;
+		margin: 60px auto 0;
+		max-width: 750px;
+		padding: 0 10px;
+		.day-label {
+			float: left;
+			width: 16%;
+			font-size: 1.4rem;
+			text-transform: uppercase;
+			letter-spacing: 0.2rem;
+		}
+
+		.itinerary-list .day-description {
+			overflow: hidden;
+
+			font-size: 1.8rem;
+			line-height: 2.4rem;
+		}
+
+		.itinerary-list .day:last-child .day-description > :last-child {
+			margin-bottom: 0;
+		}
+
+		@media ( max-width: $grid_medium ) {
+			margin-top: 30px;
+		}
+
+		@media ( max-width: $grid_small ) {
+			padding: 0;
+		}
+	}
+
+	/*-----------------------------------------------------------------------------------*/
 	/*  Testimonial slider
 	/*-----------------------------------------------------------------------------------*/
 	.testimonial-list {
