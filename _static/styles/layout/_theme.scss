@@ -285,6 +285,10 @@ form.search-form input[type=search]::placeholder {
 	background: #1b1b1b;
 }
 
+#linkbar .menu-item.current-menu-item.emphasized-link a span:after {
+	background: #AE8231;
+}
+
 /* Header -> Responsive */
 @include screen( 'small' ) {
 	#header-bar {
@@ -451,10 +455,6 @@ html .gform_wrapper .gform_body label.aa-rd {
 	background:#fff;
 }
 
-label.aa-rd,
-html .gform_wrapper label.aa-rd {
-	border-radius: 100%;
-}
 
 label.aa-cb input:checked + span,
 label.aa-rd input:checked + span {
@@ -467,10 +467,6 @@ label.aa-rd input:checked + span {
 	background: #1b1b1b;
 }
 
-label.aa-rd input:checked + span {
-	border-radius: 100%;
-}
-
 label.aa-cb input,
 label.aa-rd input {
 	opacity: 0;
@@ -480,6 +476,18 @@ label.aa-rd input {
 	-webkit-appearance: none;
 	position: absolute;
 }
+
+// If we ever want to make radio buttons look like radio buttons, and not checkboxes...
+/*
+label.aa-rd,
+html .gform_wrapper label.aa-rd {
+	border-radius: 100%;
+}
+
+label.aa-rd input:checked + span {
+	border-radius: 100%;
+}
+*/
 
 /* --------------------------------
 			Mobile Nav
