@@ -83,6 +83,10 @@
 		max-width: 730px + 40px;
 	}
 
+	&.content_width-reduced .container {
+		max-width: 900 + 40px;
+	}
+
 	&.content_width-regular .container {
 		// default, 1160px
 	}
@@ -133,9 +137,9 @@
 	/*-----------------------------------------------------------------------------------*/
 	.ff-subtitle {
 		font-size: 1.8rem;
+		letter-spacing: 0.05rem;
 		font-style: italic;
 		font-family: $font_text;
-		letter-spacing: 0.05rem;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -147,8 +151,13 @@
 	/*  Text Content
 	/*-----------------------------------------------------------------------------------*/
 	.ff-content {
+		> :last-child {
+			margin-bottom: 0;
+		}
+
 		h3 {
 			font-size: 1.8rem;
+			letter-spacing: 0.05rem;
 			font-style: italic;
 			position: relative;
 			display: inline-block;

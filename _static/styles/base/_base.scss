@@ -63,7 +63,7 @@ body {
   font-size: 1.8em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.3;
   font-weight: 400;
-  font-family: $font_text;
+  font-family: $font_title;
   color: $text;
 }
 h1, h2, h3, h4, h5, h6 {
