@@ -461,3 +461,43 @@ html .acf-field-59cae145a8ede .layout .acf-fc-layout-controlls .acf-icon.-collap
 	color: #0073aa;
 	background: #fff;
 }
+
+/* Compacted tinymce editor when delayed by ACF (click to activate, returns to normal) */
+.acf-field .wp-media-buttons .button {
+	border-color: #e2e2e2;
+	background: #f9f9f9;
+	box-shadow: none;
+	border-radius: 0;
+}
+
+.acf-field .wp-media-buttons .button:hover,
+.acf-field .wp-media-buttons .button:focus {
+	border-color: #e5e5e5;
+	background: #f5f5f5;
+}
+
+.acf-field .acf-editor-wrap .wp-media-buttons,
+.acf-field .acf-editor-wrap .wp-editor-tabs {
+	opacity:  1;
+	transition: opacity 0.3s linear;
+}
+
+.acf-field .acf-editor-wrap.delay .wp-media-buttons,
+.acf-field .acf-editor-wrap.delay .wp-editor-tabs {
+	opacity: 0;
+}
+
+.acf-field .acf-editor-wrap .wp-editor-tools {
+	height: auto;
+	overflow: visible;
+}
+
+.acf-field .acf-editor-wrap.delay .wp-editor-tools {
+	height: 0;
+	overflow: hidden;
+}
+
+.acf-field .acf-editor-wrap.delay .wp-editor-area {
+	max-height: 128px;
+	resize: none;
+}
