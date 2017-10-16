@@ -11,8 +11,19 @@
 		<div class="read-more"><a href="<?php the_permalink(); ?>">Read More</a></div>
 		
 		<div class="post-meta">
-			<p>Posted by
-				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a> on <?php the_time( 'n/j/Y' ); ?> | Filed under: <?php the_category( ', ' ); ?>
+			<p>Posted
+				
+				<?php if ( get_the_author() ) { ?>
+					by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
+				<?php } ?>
+				
+				<?php if ( get_the_time() ) { ?>
+					on <?php the_time( 'n/j/Y' ); ?>
+				<?php } ?>
+				
+				<?php if ( has_category() ) : ?>
+					| <span class="categories">Filed under: <?php the_category( ', ' ); ?></span>
+				<?php endif; ?>
 				
 				<?php if ( has_tag() ) : ?>
 					| <span class="tags"><?php the_tags( 'Tags: ', ', ' ); ?></span>
