@@ -805,6 +805,10 @@ body.error404 article .container {
 	margin-top: 0;
 }
 
+.ff.max-width-925 .container {
+	max-width: 965px; /* add 40px for padding */
+}
+
 @include screen( 'med', 'min' ) {
 	.ff.fixed-hero .ff-background {
 		display: flex;

@@ -317,7 +317,7 @@
 		margin-top: 2rem;
 
 		.cell {
-			padding: 1rem 25px;
+			padding: 1rem 12px;
 
 			/* Do not collapse this module to 2 columns */
 			@include screen('med') {
