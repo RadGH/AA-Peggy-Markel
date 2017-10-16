@@ -80,6 +80,8 @@ footer {
 	line-height: 2.0rem;
 
 	background-color: #f7f6f6;
+
+	letter-spacing: 0.05rem;
 }
 
 footer .container {
@@ -127,6 +129,10 @@ footer a:hover {
 	margin: 0;
 	padding: 0;
 	display: block;
+}
+
+#credits {
+	font-size: 1.2rem;
 }
 
 // Footer logo should be 65 wide, natural image should be at least 2x
