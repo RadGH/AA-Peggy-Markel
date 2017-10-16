@@ -278,7 +278,7 @@ form.search-form input[type=search]::placeholder {
 	content: '';
 	display: block;
 	position: absolute;
-	bottom: 0;
+	bottom: -3px;
 	left: 0;
 	right: 0;
 	height: 1px;
