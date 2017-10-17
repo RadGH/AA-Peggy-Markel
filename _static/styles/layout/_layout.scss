@@ -179,6 +179,42 @@ footer a:hover {
 	}
 }
 
+@media ( max-width: $grid_small ) {
+	footer {
+		background: none;
+	}
+
+	footer .grid {
+		display: flex;
+		flex-direction: column;
+	}
+
+	footer .container {
+		padding: 0;
+	}
+
+	footer .footer-col-middle {
+		order: 2;
+		margin: 5px 0;
+	}
+
+	footer .footer-col-right {
+		order: 1;
+		margin: 5px 0;
+	}
+
+	footer #credits img + br,
+	footer #credits img,
+	footer .footer-contact {
+		display: none;
+	}
+
+	footer #credits {
+		font-size: 1.4rem;
+
+	}
+}
+
 // Pagination (woocommerce)
 ul.page-numbers {
 	font-family: "Crimson Text", serif;

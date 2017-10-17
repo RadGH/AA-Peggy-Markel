@@ -259,7 +259,7 @@
 	}
 
 	/* Medium to Small screens: Two column layout */
-	@media screen and (max-width: $grid_medium) and (min-width: $grid_small) {
+	@media screen and ( max-width: $grid_medium ) and ( min-width: $grid_tiny + 1px ) {
 		.cell {
 			float: left;
 		}

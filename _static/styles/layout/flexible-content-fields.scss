@@ -7,11 +7,6 @@
 	&.spacing-small .container {
 		padding-top: 30px;
 		padding-bottom: 30px;
-
-		@include screen('small') {
-			padding-top: 15px;
-			padding-bottom: 15px;
-		}
 	}
 
 	&.spacing-medium {
@@ -20,8 +15,8 @@
 			padding-bottom: 60px;
 
 			@include screen('small') {
-				padding-top: 30px;
-				padding-bottom: 30px;
+				padding-top: 40px;
+				padding-bottom: 40px;
 			}
 		}
 	}
@@ -39,6 +34,11 @@
 			padding-top: 50px;
 			padding-bottom: 50px;
 		}
+
+		@media ( max-width: $grid_small ) {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
 	}
 
 	&.spacing-huge .container {
@@ -53,6 +53,11 @@
 		@include screen('small') {
 			padding-top: 80px;
 			padding-bottom: 80px;
+		}
+
+		@media ( max-width: $grid_small ) {
+			padding-top: 50px;
+			padding-bottom: 50px;
 		}
 	}
 
@@ -126,6 +131,10 @@
 	/*-----------------------------------------------------------------------------------*/
 	.ff-title {
 		margin-bottom: 3.0rem;
+
+		@media ( max-width: $grid_small ) {
+			margin-top: 1.5rem;
+		}
 
 		&:last-child {
 			margin-bottom: 0;
@@ -257,14 +266,37 @@
 	.staff-list {
 		max-width: 890px;
 		margin: 70px auto 0;
-	
-		.photo img {
-			display: block;
-			width: auto;
-			height: auto;
-			max-width: 100%;
+
+		@media ( max-width: $grid_small ) {
+			margin-top: 0;
 		}
-	
+
+
+		.photo {
+			float: left;
+			width: 33.7%;
+			margin: 0 40px 0 0;
+			max-width: 300px;
+
+			@media ( max-width: $breakpoint-small ) {
+				width: 45%;
+				margin: 0 5% 0 0;
+			}
+
+			@media ( max-width: $grid_small ) {
+				width: auto;
+				float: none;
+				margin: 0 0 2rem;
+			}
+
+			img {
+				display: block;
+				width: auto;
+				height: auto;
+				max-width: 100%;
+			}
+		}
+
 		.ff-content {
 			& > :last-child {
 				margin-bottom: 0;
@@ -292,17 +324,10 @@
 			clear: both;
 			height: 1px;
 			margin-bottom: 100px;
-		}
 
-		.photo {
-			float: left;
-			width: 33.7%;
-			margin: 0 40px 0 0;
-			max-width: 300px;
-
-			@include screen('small') {
-				width: 45%;
-				margin: 0 5% 0 0;
+			@media ( max-width: $grid_small ) {
+				content: none;
+				display: none;
 			}
 		}
 	}

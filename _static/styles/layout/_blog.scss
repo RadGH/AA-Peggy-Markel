@@ -87,6 +87,10 @@ body.blog #content-wrapper .container {
 	font-size: 1.2rem;
 	line-height: 20px;
 	margin: 15px 0;
+
+	@media ( max-width: $grid_small ) {
+		display: none;
+	}
 }
 
 .post .read-more a {
@@ -271,17 +275,15 @@ img.alignleft {
 	border-bottom: 1px solid transparent;
 
 	color: #1b1b1b;
-	font-size: 2.0rem;
+	font-size: 1.6rem;
 	letter-spacing: 0.1rem;
 	text-decoration: none;
 	text-transform: uppercase;
 
 
-	@media ( max-width: 300px ) {
-		text-align: left;
-		padding-left: 10px;
-		padding-right: 40px;
-		font-size: 1.6rem;
+	@media ( max-width: $grid_small ) {
+		padding: 10px;
+		font-size: 1.4rem;
 	}
 }
 

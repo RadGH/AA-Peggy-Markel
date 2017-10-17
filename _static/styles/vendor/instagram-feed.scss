@@ -26,7 +26,8 @@
 	}
 }
 
-@media ( max-width: $grid_medium ) and ( min-width: $grid_small + 1px ) {
+// PRefer two columns to smallest grid size
+@media ( max-width: $grid_medium ) and ( min-width: $grid_tiny + 1px ) {
 	#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
 		width: 50% !important;
 	}
@@ -35,7 +36,7 @@
 	}
 }
 
-@media ( max-width: $grid_small ) {
+@media ( max-width: $grid_tiny ) {
 	#sb_instagram.sbi_col_6 #sbi_images .sbi_item {
 		width: 100% !important;
 		clear: both !important;
