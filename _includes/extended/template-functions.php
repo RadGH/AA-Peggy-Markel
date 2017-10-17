@@ -1,5 +1,18 @@
 <?php
 
+// Adjust pagination args
+add_filter( 'aa_pagination_args', 'aa_filter_pagination_args' );
+
+// Customize WC pagination args
+function aa_filter_pagination_args( $args ) {
+	$args['prev_text'] = '&lsaquo;';
+	$args['next_text'] = '&rsaquo;';
+	$args['type']      = 'list';
+	$args['end_size']  = 3;
+	$args['mid_size']  = 3;
+	return $args;
+}
+
 function aa_get_nav_menu( $menu_id ) {
 	if ( !has_nav_menu($menu_id) ) return false;
 	

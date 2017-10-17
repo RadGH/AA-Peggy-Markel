@@ -5,29 +5,10 @@ if ( !class_exists('WooCommerce') ) return;
 
 add_theme_support( 'woocommerce' );
 
-// Remove the description tab
-function aa_remove_description_tab( $tabs ) {
-	if ( isset($tabs['description']) ) unset($tabs['description']);
-	return $tabs;
-}
-
-// Add the description
-function aa_insert_product_description_below_title() {
-	$heading = esc_html( apply_filters( 'woocommerce_product_description_heading', __( '', 'woocommerce' ) ) );
-	?>
-	
-	<div class="product-description">
-		<?php if ( $heading ): ?>
-			<h2><?php echo $heading; ?></h2>
-		<?php endif; ?>
-		
-		<?php the_content(); ?>
-	</div>
-	
-	<?php
-}
-
 function aa_wc_reorganize_woocommerce_hooks() {
+	// Adjust pagination args
+	add_filter( 'woocommerce_pagination_args', 'aa_filter_pagination_args' );
+	
 	// Remove product description tab, move description below title instead
 	add_filter( 'woocommerce_product_tabs', 'aa_remove_description_tab' );
 	add_action( 'woocommerce_single_product_summary', 'aa_insert_product_description_below_title', 7 );
@@ -64,6 +45,28 @@ function aa_wc_reorganize_woocommerce_hooks() {
 	// @add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 }
 add_action( 'init', 'aa_wc_reorganize_woocommerce_hooks' );
+
+// Remove the description tab
+function aa_remove_description_tab( $tabs ) {
+	if ( isset($tabs['description']) ) unset($tabs['description']);
+	return $tabs;
+}
+
+// Add the description
+function aa_insert_product_description_below_title() {
+	$heading = esc_html( apply_filters( 'woocommerce_product_description_heading', __( '', 'woocommerce' ) ) );
+	?>
+	
+	<div class="product-description">
+		<?php if ( $heading ): ?>
+			<h2><?php echo $heading; ?></h2>
+		<?php endif; ?>
+		
+		<?php the_content(); ?>
+	</div>
+	
+	<?php
+}
 
 function aa_wc_rename_sort_dropdown_verbiage( $options ) {
 	if ( isset($options['menu_order']) ) $options['menu_order'] = 'Default';
