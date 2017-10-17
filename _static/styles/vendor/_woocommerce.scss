@@ -231,7 +231,7 @@ html .woocommerce ul.products li {
 }
 
 .woocommerce-info {
-	border: 1px solid #ae8231;
+	border: 1px solid $accent2;
 }
 
 .woocommerce-error {
@@ -249,7 +249,6 @@ html .woocommerce ul.products li {
 	padding: 0 3px;
 	line-height: 1.35;
 	border: none;
-	text-decoration: underline;
 }
 
 /* Single product styles */
