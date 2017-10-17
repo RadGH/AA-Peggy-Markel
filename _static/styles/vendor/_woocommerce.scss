@@ -255,6 +255,12 @@ html .woocommerce ul.products li {
 /* Single product styles */
 .single-product div.summary {
 	margin-top: 20px;
+
+	@media ( max-width:  $breakpoint-small ) {
+		clear: both;
+		margin-top: 0;
+		padding-top: 20px;
+	}
 }
 
 .single-product #content-wrapper {
