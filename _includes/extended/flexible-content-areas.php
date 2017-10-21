@@ -55,7 +55,15 @@ function aa_flexible_background_start( $field, $classes = array(), $background_k
 	$_position = !empty($b['image_position']) ? $b['image_position'] : 'center';
 	
 	$classes[] = 'ff-background';
+	$classes[] = !empty($b['parallax']) ? 'motion-parallax parallax-not-initialized' : 'motion-static';
 	if ( !empty($b['light_theme']) ) $classes[] = 'light-theme';
+	
+	// Change the style if a piece is missing
+	if ( $_style == 'Image' && empty($_image) ) $style = 'No background';
+	else if ( $_style == 'Color' && empty($_color) ) $style = 'No background';
+	else if ( $_style == 'Image with color overlay' && empty($_color) && empty($_image) ) $style = 'No background';
+	else if ( $_style == 'Image with color overlay' && empty($_color) ) $style = 'Image';
+	else if ( $_style == 'Image with color overlay' && empty($_image) ) $style = 'Color';
 	
 	switch( $_style ) {
 		
@@ -72,11 +80,17 @@ function aa_flexible_background_start( $field, $classes = array(), $background_k
 		case "Image":
 			$classes[] = 'image-background';
 			
-			echo '<div class="'. esc_attr(implode(' ', $classes)) .'" style="'.
-					'background-image: url('. esc_attr($_image[0]) .'); '.
-					'background-size: '. esc_attr($_scaling) .'; '.
-					'background-position: '. esc_attr($_position) .';'.
-				'">';
+			echo '<div class="'. esc_attr(implode(' ', $classes)) .'">';
+			
+			echo '<div class="ff-background-image-wrap">';
+			
+			echo '<div class="ff-background-image" data-rellax-speed="1" style="'.
+				'background-image: url('. esc_attr($_image[0]) .'); '.
+				'background-size: '. esc_attr($_scaling) .'; '.
+				'background-position: '. esc_attr($_position) .';'.
+				'"></div>';
+			
+			echo '</div>';
 			
 			break;
 			
@@ -84,13 +98,20 @@ function aa_flexible_background_start( $field, $classes = array(), $background_k
 			$classes[] = 'image-background image-color-overlay';
 			$rgba_color = aa_hex2rgba($_color, $_opacity/100); // Opacity field is between 0-100. 50 needs to be converted to 0.50.
 			
-			echo '<div class="'. esc_attr(implode(' ', $classes)) .'" style="'.
+			echo '<div class="'. esc_attr(implode(' ', $classes)) .'">';
+			
+			echo '<div class="ff-background-image-wrap">';
+			
+			echo '<div class="ff-background-image" data-rellax-speed="1" style="'.
 				'background-image: url('. esc_attr($_image[0]) .'); '.
 				'background-size: '. esc_attr($_scaling) .'; '.
 				'background-position: '. esc_attr($_position) .';'.
-				'">';
+				'"></div>';
+			
+			echo '</div>';
 			
 			echo '<div class="ff-background-overlay" style="background: '. esc_attr($rgba_color) .';"></div>';
+			
 			break;
 		
 	}

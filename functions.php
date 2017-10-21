@@ -623,7 +623,8 @@ function theme_scripts() {
 	wp_enqueue_script( 'plugins', get_template_directory_uri() . '/_static/js/plugins.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'scripts', get_template_directory_uri() . '/_static/js/scripts.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'acf_seo', get_template_directory_uri() . '/_static/js/acf_yoastseo.js', array(), '1.0.0', true );
-	}
+	wp_enqueue_script( 'rellax', get_template_directory_uri() . '/_static/js/rellax/rellax.min.js', array(), '1.0.0', true );
+}
 
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 

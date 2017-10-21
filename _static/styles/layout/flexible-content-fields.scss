@@ -108,6 +108,33 @@
 	/*  Background images with color overlay
 	/*-----------------------------------------------------------------------------------*/
 	.ff-background {
+		&.image-background {
+			position: relative;
+
+			.ff-background-image-wrap,
+			&.motion-static .ff-background-image,
+			&.motion-parallax.parallax-not-initialized .ff-background-image {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+
+			// Parallax effects need 30% spacing on the height.
+			&.motion-parallax.parallax-initialized .ff-background-image {
+				position: relative;
+				width: 100%;
+				height: 130%;
+				top: -15%;
+				bottom: -15%;
+			}
+
+			.ff-background-image-wrap {
+				overflow: hidden;
+			}
+		}
+
 		&.image-color-overlay {
 			position: relative;
 
