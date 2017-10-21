@@ -294,17 +294,12 @@ function aa_flexible_field_gallery( $fields, $key = 'images' ) {
 		<div class="gallery-items grid grid-3-cols">
 			<?php
 			foreach( $value as $image ) {
-				$thumb_src = isset($image['sizes']['thumbnail']) ? $image['sizes']['thumbnail'] : $image['sizes']['url'];
-				
 				$caption = $image['caption'];
 				if ( !$caption ) $caption = $image['title'];
-				
-				$alt = $image['alt'];
-				if ( !$alt ) $alt = $caption;
 				?>
 				<div class="gallery-item cell">
 					<a href="<?php echo esc_attr($image['url']) ; ?>" title="<?php echo esc_attr($caption); ?>" target="_blank"  rel="gallery-<?php echo esc_attr($galleryid); ?>" class="swipebox image-overlay-label">
-						<img src="<?php echo esc_attr($thumb_src); ?>" alt="<?php echo esc_attr($alt); ?>">
+						<?php aa_display_attachment_image_tag( $image['ID'], 'thumbnail' ); ?>
 						
 						<span class="overlay">View Image</span>
 					</a>

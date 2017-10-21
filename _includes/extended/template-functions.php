@@ -108,6 +108,27 @@ function aa_get_pinit_url( $image_id = null, $page_url = null ) {
 }
 
 /**
+ * Returns an image tag of the given thumbnail size, without any srcset attributes or weird behavior.
+ *
+ * @param $attachment_id
+ * @param string $image_size
+ */
+function aa_display_attachment_image_tag( $attachment_id, $image_size = 'full' ) {
+	$src = wp_get_attachment_image_src( $attachment_id, $image_size );
+	
+	$alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
+	if ( !$alt ) $alt = get_the_title( $attachment_id );
+	
+	printf(
+		'<img src="%s" width="%s" height="%s" alt="%s">',
+		esc_attr( $src[0] ),
+		esc_attr( $src[1] ),
+		esc_attr( $src[2] ),
+		esc_attr( $alt )
+	);
+}
+
+/**
  * Displays related posts for the current post of the loop.
  */
 function aa_the_related_posts() {
