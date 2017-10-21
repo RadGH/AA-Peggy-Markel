@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="initial-scale=1.0001, minimum-scale=1.0001, maximum-scale=1.0001, user-scalable=no"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 	<title><?php wp_title('|',1,'right'); ?></title>
     
@@ -67,22 +67,22 @@
 		$iphone = get_field('iphone', 'option');
 		if( !empty($iphone) ): ?>
 	        <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-	        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo $iphone['url']; ?>">
+	        <link rel="apple-touch-icon" sizes="57x57" href="<?php echo $iphone['url']; ?>">
 	<?php endif;
     	$iphone_retina = get_field('iphone_retina', 'option');
 		if( !empty($iphone_retina) ): ?>
 	        <!-- For iPhone with high-resolution Retina display: -->
-	        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $iphone_retina['url']; ?>">
+	        <link rel="apple-touch-icon" sizes="114x114" href="<?php echo $iphone_retina['url']; ?>">
 	<?php endif;
     $ipad = get_field('ipad', 'option');
 		if( !empty($ipad) ): ?>
 	        <!-- For first- and second-generation iPad: -->
-	        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $ipad['url']; ?>">
+	        <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $ipad['url']; ?>">
 	<?php endif;
     $ipad_retina = get_field('ipad_retina', 'option');
 		if( !empty($ipad_retina) ): ?>
 	        <!-- For third-generation iPad with high-resolution Retina display: -->
-	        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $ipad_retina['url']; ?>">
+	        <link rel="apple-touch-icon" sizes="144x144" href="<?php echo $ipad_retina['url']; ?>">
 	<?php endif; ?>
 
     <?php //Google Analytics
@@ -116,7 +116,7 @@
 					if ( $social_menu_html = aa_get_social_navigation() ) {
 					?>
 					<div class="right">
-						<nav class="social-icons" role="navigation">
+						<nav class="social-icons">
 							<?php echo $social_menu_html; ?>
 						</nav>
 					</div>
@@ -130,7 +130,7 @@
 					
 					<!-- Begin Header -->
 					<div id="linkbar" class="nav-bar">
-						<nav id="menu" class="nav-menu" role="navigation">
+						<nav id="menu" class="nav-menu">
 							<?php
 							if ( $menu = aa_get_nav_menu( 'primary_left' ) ) {
 								?>
@@ -184,7 +184,7 @@
 						// Display social menu navigation
 						if ( $social_menu_html = aa_get_social_navigation() ) {
 							?>
-							<nav class="social-icons" role="navigation">
+							<nav class="social-icons">
 								<?php echo $social_menu_html; ?>
 							</nav>
 							<?php

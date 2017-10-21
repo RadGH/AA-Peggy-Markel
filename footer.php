@@ -12,7 +12,7 @@
 				<?php
 				if ( $menu = aa_get_nav_menu( 'footer' ) ) {
 					?>
-					<nav class="nav-menu footer-nav" role="navigation">
+					<nav class="nav-menu footer-nav">
 						<?php echo $menu; ?>
 					</nav>
 					<?php
@@ -57,7 +57,7 @@
 				if ( $social_menu_html = aa_get_social_navigation() ) {
 					?>
 					<div class="footer-social">
-						<nav class="social-icons" role="navigation">
+						<nav class="social-icons">
 							<?php echo $social_menu_html; ?>
 						</nav>
 					</div>
