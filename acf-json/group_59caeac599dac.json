@@ -256,6 +256,82 @@
             "ajax": 0,
             "return_format": "value",
             "placeholder": ""
+        },
+        {
+            "key": "field_59ea5b4c6075c",
+            "label": "Parallax",
+            "name": "parallax",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59caeae6425f9",
+                        "operator": "==",
+                        "value": "Image"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_59caeae6425f9",
+                        "operator": "==",
+                        "value": "Image with Color Overlay"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable parallax effect",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_59ea5b756075e",
+            "label": "Tip for using Parallax",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59caeae6425f9",
+                        "operator": "==",
+                        "value": "Image"
+                    },
+                    {
+                        "field": "field_59ea5b4c6075c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_59caeae6425f9",
+                        "operator": "==",
+                        "value": "Image with Color Overlay"
+                    },
+                    {
+                        "field": "field_59ea5b4c6075c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "A parallax effect makes the background image move separately form the page, giving a perception of depth. For best results, provide a background image that is at least 30% taller than the height of the section it is being used.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -275,5 +351,5 @@
     "hide_on_screen": "",
     "active": 0,
     "description": "",
-    "modified": 1506497234
+    "modified": 1508563259
 }
