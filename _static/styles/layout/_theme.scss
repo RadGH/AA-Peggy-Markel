@@ -282,8 +282,11 @@ form.search-form input[type=search]::placeholder {
 	right: 0;
 	height: 1px;
 	background: #1b1b1b;
+
+	transition: background 0.3s ease;
 }
 
+#linkbar .menu-item.emphasized-link a:hover > span:after,
 #linkbar .menu-item.current-menu-item.emphasized-link a span:after {
 	background: $accent2;
 }
