@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/_static/js/browser-detect.js"></script>
 
 	<!-- Theme Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i|EB+Garamond|Karla" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i|EB+Garamond" rel="stylesheet">
 	
     <!-- Style Sheets -->
 	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" type="text/css" media="screen" />
