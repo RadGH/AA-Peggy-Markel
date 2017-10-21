@@ -258,11 +258,11 @@
 	}
 
 	a.ff-button:hover {
-		background: rgba(0,0,0,0.25);
+		color: $accent2;
 	}
 
 	.light-theme a.ff-button:hover {
-		background: rgba(255,255,255,0.25);
+		color: $accent2_light;
 	}
 
 	a.ff-button:after {
@@ -270,12 +270,14 @@
 		display: block;
 		position: absolute;
 		top: 100%;
+		margin-top: 3px;
 		left: 10px;
 		right: 10px;
 		height: 1px;
-		background: rgba(0,0,0,0.5);
+		background: #000;
+		opacity: 0.5;
 
-		transition: left 0.2s linear, right 0.2s linear;
+		transition: left 0.2s linear, right 0.2s linear, opacity 0.2s linear;
 	}
 
 	.light-theme a.ff-button:after {
@@ -285,6 +287,11 @@
 	a.ff-button:hover:after {
 		left: 0;
 		right: 0;
+		background: $accent2;
+	}
+
+	.light-theme a.ff-button:hover:after {
+		background: $accent2_light;
 	}
 
 	/*-----------------------------------------------------------------------------------*/
