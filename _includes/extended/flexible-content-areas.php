@@ -306,7 +306,7 @@ function aa_flexible_field_gallery( $fields, $key = 'images' ) {
 					<a href="<?php echo esc_attr($image['url']) ; ?>" title="<?php echo esc_attr($caption); ?>" target="_blank"  rel="gallery-<?php echo esc_attr($galleryid); ?>" class="swipebox image-overlay-label">
 						<img src="<?php echo esc_attr($thumb_src); ?>" alt="<?php echo esc_attr($alt); ?>">
 						
-						<span class="overlay">View Gallery</span>
+						<span class="overlay">View Image</span>
 					</a>
 				</div>
 				<?php
