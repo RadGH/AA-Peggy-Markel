@@ -21,6 +21,15 @@ html .gform_wrapper textarea {
 	margin: 0;
 }
 
+html .gform_wrapper.gf_browser_chrome select {
+	line-height: 27px;
+	padding: 0 4px;
+}
+
+html .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield select {
+	margin-left: 0; // Fix gravity forms trying to correct browser styles, incorrectly.
+}
+
 html .gform_wrapper .gfield_checkbox li label {
 	font-weight: normal;
 	font-size: 1.4rem;
