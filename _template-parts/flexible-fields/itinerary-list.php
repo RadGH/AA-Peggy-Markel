@@ -6,11 +6,17 @@
 
 if ( !isset($flex_field) ) return; // This variable is passed through from "flexible-content-areas.php"
 
+// Add the [itinerary_form] shortcode to form content, if not already present:
+if ( stripos($flex_field['content'], '[itinerary_form]') === false ) {
+	$flex_field['content'] .= "\n\n[itinerary_form]";
+}
+
 // Display some common data among the flexible fields
 aa_flexible_field_title( $flex_field );
 aa_flexible_field_subtitle( $flex_field );
 aa_flexible_field_content( $flex_field );
 
+// Display the itinerary list
 $days = !empty($flex_field['itinerary_log']) ? $flex_field['itinerary_log'] : false;
 if ( $days ) {
 	?>
