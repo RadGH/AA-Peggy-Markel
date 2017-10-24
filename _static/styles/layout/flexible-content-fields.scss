@@ -367,7 +367,17 @@
 	}
 
 	/*-----------------------------------------------------------------------------------*/
-	/*  Itinerary day list
+	/*  [Destinations] Available Programs list
+	/*-----------------------------------------------------------------------------------*/
+	.programs-list {
+		.program-prices,
+		.program-dates {
+			font-family: "Crimson Text", serif;
+		}
+	}
+
+	/*-----------------------------------------------------------------------------------*/
+	/*  [Destinations] Itinerary day list
 	/*-----------------------------------------------------------------------------------*/
 	.itinerary-list {
 		font-family: "Crimson Text", serif;

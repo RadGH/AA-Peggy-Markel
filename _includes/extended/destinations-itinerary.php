@@ -61,6 +61,72 @@ function aa_shortcode_itinerary_form( $atts, $content = '' ) {
 add_shortcode( 'itinerary_form', 'aa_shortcode_itinerary_form' );
 
 /*---------------------------------------------------------------
+	Display programs for a destination using a shortcode.
+------------------------------------------------------------------*/
+function aa_shortcode_destination_programs( $atts, $content = '' ) {
+	$programs = get_field('available_programs');
+	if ( empty($programs) ) return '';
+	
+	ob_start();
+	
+	// Combine dates with the same prices
+	$groups = array();
+	
+	foreach( $programs as $p ) {
+		$date_text = $p['date_text'];
+		$single_price = $p['single_price'];
+		$double_price = $p['double_price'];
+		
+		// For combining similar prices
+		$price_key = ($single_price ?: "0") . '|' . ($double_price ?: "0");
+		
+		if ( !isset($groups[$price_key]) ) {
+			// Create an new date group, this is a new price combo
+			$groups[$price_key] = array(
+				'dates' => array($date_text),
+				'single_price' => $single_price,
+				'double_price' => $double_price
+			);
+		}else{
+			// Add to the existing date, since the price matches.
+			$groups[$price_key]['dates'][] = $date_text;
+		}
+	}
+	
+	// Display groups of prices
+	?>
+	<div class="programs-list">
+		<div class="ff-content">
+			<?php
+			$i = 0;
+			
+			foreach( $groups as $g ) {
+				$i++;
+				
+				$date_term = _n( 'Date', 'Dates', count($g['dates']) );
+				
+				$price_term = ($g['single_price'] && $g['double_price']) ? 'Prices' : 'Price';
+				
+				if ( count($groups) >= 2 ) {
+					$date_term .= ' #'. $i;
+				}
+				
+				echo '<h3>' . $date_term . '</h3>';
+				aa_display_program_dates( $g['dates'] );
+				
+				echo '<h3>' . $price_term . '</h3>';
+				aa_display_program_prices( $g['single_price'], $g['double_price'] );
+			}
+			?>
+		</div>
+	</div>
+	<?php
+	
+	return ob_get_clean();
+}
+add_shortcode( 'destination_programs', 'aa_shortcode_destination_programs' );
+
+/*---------------------------------------------------------------
 	Attach the itinerary PDF and replace short tags in the notification sent by gravity forms.
 ------------------------------------------------------------------*/
 function aa_itinerary_notification_insert_short_tags_and_attachment( $notification, $form, $entry ) {

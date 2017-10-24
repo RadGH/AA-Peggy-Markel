@@ -24,7 +24,7 @@ if ( $dest_query->have_posts() ) {
 	<div class="destinations-list grid grid-3-cols">
 		<?php
 		while( $dest_query->have_posts() ): $dest_query->the_post();
-			$date_range = aa_destination_date_range();
+			$date_range = aa_destination_next_date();
 			?>
 			<div <?php post_class('destination-item cell'); ?>>
 				

@@ -171,3 +171,67 @@ function aa_the_related_posts() {
 	$post = $orig_post;
 	wp_reset_query();
 }
+
+/**
+ * Displays the destination's program dates. Used in _template-parts/flexible-fields/available-programs.php
+ *
+ * @param $dates
+ */
+function aa_display_program_dates( $dates ) {
+	// Format the dates to for consistency
+	foreach( $dates as $k => $v ) {
+		$dates[$k] = aa_format_program_date( $v );
+	}
+	
+	?>
+	<p class="program-dates">
+		<?php echo nl2br(esc_html(implode("\n", $dates))); ?>
+	</p>
+	<?php
+}
+
+/**
+ * Displays the destination's program dates. Used in _template-parts/flexible-fields/available-programs.php
+ *
+ * @param $single_price
+ * @param $double_price
+ *
+ * @internal param $dates
+ */
+function aa_display_program_prices( $single_price, $double_price ) {
+	// Format the prices for consistency
+	$single_price = aa_format_program_price( $single_price );
+	$double_price = aa_format_program_price( $double_price );
+	
+	?>
+	<p class="program-prices">
+		<?php
+		if ( $single_price ) echo 'Single: $', esc_html($single_price);
+		if ( $single_price && $double_price ) echo '<br>';
+		if ( $double_price ) echo 'Double: $', esc_html($double_price);
+		?>
+	</p>
+	<?php
+}
+
+/**
+ * Format the date for a program
+ *
+ * @param $d
+ *
+ * @return mixed
+ */
+function aa_format_program_date( $d ) {
+	return preg_replace( '/ ?- ?/', ' – ', $d );
+}
+
+/**
+ * Format the price for a program
+ *
+ * @param $d
+ *
+ * @return mixed
+ */
+function aa_format_program_price( $d ) {
+	return str_replace('.00', '', number_format( (float) $d, 2 ) );
+}
