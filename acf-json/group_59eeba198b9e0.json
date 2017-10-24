@@ -1,0 +1,46 @@
+{
+    "key": "group_59eeba198b9e0",
+    "title": "Destination Shortcodes",
+    "fields": [
+        {
+            "key": "field_59eeba36f1ba3",
+            "label": "Shortcodes Required",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "You must place the shortcode <code class=\"code\"><strong>[itinerary_form]<\/strong><\/code> on the page to allow users to sign up for the newsletter and download the itinerary.\r\n\r\nYou can also place the shortcode <code class=\"code\"><strong>[destination_programs]<\/strong><\/code> to display a dynamic list of prices from the Available Programs section.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "destination"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ]
+    ],
+    "menu_order": "",
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1508817575
+}

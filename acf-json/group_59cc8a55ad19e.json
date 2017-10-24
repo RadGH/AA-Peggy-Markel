@@ -3,45 +3,112 @@
     "title": "Destination Settings",
     "fields": [
         {
-            "key": "field_59cdcc3a8efef",
-            "label": "Start Date",
-            "name": "start_date",
-            "type": "date_picker",
-            "instructions": "A date range will appear on the front page using the start and end date.",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "display_format": "F j, Y",
-            "return_format": "Y-m-d",
-            "first_day": 0
-        },
-        {
-            "key": "field_59cdcc638eff0",
-            "label": "End Date",
-            "name": "end_date",
-            "type": "date_picker",
-            "instructions": "",
+            "key": "field_59eea47515c7a",
+            "label": "Program Description",
+            "name": "program_description",
+            "type": "text",
+            "instructions": "A short description of the trip.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "display_format": "F j, Y",
-            "return_format": "Y-m-d",
-            "first_day": 0
+            "default_value": "",
+            "placeholder": "(eg: A Taste of Italy)",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59eea45e15c79",
+            "label": "Available Programs",
+            "name": "available_programs",
+            "type": "repeater",
+            "instructions": "Add available program dates, prices, and occupants here. These will be displayed on the destination page, and used on the registration page for price calculation. Leave a price empty to disable that occupancy. Use the <strong>total price<\/strong> for each option. Dates with the same price may be combined for readability.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Date",
+            "sub_fields": [
+                {
+                    "key": "field_59eea4c915c7b",
+                    "label": "Date Range Text",
+                    "name": "date_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "44",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "(eg: January 1 - 8, 2018)",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59eeae13f9703",
+                    "label": "Single Price",
+                    "name": "single_price",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "28",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "$",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_59eeb2517e010",
+                    "label": "Double Price",
+                    "name": "double_price",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "28",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "$",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                }
+            ]
         },
         {
             "key": "field_59cc8ad201d16",
             "label": "Itinerary PDF",
             "name": "itinerary_pdf",
             "type": "file",
-            "instructions": "<strong>Reminder:<\/strong> You must place the shortcode <code class=\"code\"><strong>[itinerary-form]<\/strong><\/code> on the page to allow users to sign up for the newsletter and download the itinerary.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -73,5 +140,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1508809962
+    "modified": 1508818570
 }
