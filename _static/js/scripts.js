@@ -232,3 +232,197 @@ jQuery(function($) {
 		jQuery(this).removeClass('parallax-not-initialized').addClass('parallax-initialized');
 	} );
 });
+
+// Add the functionality to the registration form to choose program, dates, occupancy.
+jQuery(function($) {
+	if ( typeof aa_register_data === 'undefined' ) return;
+
+	var ids = aa_register_data.ids;
+	var r = aa_register_data.ids.registration_form;
+
+	var $_program = jQuery('#input_'+r+'_'+ids.program);        // morocco
+	var $_date = jQuery('#input_'+r+'_'+ids.date);              // morocco_march-4-13-2018
+	var $_occupancy = jQuery('#input_'+r+'_'+ids.occupancy);    // morocco_march-4-13-2018_single
+	var $_price = jQuery('#ginput_base_price_'+r+'_'+ids.price);// $7880
+	var $_total = jQuery('#input_'+r+'_'+ids.total);            // $7880
+
+	var update_register_price = function( new_price ) {
+		if ( new_price <= 0 ) {
+			$_total.closest('.gfield_price').css('display', 'none');
+			$_total.val('').trigger('change');
+			$_price.val('').trigger('change');
+		}else{
+			$_total.closest('.gfield_price').css('display', '');
+			$_total.siblings('.ginput_total').html( '$' + number_format(new_price, 2, '.', ',').toString().replace('.00','') );
+			$_total.val(parseFloat(new_price)).trigger('change');
+			$_price.val(parseFloat(new_price)).trigger('change');
+		}
+	};
+
+	$_program.on('change', function(e) {
+		var program_value = jQuery(this).val(); // eg: amalfi
+
+		// Hide dates that aren't used by this option.
+		$_date
+			.find('option')
+				.each(function() {
+						var opt_value = jQuery(this).val(); // eg:  morocco_march-4-13-2018
+
+						if ( opt_value.indexOf(program_value) === 0 ) {
+							// This date should be visible
+							jQuery(this).css('display', 'block');
+						}else{
+							// Hide this date, clear it if it was selected
+							jQuery(this).css('display', 'none');
+							if ( $_date.val() === opt_value ) $_date.val('');
+						}
+					})
+			.end()
+			.trigger('change'); // Update the select
+
+	});
+
+	$_date.on('change', function(e) {
+		var date_value = jQuery(this).val(); // eg: morocco_march-4-13-2018
+
+		// Hide dates that aren't used by this option.
+		$_occupancy
+			.find('option')
+				.each(function() {
+					var opt_value = jQuery(this).val(); // eg:  morocco_march-4-13-2018_single
+
+					if ( opt_value.indexOf(date_value) === 0 ) {
+						// This date should be visible
+						jQuery(this).css('display', 'block');
+					}else{
+						// Hide this date, clear it if it was selected
+						jQuery(this).css('display', 'none');
+						if ( $_occupancy.val() === opt_value ) $_occupancy.val('');
+					}
+				})
+			.end()
+			.trigger('change'); // Update the select
+	});
+
+	$_occupancy.on('change', function(e) {
+		var occupancy_value = jQuery(this).val(); // eg: morocco_march-4-13-2018_single
+
+		if ( !occupancy_value) {
+			update_register_price(0);
+			return;
+		}
+
+		// Find the price within the register  data variable, from destinations.php
+		for ( var a in aa_register_data.destinations ) {
+			if ( !aa_register_data.destinations.hasOwnProperty(a) ) continue;
+
+			// a might be:
+			// amalfi
+			// seville
+
+			// Occupancy value must start with "a"
+			if ( occupancy_value.indexOf(a) < 0 ) continue;
+
+			for ( var b in aa_register_data.destinations[a].programs ) {
+				if ( !aa_register_data.destinations[a].programs.hasOwnProperty(b) ) continue;
+
+				// b might be:
+				// amalfi_june-9-16-2018
+				// seville_april-28-may-5-2018
+
+				// Occupancy value must start with "b"
+				if ( occupancy_value.indexOf(b) < 0 ) continue;
+
+				for ( var c in aa_register_data.destinations[a].programs[b].options ) {
+					if ( !aa_register_data.destinations[a].programs[b].options.hasOwnProperty(c) ) continue;
+
+					// c might be:
+					// amalfi_june-9-16-2018_single
+					// seville_april-28-may-5-2018_double
+
+					// Occupancy value should be an exact match
+					if ( occupancy_value === c ) {
+						update_register_price( aa_register_data.destinations[a].programs[b].options[c].price );
+						return;
+					}
+
+				}
+			}
+		}
+
+		// If occupancy not found, clear price.
+		update_register_price(0);
+	});
+
+	// Initialize field selection
+	$_program.trigger('change');
+
+});
+
+
+// Function to format numbers
+// https://stackoverflow.com/a/2901136/470480
+function number_format(number, decimals, dec_point, thousands_sep) {
+	// http://kevin.vanzonneveld.net
+	// +   original by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
+	// +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+	// +     bugfix by: Michael White (http://getsprink.com)
+	// +     bugfix by: Benjamin Lupton
+	// +     bugfix by: Allan Jensen (http://www.winternet.no)
+	// +    revised by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
+	// +     bugfix by: Howard Yeend
+	// +    revised by: Luke Smith (http://lucassmith.name)
+	// +     bugfix by: Diogo Resende
+	// +     bugfix by: Rival
+	// +      input by: Kheang Hok Chin (http://www.distantia.ca/)
+	// +   improved by: davook
+	// +   improved by: Brett Zamir (http://brett-zamir.me)
+	// +      input by: Jay Klehr
+	// +   improved by: Brett Zamir (http://brett-zamir.me)
+	// +      input by: Amir Habibi (http://www.residence-mixte.com/)
+	// +     bugfix by: Brett Zamir (http://brett-zamir.me)
+	// +   improved by: Theriault
+	// +   improved by: Drew Noakes
+	// *     example 1: number_format(1234.56);
+	// *     returns 1: '1,235'
+	// *     example 2: number_format(1234.56, 2, ',', ' ');
+	// *     returns 2: '1 234,56'
+	// *     example 3: number_format(1234.5678, 2, '.', '');
+	// *     returns 3: '1234.57'
+	// *     example 4: number_format(67, 2, ',', '.');
+	// *     returns 4: '67,00'
+	// *     example 5: number_format(1000);
+	// *     returns 5: '1,000'
+	// *     example 6: number_format(67.311, 2);
+	// *     returns 6: '67.31'
+	// *     example 7: number_format(1000.55, 1);
+	// *     returns 7: '1,000.6'
+	// *     example 8: number_format(67000, 5, ',', '.');
+	// *     returns 8: '67.000,00000'
+	// *     example 9: number_format(0.9, 0);
+	// *     returns 9: '1'
+	// *    example 10: number_format('1.20', 2);
+	// *    returns 10: '1.20'
+	// *    example 11: number_format('1.20', 4);
+	// *    returns 11: '1.2000'
+	// *    example 12: number_format('1.2000', 3);
+	// *    returns 12: '1.200'
+	var n = !isFinite(+number) ? 0 : +number,
+		prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+		sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+		dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+		toFixedFix = function (n, prec) {
+			// Fix for IE parseFloat(0.55).toFixed(0) = 0;
+			var k = Math.pow(10, prec);
+			return Math.round(n * k) / k;
+		},
+		s = (prec ? toFixedFix(n, prec) : Math.round(n)).toString().split('.');
+	if (s[0].length > 3) {
+		s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+	}
+	if ((s[1] || '').length < prec) {
+		s[1] = s[1] || '';
+		s[1] += new Array(prec - s[1].length + 1).join('0');
+	}
+	return s.join(dec);
+}

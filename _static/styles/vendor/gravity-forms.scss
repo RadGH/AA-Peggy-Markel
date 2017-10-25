@@ -35,6 +35,14 @@ html .gform_wrapper .gfield_checkbox li label {
 	font-size: 1.4rem;
 }
 
+html .gform_wrapper span.ginput_total {
+	color: $text;
+	font-size: 1.8rem;
+	font-family: "Crimson Text", serif;
+	font-weight: normal;
+	font-style: italic;
+}
+
 html .gform_wrapper div.validation_error {
 	background: $accent2;
 	border: none;
