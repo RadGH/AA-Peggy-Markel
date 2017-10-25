@@ -37,7 +37,7 @@
 					}
 					
 					// Un-editable By-Lines
-					echo 'Site Designed by <a href="http://thedenizenco.com/" target="_blank">The Denizen Co.</a>.<br>';
+					echo 'Site Designed by <a href="http://thedenizenco.com/" target="_blank">The Denizen Co</a>.<br>';
 					echo 'Site Developed by <a href="http://www.alchemyandaim.com/" target="_blank">Alchemy + Aim</a>.';
 					?>
 				</div>
