@@ -154,9 +154,19 @@ footer a:hover {
 	}
 }
 
-@media ( max-width: $grid_large ) {
+@include screen( 'small' ) {
 	footer {
 		padding: 20px 10px;
+		background: none;
+	}
+
+	footer .container {
+		padding: 0;
+	}
+
+	footer .grid {
+		display: flex;
+		flex-direction: column;
 	}
 
 	footer .grid.grid-3-cols .cell {
@@ -174,25 +184,6 @@ footer a:hover {
 		margin-top: 2rem;
 	}
 
-	.footer-contact {
-		font-family: $font_text;
-	}
-}
-
-@media ( max-width: $grid_small ) {
-	footer {
-		background: none;
-	}
-
-	footer .grid {
-		display: flex;
-		flex-direction: column;
-	}
-
-	footer .container {
-		padding: 0;
-	}
-
 	footer .footer-col-middle {
 		order: 2;
 		margin: 5px 0;
@@ -204,14 +195,22 @@ footer a:hover {
 	}
 
 	footer #credits img + br,
-	footer #credits img,
-	footer .footer-contact {
+	footer #credits img {
 		display: none;
+	}
+
+	footer p {
+		margin-bottom: 1.4rem;
 	}
 
 	footer #credits {
 		font-size: 1.4rem;
+	}
+}
 
+@media ( max-width: $grid_small ) {
+	footer .footer-contact {
+		display: none;
 	}
 }
 
