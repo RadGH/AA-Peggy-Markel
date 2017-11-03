@@ -46,6 +46,15 @@ function aa_wc_reorganize_woocommerce_hooks() {
 }
 add_action( 'init', 'aa_wc_reorganize_woocommerce_hooks' );
 
+
+// Disable the "Company Name" field during checkout
+function aa_disable_company_name_field_checkout( $fields ) {
+	unset($fields['billing']['billing_company']);
+	
+	return $fields;
+}
+add_filter( 'woocommerce_checkout_fields' , 'aa_disable_company_name_field_checkout' );
+
 // Remove the description tab
 function aa_remove_description_tab( $tabs ) {
 	if ( isset($tabs['description']) ) unset($tabs['description']);

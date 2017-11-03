@@ -305,12 +305,17 @@ button.single_add_to_cart_button.button {
 	font-size: 1.8rem;
 }
 
-/* Cart Page */
+/* Cart and Checkout Pages */
+body.woocommerce-cart .container,
+body.woocommerce-checkout .container,
+.woocommerce form.checkout {
+	max-width: 800px;
+}
+
 table.shop_table {
 	width: 100%;
 }
 
-/* Checkout Page */
 .woocommerce-checkout .col2-set .col-1,
 .woocommerce-checkout .col2-set .col-2 {
 	width: auto;
@@ -323,6 +328,95 @@ ul.wc_payment_methods, ul.wc_payment_methods li {
 
 ul.wc_payment_methods li {
 	margin: 15px 20px;
+}
+
+.woocommerce form.checkout .col2-set  .col-2 {
+	display: none;
+}
+
+.woocommerce form.checkout .col2-set  .col-1 {
+	width: auto;
+	float: none;
+}
+
+/* Place order button area */
+html .woocommerce .form-row.place-order {
+	text-align: center;
+}
+html .woocommerce #payment .terms {
+	float: none;
+	margin: 0 0 10px;
+}
+html .woocommerce #payment #place_order {
+	text-align: center;
+	float: none;
+}
+
+/* Proceed to checkout and complete checkout buttons */
+.woocommerce #payment #place_order,
+.woocommerce a.checkout-button.button {
+	float: right;
+	padding: 14px 32px;
+	border: 1px solid #cccccc;
+	background: #6c6c6c;
+	margin: 0 auto;
+	color: #fff;
+	font-size: 1.4rem;
+	line-height: 1.4rem;
+	text-transform: uppercase;
+	font-style: normal;
+	letter-spacing: 0.2rem;
+}
+
+.woocommerce #payment #place_order:hover,
+.woocommerce a.checkout-button.button:hover {
+	background: #404040;
+	color: #fff;
+	text-decoration: none;
+}
+
+.woocommerce #payment #place_order:after,
+.woocommerce a.checkout-button.button:after {
+	content: none;
+	display: none;
+}
+
+/* Payment type area */
+ul.wc_payment_methods .wc_payment_method:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+ul.wc_payment_methods .wc_payment_method input[type="radio"] {
+	float: left;
+	position: relative;
+	top: 7px;
+}
+
+ul.wc_payment_methods .wc_payment_method label {
+	float: left;
+	margin-left: 20px;
+}
+
+ul.wc_payment_methods .wc_payment_method label + div {
+	clear: both;
+	margin-left: 32px;
+}
+
+/* Paypal styles */
+.woocommerce .payment_method_paypal img {
+	width: 90px;
+	margin: -12px 5px 0;
+}
+
+.woocommerce .payment_method_paypal a.about_paypal {
+	font-style: italic;
+	font-weight: normal;
+	font-size: 1.4rem;
+	position: relative;
+	top: -3px;
+	left: 6px;
 }
 
 // Larger hero image on shop pages
