@@ -132,16 +132,15 @@ footer a:hover {
 }
 
 #credits {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 }
 
-// Footer logo should be 65 wide, natural image should be at least 2x
+// Footer logo should be 97 wide, natural image should be at least 2x
 #credits img {
-	max-width: 65px;
-	margin-bottom: 3px;
+	max-width: 97px;
+	margin-bottom: 1rem;
 
 	@media ( max-width: $breakpoint-small ) {
-		max-width: 97px;
 		margin-bottom: 2rem;
 	}
 }
