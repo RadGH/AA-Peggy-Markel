@@ -306,8 +306,8 @@ button.single_add_to_cart_button.button {
 }
 
 /* Cart and Checkout Pages */
-body.woocommerce-cart .container,
-body.woocommerce-checkout .container,
+body.woocommerce-cart #content-wrapper .container,
+body.woocommerce-checkout #content-wrapper .container,
 .woocommerce form.checkout {
 	max-width: 800px;
 }
