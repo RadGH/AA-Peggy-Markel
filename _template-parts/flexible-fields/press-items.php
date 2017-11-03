@@ -50,7 +50,10 @@ if ( $press_query->have_posts() ) {
 				
 					<?php if ( has_post_thumbnail() ) { ?>
 					<div class="image">
-						<a href="<?php echo esc_attr($download_link); ?>" title="Read more about <?php echo esc_attr(get_the_title()); ?>" target="_blank" rel="external"><?php aa_display_attachment_image_tag( get_post_thumbnail_id(), 'thumbnail' ); ?></a>
+						<a href="<?php echo esc_attr($download_link); ?>" title="Read more about <?php echo esc_attr(get_the_title()); ?>" target="_blank" rel="external" class="image-overlay-label">
+							<?php aa_display_attachment_image_tag( get_post_thumbnail_id(), 'thumbnail' ); ?>
+							<span class="overlay">View Entry</span>
+						</a>
 					</div>
 					<?php } ?>
 					
