@@ -30,12 +30,11 @@ if ( $dest_query->have_posts() ) {
 				
 				<?php
 				if ( has_post_thumbnail() ) {
-					$pinit_url = aa_get_pinit_url();
 					?>
 					<div class="image">
-						<a href="<?php echo esc_attr($pinit_url); ?>" class="image-overlay-label" target="_blank" rel="external">
+						<a href="<?php echo esc_attr(get_permalink()); ?>" class="image-overlay-label">
 							<?php aa_display_attachment_image_tag( get_post_thumbnail_id(), 'thumbnail' ); ?>
-							<span class="overlay">Pin It</span>
+							<span class="overlay">Experience <?php the_title(); ?></span>
 						</a>
 					</div>
 					<?php
