@@ -269,7 +269,7 @@ jQuery(function($) {
 				.each(function() {
 						var opt_value = jQuery(this).val(); // eg:  morocco_march-4-13-2018
 
-						if ( opt_value.indexOf(program_value) === 0 ) {
+						if ( program_value && (opt_value.indexOf(program_value) === 0) ) {
 							// This date should be visible
 							jQuery(this).css('display', 'block');
 						}else{
@@ -292,7 +292,7 @@ jQuery(function($) {
 				.each(function() {
 					var opt_value = jQuery(this).val(); // eg:  morocco_march-4-13-2018_single
 
-					if ( opt_value.indexOf(date_value) === 0 ) {
+					if ( date_value && (opt_value.indexOf(date_value) === 0) ) {
 						// This date should be visible
 						jQuery(this).css('display', 'block');
 					}else{
@@ -351,7 +351,7 @@ jQuery(function($) {
 			}
 		}
 
-		// If occupancy not found, clear price.
+		// Occupancy was not found, clear price.
 		update_register_price(0);
 	});
 
