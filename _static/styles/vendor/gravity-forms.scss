@@ -264,7 +264,8 @@ Gravity forms - Contact Page (Form ID #3, also see scripts.js, the creation of d
 	}
 }
 
-#field_3_5 .gfield_checkbox {
+#field_3_5 .gfield_checkbox,
+#field_3_10 .gfield_radio {
 	columns: 2;
 
 	@media ( max-width: $grid_small ) {
@@ -272,12 +273,24 @@ Gravity forms - Contact Page (Form ID #3, also see scripts.js, the creation of d
 	}
 }
 
-#field_3_5 .gfield_checkbox li {
+#field_3_5 .gfield_checkbox li,
+#field_3_10 .gfield_radio li {
 	white-space: nowrap;
 }
 
-#field_3_5 .gfield_checkbox label.aa-cb {
+#field_3_5 .gfield_checkbox label.aa-cb,
+#field_3_10 .gfield_radio label.aa-rd {
 	margin-right: 10px;
+}
+
+/* Have you travelled with us before? Space closer together */
+#field_3_10 .ginput_container {
+	margin: -10px 0 0;
+}
+
+#field_3_10 .gfield_radio {
+	display: inline-block;
+	margin: 0 0 0;
 }
 
 .gf_contact {
