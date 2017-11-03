@@ -41,6 +41,16 @@
 					echo 'Site Developed by <a href="http://www.alchemyandaim.com/" target="_blank">Alchemy + Aim</a>.';
 					?>
 				</div>
+				
+				<?php
+				if ( $menu = aa_get_nav_menu( 'mobile_footer' ) ) {
+					?>
+					<nav class="nav-menu footer-nav footer-mobile-nav">
+						<?php echo $menu; ?>
+					</nav>
+					<?php
+				}
+				?>
 			</div>
 			
 			<div class="cell footer-col-right">

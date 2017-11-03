@@ -146,6 +146,39 @@ footer a:hover {
 	}
 }
 
+/* Footer Mobile Nav */
+.footer-mobile-nav {
+	margin-top: 1.4rem;
+}
+
+.footer-mobile-nav ul li {
+	display: inline;
+}
+
+.footer-mobile-nav ul li a {
+	display: inline-block;
+}
+
+.footer-mobile-nav ul li:after {
+	content: ' \2022 ';
+	display: inline-block;
+	margin: 0 5px 0 8px;
+	color: #989898;
+	font-size: 1.2rem;
+}
+
+.footer-mobile-nav ul li:last-child:after {
+	content: none;
+	display: none;
+}
+
+@media ( min-width: $breakpoint-small + 1px ) {
+	.footer-mobile-nav {
+		display: none;
+	}
+}
+
+
 /* Footer -> Responsive */
 @media ( min-width: $breakpoint-med-small ) {
 	footer .nav-menu .nav {

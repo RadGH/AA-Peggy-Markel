@@ -534,6 +534,7 @@ register_nav_menus( array(
 'primary_right' => __( 'Primary (Right)', 'alchemyaim' ),
 'footer' => __( 'Footer Navigation', 'alchemyaim' ),
 'mobile' => __( 'Mobile Navigation', 'alchemyaim' ),
+'mobile_footer' => __( 'Mobile Footer Nav', 'alchemyaim' ),
 ) );
 
 
