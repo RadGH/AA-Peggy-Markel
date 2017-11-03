@@ -167,13 +167,14 @@ jQuery(function($) {
 	$body.html('');
 
 	// Make a two column layout and add fields to the left/right column as necessary.
+	var left_column_fields = '#field_3_1, #field_3_2, #field_3_4, #field_3_5';
 	$grid.append(
 		jQuery('<div>', { class: 'cell' }).append(
-			$div_fields.find('.gfield').filter('#field_3_1, #field_3_2, #field_3_3, #field_3_4, #field_3_5')
+			$div_fields.find('.gfield').filter(left_column_fields)
 		)
 	).append(
 		jQuery('<div>', { class: 'cell' }).append(
-			$div_fields.find('.gfield').not('#field_3_1, #field_3_2, #field_3_3, #field_3_4, #field_3_5') // OTHER FIELDS, using a not() operation.
+			$div_fields.find('.gfield').not(left_column_fields) // Right column uses not() operation to add all other fields.
 		)
 	);
 
