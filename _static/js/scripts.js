@@ -247,6 +247,11 @@ jQuery(function($) {
 	var $_price = jQuery('#ginput_base_price_'+r+'_'+ids.price);// $7880
 	var $_total = jQuery('#input_'+r+'_'+ids.total);            // $7880
 
+	var $_date_options = $_date.find('option'); // Will be filtered
+	var $_occupancy_options = $_occupancy.find('option'); // Will be filtered
+
+	console.log($_date_options);
+
 	var update_register_price = function( new_price ) {
 		if ( new_price <= 0 ) {
 			$_total.closest('.gfield_price').css('display', 'none');
@@ -262,23 +267,40 @@ jQuery(function($) {
 
 	$_program.on('change', function(e) {
 		var program_value = jQuery(this).val(); // eg: amalfi
+		var date_value = $_date.val(); // eg: morocco
 
-		// Hide dates that aren't used by this option.
+		console.log( 'date bef: ', date_value );
+
+		$_date_options
+
+			// Detach all options from this select, re-attach only those that belong to the selected program.
+			.detach()
+
+			// Loop through each option
+			.each(function() {
+				var opt_value = jQuery(this).val(); // eg:  morocco_march-4-13-2018
+
+				// Determine if this option should appear in the dropdown. It must belong to the selected program.
+				var show_option = false;
+				if ( opt_value === "" ) show_option = true; // Always show the empty option so we can leave it blank.
+				if ( program_value && program_value && (opt_value.indexOf(program_value) === 0) ) show_option = true; // If this date belongs to the program, show it.
+
+				if ( show_option ) {
+					// List the option within the dropdown.
+					$_date.append(this);
+
+					// Re-set the select value because the option was detached.
+					if ( date_value === opt_value ) date_value = opt_value;
+				}else{
+					// Don't include this date. If it was selected, clear the select
+					if ( $_date.val() === opt_value ) date_value = '';
+				}
+			});
+
+		console.log( 'date aft: ', date_value );
+
 		$_date
-			.find('option')
-				.each(function() {
-						var opt_value = jQuery(this).val(); // eg:  morocco_march-4-13-2018
-
-						if ( program_value && (opt_value.indexOf(program_value) === 0) ) {
-							// This date should be visible
-							jQuery(this).css('display', 'block');
-						}else{
-							// Hide this date, clear it if it was selected
-							jQuery(this).css('display', 'none');
-							if ( $_date.val() === opt_value ) $_date.val('');
-						}
-					})
-			.end()
+			// .val(date_value)
 			.trigger('change'); // Update the select
 
 	});
