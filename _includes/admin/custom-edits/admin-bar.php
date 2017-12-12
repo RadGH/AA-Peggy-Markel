@@ -3,8 +3,9 @@
 // Remove WP Logo from Admin Bar.
 function remove_wp_logo() {
 	global $wp_admin_bar;
-	$wp_admin_bar->remove_menu('wp-logo');
+	$wp_admin_bar->remove_menu( 'wp-logo' );
 }
+
 add_action( 'wp_before_admin_bar_render', 'remove_wp_logo' );
 
 // Remove the Comment Bubble from the WordPress Admin Bar.
@@ -69,27 +70,27 @@ add_action( 'wp_before_admin_bar_render', 'remove_my_account' );
 add_action( 'admin_bar_menu', 'wp_admin_bar_my_custom_account_menu', 11 );
 
 function wp_admin_bar_my_custom_account_menu( $wp_admin_bar ) {
-$user_id = get_current_user_id();
-$current_user = wp_get_current_user();
-$profile_url = get_edit_profile_url( $user_id );
-
-if ( 0 != $user_id ) {
-/* Add the "My Account" menu */
-$avatar = get_avatar( $user_id, 28 );
-$howdy = sprintf( __('Logged in as %1$s'), $current_user->display_name );
-$class = empty( $avatar ) ? '' : 'with-avatar';
-
-$wp_admin_bar->add_menu( array(
-'id' => 'my-account',
-'parent' => 'top-secondary',
-'title' => $howdy . $avatar,
-'href' => $profile_url,
-'meta' => array(
-'class' => $class,
-),
-) );
-
-}
+	$user_id = get_current_user_id();
+	$current_user = wp_get_current_user();
+	$profile_url = get_edit_profile_url( $user_id );
+	
+	if ( 0 != $user_id ) {
+		/* Add the "My Account" menu */
+		$avatar = get_avatar( $user_id, 28 );
+		$howdy = sprintf( __( 'Logged in as %1$s' ), $current_user->display_name );
+		$class = empty( $avatar ) ? '' : 'with-avatar';
+		
+		$wp_admin_bar->add_menu( array(
+			'id'     => 'my-account',
+			'parent' => 'top-secondary',
+			'title'  => $howdy . $avatar,
+			'href'   => $profile_url,
+			'meta'   => array(
+				'class' => $class,
+			),
+		) );
+		
+	}
 }
 
 
@@ -126,24 +127,43 @@ add_action( 'admin_bar_menu', 'newlogout' );*/
 // Disable the Current Site Name Menu in the Admin Bar.
 function remove_this_site() {
 	global $wp_admin_bar;
-	$wp_admin_bar->remove_menu('site-name');
+	$wp_admin_bar->remove_menu( 'site-name' );
 }
+
 add_action( 'wp_before_admin_bar_render', 'remove_this_site' );
 
 
 // Add a simple menu & link that opens in a new window.
-function custom_adminbar_menu( $meta = TRUE ) {
+function custom_adminbar_menu( $meta = true ) {
 	global $wp_admin_bar;
-		if ( !is_user_logged_in() ) { return; }
-		if ( !is_super_admin() || !is_admin_bar_showing() ) { return; }
-	$wp_admin_bar->add_menu( array(
-		'id' => 'custom_menu',
-		'class' => 'visit_menu',
-		'title' => __( 'Visit Site' ),
-		'href' => get_home_url( $blog->userblog_id, '/' ),
-		'meta' 	=> array( target => '_blank' ) )
-	);
+	if ( !is_user_logged_in() ) {
+		return;
+	}
+	if ( !is_super_admin() || !is_admin_bar_showing() ) {
+		return;
+	}
+	
+	if ( is_admin() ) {
+		$wp_admin_bar->add_menu( array(
+				'id'    => 'custom_menu',
+				'class' => 'visit_menu',
+				'title' => __( 'Visit Site' ),
+				'href'  => site_url(),
+				'meta'  => array(),
+			)
+		);
+	}else{
+		$wp_admin_bar->add_menu( array(
+				'id'    => 'custom_menu',
+				'class' => 'visit_menu',
+				'title' => __( 'Go to Dashboard' ),
+				'href'  => admin_url(),
+				'meta'  => array(),
+			)
+		);
+	}
 }
+
 add_action( 'admin_bar_menu', 'custom_adminbar_menu', 10 );
 /* The add_action # is the menu position:
 10 = Before the WP Logo
