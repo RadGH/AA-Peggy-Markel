@@ -923,3 +923,29 @@ body.error404 article .container {
 		height: 300px;
 	}
 }
+
+/*
+Hero Images with consistent height
+	1. Hero sections used on specific pages (Shop, Journal)
+	2. The first background image field for a flexible content field page.
+	2. The first text field for a flexible content field page.
+*/
+@media screen and ( min-width: $breakpoint-med + 1px )  {
+	.flexible-content-fields > &.layout-background-image:first-child .ff-background,
+	.flexible-content-fields > &.layout-text:first-child .ff-background,
+	.hero-section .ff-background {
+		height: 300px;
+
+		// Don't use padding to vertically center, use flexbox.
+		.container {
+			padding-top: 0;
+			padding-bottom: 0;
+			display: flex;
+			height: 100%;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+	}
+}
