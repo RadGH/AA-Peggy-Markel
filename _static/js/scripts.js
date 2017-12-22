@@ -61,22 +61,33 @@ jQuery(function($) {
 });
   
 //Scrolling Anchor Link
-jQuery(function($) {
+jQuery(function ( $ ) {
 	"use strict";
-		$('a[href*=#]:not([href=#])').click(function() {
-		
-    if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') || location.hostname == this.hostname) {
+	$('a[href*=#]:not([href=#])').click(function () {
 
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-           if (target.length) {
-             $('html,body').animate({
-                 scrollTop: target.offset().top
-            }, 1000);
-            return false;
-        }
-    }
-});
+		if ( location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') || location.hostname === this.hostname ) {
+
+			var hash = this.hash; // #myelement
+			var hash_id = hash.slice(1); // myelement
+			var $element = $(hash); // <div id="myelement">
+
+			if ( $element.length ) {
+				// temporary change ID so we don't scroll to the target, update hash in url, and switch id back
+				$element.attr( 'id', hash_id + '-scrolling' );
+				window.location.hash = hash;
+				$element.attr( 'id', hash_id );
+
+				// smooth scroll to the target
+				$('html,body').animate({ scrollTop: $element.offset().top }, 1000);
+
+				// make it the "targeted" element
+				$('.targeted').removeClass('targeted');
+				$element.addClass('targeted');
+
+				return false;
+			}
+		}
+	});
 });
 
 // Gallery flexible fields lightbox

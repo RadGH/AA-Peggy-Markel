@@ -2691,6 +2691,28 @@ Hero Images with consistent height
       line-height: 2.4rem; }
     .ff .itinerary-list .day:last-child .day-description > :last-child {
       margin-bottom: 0; }
+  .ff #itinerary .itinerary-form {
+    border: 1px solid transparent;
+    padding: 0;
+    -webkit-transition: border-color 0s 0s linear, padding 0s 0s linear;
+    -o-transition: border-color 0s 0s linear, padding 0s 0s linear;
+    transition: border-color 0s 0s linear, padding 0s 0s linear; }
+  .ff #itinerary:target .itinerary-form,
+  .ff #itinerary.targeted .itinerary-form {
+    border: 1px solid #777777;
+    padding: 40px 0;
+    -webkit-transition: border-color 0.4s 1.2s linear, padding 0.4s 1.2s linear;
+    -o-transition: border-color 0.4s 1.2s linear, padding 0.4s 1.2s linear;
+    transition: border-color 0.4s 1.2s linear, padding 0.4s 1.2s linear; }
+  .ff #itinerary:target,
+  .ff #itinerary.targeted {
+    color: #ccc;
+    -webkit-transition: color 0.3s 1.6s linear;
+    -o-transition: color 0.3s 1.6s linear;
+    transition: color 0.3s 1.6s linear; }
+    .ff #itinerary:target .itinerary-form,
+    .ff #itinerary.targeted .itinerary-form {
+      color: #1b1b1b; }
   .ff .testimonial-list {
     margin-bottom: 28px; }
   .ff .testimonial-list .flickity-page-dots {

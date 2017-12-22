@@ -418,6 +418,29 @@
 		}
 	}
 
+	#itinerary .itinerary-form {
+		border: 1px solid rgba(0,0,0,0);
+		padding: 0;
+		transition: border-color 0s 0s linear, padding 0s 0s linear;
+	}
+
+	#itinerary:target .itinerary-form,
+	#itinerary.targeted .itinerary-form {
+		border: 1px solid rgba(119,119,119,1);
+		padding: 40px 0;
+		transition: border-color 0.4s 1.2s linear, padding 0.4s 1.2s linear;
+	}
+
+	#itinerary:target,
+	#itinerary.targeted {
+		color: #ccc;
+		transition: color 0.3s 1.6s linear;
+
+		.itinerary-form {
+			color: #1b1b1b;
+		}
+	}
+
 	/*-----------------------------------------------------------------------------------*/
 	/*  Testimonial slider
 	/*-----------------------------------------------------------------------------------*/
