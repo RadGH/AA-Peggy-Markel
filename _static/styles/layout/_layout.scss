@@ -279,3 +279,26 @@ ul.page-numbers a.page-numbers {
 		color: $accent2;
 	}
 }
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*  [Destinations] Use same header as text column widget or rollovers
+/*-----------------------------------------------------------------------------------*/
+body.page-destinations .ff-subtitle,
+body.destination-template .ff-subtitle {
+	font-family: "EB Garamond", serif;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+body.page-destinations .ff-subtitle .pm-underline,
+body.destination-template .ff-subtitle .pm-underline {
+	font-style: normal;
+}
+
+body.page-destinations .ff-subtitle .pm-underline:after,
+body.destination-template .ff-subtitle .pm-underline:after {
+	display: none;
+}

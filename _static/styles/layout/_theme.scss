@@ -190,6 +190,7 @@ form.search-form input[type=search]::placeholder {
 
 #linkbar li {
 	display: inline-block;
+	position: relative;
 }
 
 #linkbar .nav-menu {
@@ -245,7 +246,9 @@ form.search-form input[type=search]::placeholder {
 	font-family: 'FontAwesome';
 	content: "\f0dd";
 	font-size: 1.6rem;
-	padding-left: 5px;
+	padding-left: 10px;
+	position: relative;
+	top: -2px;
 }
 
 /* Header Link Bar -> Navigation Menu (Submenu dropdowns) */
@@ -321,6 +324,35 @@ form.search-form input[type=search]::placeholder {
 		max-height: 100px;
 		max-height: 25vh;
 	}
+}
+
+/* Header -> Dropdowns */
+#linkbar .header-nav .menu-item-has-children:hover > a {
+	background: #f7f6f6;
+	color: #000;
+}
+
+#linkbar .header-nav .sub-menu {
+	background: #f7f6f6;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+#linkbar .header-nav .sub-menu li {
+	margin: 0;
+	padding: 0;
+}
+
+#linkbar .header-nav .sub-menu li a {
+	padding: 10px 15px;
+	text-align: left;
+}
+
+#linkbar .header-nav .menu-item-has-children:hover > a:hover,
+#linkbar .header-nav .sub-menu li a:hover {
+	background: #bfbfbf;
+	color: #1b1b1b;
 }
 
 /* --------------------------------
@@ -766,6 +798,16 @@ body.slideout-menu-visible #slideout-bar:before {
 	#linkbar nav {
 		display: none;
 	}
+}
+
+#slideout-menu .menu ul.sub-menu {
+	margin: 0 0 40px;
+	border: 1px dotted #d3d2d2;
+	border-top: none;
+}
+
+#slideout-menu .menu ul.sub-menu li {
+	background: #f3f3f3;
 }
 
 /* Slideout menu backdrop, transparent white overlay over main content */

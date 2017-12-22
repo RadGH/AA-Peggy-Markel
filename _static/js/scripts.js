@@ -30,7 +30,7 @@ jQuery(function($) {
 	$trigger.on('click', function(event){
     	event.preventDefault();
 
-		updateSlideoutHeight();
+		// updateSlideoutHeight();
 
 	    $body
 		    .toggleClass('slideout-menu-visible')
@@ -48,13 +48,14 @@ jQuery(function($) {
 	    	var $this = jQuery(this);
 
 		    $this.toggleClass('toggled');
-		    if ( $this.hasClass('toggled') ) {
+
+		    // if ( $this.hasClass('toggled') ) {
 			    $this.children('ul').slideToggle();
-		    }
+		    // }
 
-		    updateSlideoutHeight();
+		    // updateSlideoutHeight();
 
-		    //return false;
+		    return false;
 
 	    });
     }

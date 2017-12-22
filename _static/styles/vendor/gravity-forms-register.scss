@@ -6,6 +6,12 @@ Form ID: #4
 
 */
 
+#gform_wrapper_4 .gf_page_steps {
+	margin: 0 0 40px;
+	padding:  0;
+	text-align: center;
+}
+
 /* Hide checkbox label for "Agree to Terms" and "Payment Method" */
 #field_4_41 label.gfield_label,
 #field_4_45 label.gfield_label {

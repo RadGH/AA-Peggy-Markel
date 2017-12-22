@@ -1021,6 +1021,24 @@ ul.page-numbers a.page-numbers {
     color: #d29816; }
 
 /*-----------------------------------------------------------------------------------*/
+/*  [Destinations] Use same header as text column widget or rollovers
+/*-----------------------------------------------------------------------------------*/
+body.page-destinations .ff-subtitle,
+body.destination-template .ff-subtitle {
+  font-family: "EB Garamond", serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+body.page-destinations .ff-subtitle .pm-underline,
+body.destination-template .ff-subtitle .pm-underline {
+  font-style: normal; }
+
+body.page-destinations .ff-subtitle .pm-underline:after,
+body.destination-template .ff-subtitle .pm-underline:after {
+  display: none; }
+
+/*-----------------------------------------------------------------------------------*/
 /*  BLOG
 /*-----------------------------------------------------------------------------------*/
 body.category #content-wrapper .container,
@@ -1713,7 +1731,8 @@ form.search-form input[type=search]::placeholder {
   display: block; }
 
 #linkbar li {
-  display: inline-block; }
+  display: inline-block;
+  position: relative; }
 
 #linkbar .nav-menu {
   display: block; }
@@ -1761,7 +1780,9 @@ form.search-form input[type=search]::placeholder {
   font-family: 'FontAwesome';
   content: "\f0dd";
   font-size: 1.6rem;
-  padding-left: 5px; }
+  padding-left: 10px;
+  position: relative;
+  top: -2px; }
 
 /* Header Link Bar -> Navigation Menu (Submenu dropdowns) */
 #linkbar ul li ul {
@@ -1822,6 +1843,30 @@ form.search-form input[type=search]::placeholder {
   #linkbar .nav-logo a img {
     max-height: 100px;
     max-height: 25vh; } }
+
+/* Header -> Dropdowns */
+#linkbar .header-nav .menu-item-has-children:hover > a {
+  background: #f7f6f6;
+  color: #000; }
+
+#linkbar .header-nav .sub-menu {
+  background: #f7f6f6;
+  color: #000;
+  margin: 0;
+  padding: 0; }
+
+#linkbar .header-nav .sub-menu li {
+  margin: 0;
+  padding: 0; }
+
+#linkbar .header-nav .sub-menu li a {
+  padding: 10px 15px;
+  text-align: left; }
+
+#linkbar .header-nav .menu-item-has-children:hover > a:hover,
+#linkbar .header-nav .sub-menu li a:hover {
+  background: #bfbfbf;
+  color: #1b1b1b; }
 
 /* --------------------------------
 			Front Page
@@ -2213,6 +2258,14 @@ body.slideout-menu-visible #slideout-bar:before {
     display: block; }
   #linkbar nav {
     display: none; } }
+
+#slideout-menu .menu ul.sub-menu {
+  margin: 0 0 40px;
+  border: 1px dotted #d3d2d2;
+  border-top: none; }
+
+#slideout-menu .menu ul.sub-menu li {
+  background: #f3f3f3; }
 
 /* Slideout menu backdrop, transparent white overlay over main content */
 @media screen and (max-width: 730px) {
@@ -3201,7 +3254,7 @@ html .gform_wrapper div.validation_error {
   background: #d29816;
   border: none;
   color: #fff;
-  margin: 0 auto;
+  margin: 40px auto;
   max-width: 640px;
   padding: 15px 20px; }
 
@@ -3503,6 +3556,11 @@ Gravity Forms adjustments specifically for the Register page. There's a lot of c
 Form ID: #4
 
 */
+#gform_wrapper_4 .gf_page_steps {
+  margin: 0 0 40px;
+  padding: 0;
+  text-align: center; }
+
 /* Hide checkbox label for "Agree to Terms" and "Payment Method" */
 #field_4_41 label.gfield_label,
 #field_4_45 label.gfield_label {
