@@ -56,7 +56,10 @@ function aa_shortcode_itinerary_form( $atts, $content = '' ) {
 	$destination_id = get_the_ID();
 	if ( get_post_type($destination_id) !== 'destination' ) return '<!-- Itinerary form shortcode only works for a destination post type. -->';
 	
-	return '<div class="itinerary-form">'. do_shortcode('[gravityform id="'. $itinerary_form_id .'" field_values="destination_id='. $destination_id .'" title="false" description="false" ajax="true"]') .'</div>';
+	return '<div class="itinerary-form">'.
+		'<p>Enter your information below to get a detailed itinerary and follow up information in your inbox:</p>'.
+		do_shortcode('[gravityform id="'. $itinerary_form_id .'" field_values="destination_id='. $destination_id .'" title="false" description="false" ajax="true"]') .
+		'</div>';
 }
 add_shortcode( 'itinerary_form', 'aa_shortcode_itinerary_form' );
 
