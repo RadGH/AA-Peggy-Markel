@@ -243,6 +243,22 @@ Gravity forms - Itinerary Download form (Destination singular pages via [itinera
 	}
 }
 
+.gform_wrapper #gform_2 ul.gform_fields li.gfield {
+	padding-right: 0;
+}
+
+html .gform_wrapper #gform_2 .gform_footer .button {
+	font-size: 1.7rem;
+	padding: 20px 40px;
+	font-weight: 400;
+	background: #fbf5ea;
+	margin: 0;
+}
+
+html .gform_wrapper #gform_2 .gform_footer .button:hover {
+	background: #fbf3e2;
+}
+
 /*-----------------------------------------------------------------------------------
 Gravity forms - Contact Page (Form ID #3, also see scripts.js, the creation of div.gf_contact
 -----------------------------------------------------------------------------------*/

@@ -21,6 +21,8 @@ $days = !empty($flex_field['itinerary_log']) ? $flex_field['itinerary_log'] : fa
 if ( $days ) {
 	?>
 	<div class="itinerary-list">
+		<h3 class="itinerary-list-title h3 ff-subtitle"><span class="pm-underline">Day By Day Overview</span></h3>
+		
 		<?php
 		$i = 1;
 		foreach( $days as $d ) {
