@@ -51,41 +51,6 @@ require_once( get_template_directory() . '/_includes/custom-post-types/post.php'
 }
 add_filter( 'site_transient_update_plugins', 'filter_plugin_updates' );
 
-/*-----------------------------------------------------------
-	INCLUDE ADVANCED CUSTOM FIELDS PLUGIN WITHIN THE THEME
---------------------------------------------------------------*/
-
-// 1. customize ACF path
-add_filter('acf/settings/path', 'my_acf_settings_path');
-function my_acf_settings_path( $path ) {
-    // update path
-    $path = get_stylesheet_directory() . '/_includes/acf/';
-    // return
-    return $path;
-}
- 
-// 2. customize ACF dir
-add_filter('acf/settings/dir', 'my_acf_settings_dir');
-function my_acf_settings_dir( $dir ) {
-    // update path
-    $dir = get_stylesheet_directory_uri() . '/_includes/acf/';
-    // return
-    return $dir;
-}
- 
-// 3. Hide ACF field group menu item
-$user = wp_get_current_user();
-$user = $user->user_login;
-if($user != "alchemyandaim"): 
-
-add_filter('acf/settings/show_admin', '__return_false');
-
-endif;
-
-
-// 4. Include ACF
-include_once( get_stylesheet_directory() . '/_includes/acf/acf.php' );
-
 /*---------------------------------------------
 	ADVANCED CUSTOM FIELDS CONTROL PANEL
 ------------------------------------------------*/
@@ -117,6 +82,7 @@ require_once( get_template_directory() . '/_includes/acf-base.php' ); // Add ACF
 	ADVANCED CUSTOM FIELDS ADDONS
 ------------------------------------------------*/
 
+/*
 include_once( get_stylesheet_directory() . '/_includes/acf-addons/acf-image-crop-add-on/acf-image-crop.php');
 include_once( get_stylesheet_directory() . '/_includes/acf-addons/acf-sidebar-selector-field/acf-sidebar_selector.php');
 include_once( get_stylesheet_directory() . '/_includes/acf-addons/acf-menu-selector-field/acf-menus.php');
@@ -126,6 +92,7 @@ include_once( get_stylesheet_directory() . '/_includes/acf-addons/acf-code-field
 include_once( get_stylesheet_directory() . '/_includes/acf-addons/acf-font-awesome/acf-font-awesome.php');
 include_once( get_stylesheet_directory() . '/_includes/acf-addons/acf-justified-image-grid/acf-justified-image-grid.php');
 include_once( get_stylesheet_directory() . '/_includes/acf-addons/acf-medium-editor-field/acf-medium-editor.php');
+*/
 
 /*---------------------------------
 	REGISTER CUSTOM SIDEBAR AREAS
@@ -322,4 +289,59 @@ Lorem <sup>superscript</sup> dolor <sub>subscript</sub> amet, consectetuer adipi
                 }
         }
 }
-?>
+
+/*
+format_phone( $input, $html = true )
+  Converts any phone number to a 10-digit phone number.
+  
+    - If $html is true (default), the returned value will be an HTML-formatted phone number, including "tel:+" in the link.
+    - Extensions are supported. An extension will be identified starting with one of the following: +, -, x, ex, ext, ext.
+    - If a pattern match is not found, the original string will be returned without HTML formatting.
+    
+  Example:
+    <?php var_dump(format_phone("My phone number is: 1 (555)293-1039 ext. 3999. Thank you.")); ?>
+    
+  Output - With HTML [default] (white space added manually)
+    <span class="tel">
+      <a href="tel:+15552931039" class="tel-link">555-293-1039</a>
+      <span class="tel-ext"><span> x</span>3999</span>
+    </span>
+    
+  Output - No HTML
+      555-293-1039 x3999
+*/
+function format_phone( $string, $html = true ) {
+	// Pattern to collect digits from a phone number, and optional extension
+	// Extensions can be identified using: + - x ex ex. ext ext. extension extension.
+	// Now (should) function with country codes!
+	$pattern = '/\+?([0-9]{0,3})?[^0-9]*([0-9]{3,3})[^0-9]*([0-9]{3,3})[^0-9]*([0-9]{4,4})[^0-9]*([^0-9]*(-|e?xt?\.?)[^0-9]*([0-9]{1,}))?[^0-9]*$/i';
+	
+	if ( preg_match($pattern, $string, $matches) ) {
+		// Input: "1 (541) 123-4567 x999"
+		// 1 => 1
+		// 2 => 541
+		// 3 => 123
+		// 4 => 4567
+		// 7 => 999
+		$result = array();
+		if ( isset($matches[7]) ) $ext = $matches[7];
+		else $ext = '';
+		$countrycode = $matches[1] ? $matches[1] : 1;
+		// Output (HTML):
+		// <span class="tel"><a href="tel+15411234567" class="tel-link">541-123-4567</a><span class="tel-ext"><span> x</span>999</span></span>
+		// Output (Raw):
+		// 541-123-4567 x999
+		if ( $html ) $result[] = '<span class="tel">';
+		if ( $html ) $result[] = sprintf('<a href="tel:+%s%s%s%s" class="tel-link">', $countrycode, $matches[2], $matches[3], $matches[4]);
+		$result[] = sprintf('(%s) %s-%s', $matches[2], $matches[3], $matches[4]);
+		if ( $html ) $result[] = sprintf('</a>');
+		// Note: tel: links cannot *reliably* include an extension, so it comes after the link.
+		if ( $ext && $html ) $result[] = sprintf('<span class="tel-ext"><span> x</span>%s</span>', $ext);
+		else if ( $ext )     $result[] = sprintf(' x%s', $ext);
+		if ( $html ) $result[] = '</span>';
+		return implode($result);
+	}
+	
+	// Pattern not found
+	return esc_html($string); // The phone number isn't valid, but that's ok. Keep the original.
+}
