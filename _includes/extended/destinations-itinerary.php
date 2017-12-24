@@ -136,36 +136,9 @@ function aa_itinerary_notification_insert_short_tags_and_attachment( $notificati
 	$destination_id = aa_get_destination_id_from_gravity_forms( $entry );
 	if ( !$destination_id ) return $notification;
 	
-	// Get the itinerary PDF and title to use for the short tags
-	$destination_title = get_the_title( $destination_id );
-	$pdf = get_field( 'itinerary_pdf', $destination_id );
-	
-	if ( !empty($pdf['ID']) ) {
-		// Replace short tags within the subject and message. Short tags include: [itinerary_title] and [itinerary_download]
-		$notification['subject'] = aa_itinerary_filter_short_tags( $notification['subject'], $pdf['url'], $destination_title );
-		$notification['message'] = aa_itinerary_filter_short_tags( $notification['message'], $pdf['url'], $destination_title );
-		
-		// Don't bother attaching the PDF if it is going to the admin.
-		if ( $notification['to'] !== '{admin_email}' && $notification['to'] !== get_option( 'admin_email' ) ) {
-		
-			// Attach the itinerary PDF to the notification (note: not to the $notification)
-			$pdf_path = get_attached_file( $pdf['ID'] );
-			if ( $pdf_path && file_exists($pdf_path) ) {
-				if ( !isset($notification['attachments']) || !is_array($notification['attachments']) ) {
-					// Initialize the attachments field
-					$notification['attachments'] = array();
-				}
-				
-				// Attach the file path
-				$notification['attachments'][] = $pdf_path;
-			}
-		
-		}
-	}else{
-		// The itinerary was not attached. Link to the destination page, and append an error to the download title
-		$notification['subject'] = aa_itinerary_filter_short_tags( $notification['subject'], false );
-		$notification['message'] = aa_itinerary_filter_short_tags( $notification['message'], false );
-	}
+	// Replace short tags within the subject and message. Short tags include: [itinerary_title] and [itinerary_link]
+	$notification['subject'] = aa_itinerary_filter_short_tags( $notification['subject'], $destination_id );
+	$notification['message'] = aa_itinerary_filter_short_tags( $notification['message'], $destination_id );
 	
 	// Return the adjusted notification data
 	return $notification;
@@ -179,46 +152,42 @@ function aa_itinerary_confirmation_insert_short_tags( $confirmation, $form, $ent
 	$destination_id = aa_get_destination_id_from_gravity_forms( $entry );
 	if ( !$destination_id ) return $confirmation;
 	
-	// Get the itinerary PDF and title to use for the short tags
-	$destination_title = get_the_title( $destination_id );
-	$pdf = get_field( 'itinerary_pdf', $destination_id );
-	
-	if ( !empty($pdf['ID']) ) {
-		$confirmation = aa_itinerary_filter_short_tags( $confirmation, $pdf['url'], $destination_title );
-	}else{
-		$confirmation = aa_itinerary_filter_short_tags( $confirmation, false );
-	}
+	$confirmation = aa_itinerary_filter_short_tags( $confirmation, $destination_id );
 	
 	return $confirmation;
 }
 add_filter( 'gform_confirmation', 'aa_itinerary_confirmation_insert_short_tags', 20, 4 );
 
 /**
- * Replaces short tags [itinerary_title] and [itinerary_download] with the title and download link for the itinerary PDF.
+ * Replaces short tags [itinerary_title] and [itinerary_link] with the title and download link for the itinerary PDF.
  * Note: $pdf should be an array from ACF's result of get_field().
  *
  * @param $string
- * @param $pdf_url
+ * @param $destination_id
  * @param $destination_title
  *
  * @return mixed
  */
-function aa_itinerary_filter_short_tags( $string, $pdf_url, $destination_title = null ) {
-	if ( !empty($pdf_url) ) {
-		$pdf_link = sprintf(
-			'<a href="%s" title="%s" target="_blank" rel="external" class="button">Download the itinerary for %s</a>',
-			esc_attr($pdf_url),
-			esc_attr('Download Itinerary'),
+function aa_itinerary_filter_short_tags( $string, $destination_id, $destination_title = null ) {
+	if ( !empty($destination_id) ) {
+		if ( $destination_title === null ) {
+			$destination_title = get_the_title( $destination_id );
+		}
+		
+		$itinerary_link = sprintf(
+			'<a href="%s" title="%s" target="_blank" rel="external" class="button">View the detailed itinerary for %s</a>',
+			esc_attr(aa_get_itinerary_link($destination_id)),
+			esc_attr('View Itinerary'),
 			esc_html($destination_title)
 		);
 	}else{
-		$destination_title = '(Error: The itinerary is not available to download for this entry.)';
-		$pdf_link = '<em>[Download link not available]</em>';
+		$destination_title = '(Error: The detailed itinerary is not available for this entry.)';
+		$itinerary_link = '<em>(Itinerary not available)</em>';
 	}
 	
 	$tags = array(
 		'[itinerary_title]' => esc_html($destination_title),
-		'[itinerary_download]' => $pdf_link
+		'[itinerary_link]' => $itinerary_link
 	);
 	
 	return str_replace( array_keys($tags), array_values($tags), $string );
