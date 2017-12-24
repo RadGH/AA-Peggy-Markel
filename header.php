@@ -113,9 +113,14 @@
 					
 					<?php
 					// Display social menu navigation
-					if ( $social_menu_html = aa_get_social_navigation() ) {
+					$phone = get_field( 'phone_number', 'options' );
+					$social_menu_html = aa_get_social_navigation();
+					if ( $phone || $social_menu_html ) {
 					?>
 					<div class="right">
+						<div class="phone-number">
+							Call Us: <?php echo format_phone($phone); ?>
+						</div>
 						<nav class="social-icons">
 							<?php echo $social_menu_html; ?>
 						</nav>
@@ -181,6 +186,15 @@
 						<?php get_search_form(); ?>
 						
 						<?php
+						
+						if ( $phone ) {
+							?>
+							<div class="phone-number">
+								Call Us: <?php echo format_phone($phone); ?>
+							</div>
+							<?php
+						}
+						
 						// Display social menu navigation
 						if ( $social_menu_html = aa_get_social_navigation() ) {
 							?>

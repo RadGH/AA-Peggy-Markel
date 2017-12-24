@@ -1614,6 +1614,25 @@ a:hover .pm-underline:after {
   position: relative;
   top: 5px; }
 
+#header-bar .phone-number {
+  position: relative;
+  top: 4px;
+  display: inline-block;
+  margin-right: 5px; }
+
+#header-bar .social-icons {
+  display: inline-block; }
+
+/* Phone number */
+.phone-number {
+  line-height: 1;
+  font-size: 1.6rem;
+  font-family: "EB Garamond", serif; }
+
+#slideout-nav .phone-number {
+  margin: 20px auto;
+  font-size: 1.8rem; }
+
 /* Header Bar -> Search */
 form.search-form {
   line-height: 18px;
