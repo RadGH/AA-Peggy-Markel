@@ -136,8 +136,13 @@ function aa_destination_fill_register_form_dropdowns( $form, $ajax, $field_value
 	$occupancy_options = array( array( 'value'=>'', 'text' => '', 'isSelected' => false) );
 	
 	$program_selected = isset($_POST['input_'.$_program]) ? stripslashes($_POST['input_'.$_program]) : false;
+	if ( isset($_REQUEST['register-program']) && empty($program_selected) ) $program_selected = stripslashes($_REQUEST['register-program']);
+	
 	$date_selected = isset($_POST['input_'.$_date]) ? stripslashes($_POST['input_'.$_date]) : false;
+	if ( isset($_REQUEST['register-dates']) && empty($date_selected) ) $date_selected = stripslashes($_REQUEST['register-dates']);
+	
 	$occupancy_selected = isset($_POST['input_'.$_occupancy]) ? stripslashes($_POST['input_'.$_occupancy]) : false;
+	if ( isset($_REQUEST['register-occupancy']) && empty($occupancy_selected) ) $occupancy_selected = stripslashes($_REQUEST['register-occupancy']);
 	
 	$program_data = aa_get_destination_program_data();
 	

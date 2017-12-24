@@ -215,12 +215,8 @@ img.alignleft {
 /*-----------------------------------------------------------------------------------*/
 /*	SIDEBAR & WIDGETS
 /*-----------------------------------------------------------------------------------*/
-.sidebar {
+.sidebar-archive {
 	text-align: right;
-
-	@include screen('med') {
-		text-align: center;
-	}
 }
 .widget{
 	padding: 0;
@@ -236,25 +232,26 @@ img.alignleft {
 .widget_categories h3 {
 	display: none;
 }
-.aside .widget.social{
+.content-sidebar .widget.social{
 	padding-bottom:20px;
 }
-.aside .widget.social .social-title{  
+.content-sidebar .widget.social .social-title{
 	letter-spacing: .05rem;
 }
-.aside .widget.social a{
+.content-sidebar .widget.social a{
 	font-size:1.8rem;
 	margin-left:3%;
 	text-decoration:none;
 }
-.aside .widget.social a:hover{
+.content-sidebar .widget.social a:hover{
 	color:$accent2;
 }
 #sidebar h3 {
-    letter-spacing: .05rem;
-	font-size:2.0rem;
-    text-transform: lowercase;
     text-align: left;
+	font-family: "EB Garamond", serif;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 .widget-subtitle{
 	color:#ccc;
@@ -315,15 +312,20 @@ img.alignleft {
 }
 
 @include screen('med') {
-	.sidebar {
-		margin-bottom: 30px;
+	.mobile-sidebar-button {
 		border: 1px solid #dddddd;
+		margin-bottom: 30px;
+	}
+
+	.content-sidebar {
+		max-width: 250px;
+		margin: 0 auto;
+
+		padding: 20px 5px 0;
+		text-align: center;
 	}
 
 	#sidebar {
-		padding: 20px 5px 0;
-		max-width: 250px;
-		margin: 0 auto;
 	}
 
 	.mobile-sidebar-button {

@@ -1,4 +1,4 @@
-<div id="post-<?php the_ID(); ?>" <?php post_class( 'post clearfix' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post clearfix' ); ?>>
 	<div class="post-preview">
 		<h2 class="post-title h5">
 			<span class="pm-underline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
@@ -31,4 +31,4 @@
 			</p>
 		</div>
 	</div>
-</div>
+</article>

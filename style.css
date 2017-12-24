@@ -50,15 +50,16 @@ contains global mixins, functions, helper selectors, etc.
       width: auto;
       padding: 0; } }
 
-.aside {
+.content-sidebar {
   float: left;
   width: 24%;
   padding-right: 40px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  font-size: 1.4rem; }
   @media screen and (max-width: 1175px) {
-    .aside {
+    .content-sidebar {
       float: none;
       width: auto;
       padding: 0; } }
@@ -1241,11 +1242,8 @@ img.alignleft {
 /*-----------------------------------------------------------------------------------*/
 /*	SIDEBAR & WIDGETS
 /*-----------------------------------------------------------------------------------*/
-.sidebar {
+.sidebar-archive {
   text-align: right; }
-  @media screen and (max-width: 1175px) {
-    .sidebar {
-      text-align: center; } }
 
 .widget {
   padding: 0;
@@ -1261,25 +1259,26 @@ img.alignleft {
 .widget_categories h3 {
   display: none; }
 
-.aside .widget.social {
+.content-sidebar .widget.social {
   padding-bottom: 20px; }
 
-.aside .widget.social .social-title {
+.content-sidebar .widget.social .social-title {
   letter-spacing: .05rem; }
 
-.aside .widget.social a {
+.content-sidebar .widget.social a {
   font-size: 1.8rem;
   margin-left: 3%;
   text-decoration: none; }
 
-.aside .widget.social a:hover {
+.content-sidebar .widget.social a:hover {
   color: #d29816; }
 
 #sidebar h3 {
-  letter-spacing: .05rem;
-  font-size: 2.0rem;
-  text-transform: lowercase;
-  text-align: left; }
+  text-align: left;
+  font-family: "EB Garamond", serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
 
 .widget-subtitle {
   color: #ccc;
@@ -1335,13 +1334,14 @@ img.alignleft {
   transform: rotate(180deg); }
 
 @media screen and (max-width: 1175px) {
-  .sidebar {
-    margin-bottom: 30px;
-    border: 1px solid #dddddd; }
-  #sidebar {
-    padding: 20px 5px 0;
+  .mobile-sidebar-button {
+    border: 1px solid #dddddd;
+    margin-bottom: 30px; }
+  .content-sidebar {
     max-width: 250px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding: 20px 5px 0;
+    text-align: center; }
   .mobile-sidebar-button {
     display: block; }
   #sidebar {

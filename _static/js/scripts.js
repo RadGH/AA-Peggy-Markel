@@ -246,6 +246,14 @@ jQuery(function($) {
 	} );
 });
 
+// Make sidebar "sticky" using Sticky Kit, or any element with the "sticky" class
+// https://github.com/rgalus/sticky-js#examples
+jQuery(function($) {
+	if ( typeof Sticky === 'undefined' ) return;
+
+	new Sticky( '.sticky' );
+});
+
 // Add the functionality to the registration form to choose program, dates, occupancy.
 jQuery(function($) {
 	if ( typeof aa_register_data === 'undefined' ) return;

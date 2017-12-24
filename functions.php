@@ -236,15 +236,35 @@ function widgets_init() {
 
 	register_sidebar( array(
 		'name' => __('Sidebar', 'theme'),
-		'id' => 'sidbar_widget',
+		'id' => 'sidebar-primary',
 		'description' => __('The sidebar of the theme.', 'theme'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 	) );
-	}
+
+	register_sidebar( array(
+		'name' => __('Itinerary', 'theme'),
+		'id' => 'itinerary-sidebar',
+		'description' => __('Add custom widgets to the detailed itinerary pages.', 'theme'),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	) );
+	
+}
 add_action( 'widgets_init', 'widgets_init' );
+
+
+/**
+ * Include "Sticky Kit" on on sidebar pages
+ */
+function aa_include_js_sticky() {
+	wp_enqueue_script( 'sticky', get_template_directory_uri() . '/_static/js/sticky/sticky.min.js', array('jquery'), '1.2.0' );
+}
+add_filter( 'wp_enqueue_scripts', 'aa_include_js_sticky' );
 
 /*---------------------------------
 	Add Featured Image Column for Posts

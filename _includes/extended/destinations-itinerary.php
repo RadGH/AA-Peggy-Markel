@@ -300,3 +300,62 @@ function aa_itinerary_non_destination_redirect() {
 	}
 }
 add_action( 'template_redirect', 'aa_itinerary_non_destination_redirect' );
+
+function aa_itinerary_page_template( $template ) {
+	if ( is_singular( 'destination' ) && get_query_var('itinerary') === true ) {
+		$new_template = locate_template( array( '/templates/destination-itinerary.php' ) );
+		if ( '' != $new_template ) {
+			return $new_template;
+		}
+	}
+	
+	return $template;
+}
+add_filter( 'template_include', 'aa_itinerary_page_template', 30 );
+
+/**
+ * Ask robots not to index itinerary detail pages using: meta tag
+ */
+function aa_itinerary_noindex_meta_tag() {
+	if ( get_post_type() == 'destination' && get_query_var('itinerary') ) {
+		echo "\t" . '<meta name="robots" content="noindex">';
+		echo "\n";
+	}
+}
+add_filter( 'wp_head', 'aa_itinerary_noindex_meta_tag' );
+
+/**
+ * Ask robots not to index itinerary detail pages using: response header
+ */
+function aa_itinerary_noindex_response_header() {
+	if ( get_post_type() == 'destination' && get_query_var('itinerary') ) {
+		header('X-Robots-Tag: noindex');
+	}
+}
+add_filter( 'template_redirect', 'aa_itinerary_noindex_response_header', 30 );
+
+function aa_shortcode_itinerary_registration_button( $atts, $content = '' ) {
+	if ( !is_array($atts) ) $atts = (array) $atts;
+	$atts['button'] = 1;
+	return aa_shortcode_itinerary_registration_link($atts, $content);
+}
+add_shortcode('itinerary_registration_button', 'aa_shortcode_itinerary_registration_button' );
+
+function aa_shortcode_itinerary_registration_link( $atts, $content = '' ) {
+	if ( !is_array($atts) ) $atts = (array) $atts;
+	$is_button = !empty($atts['button']);
+	$text = empty($atts['text']) ? 'Click here to register' : $atts['text'];
+	$destination_id = empty($atts['destination']) ? get_the_ID() : (int) $atts['destination'];
+	
+	$destination_post = get_post($destination_id);
+	$destination_slug = aa_sanitize_key($destination_post->post_title); // the value to pass to the registration form
+	
+	$register_page_id = get_field('registration_page_id', 'options', false);
+	$register_page_url = get_permalink( $register_page_id );
+	
+	$link = add_query_arg( array('register-program' => $destination_slug), $register_page_url );
+	
+	// note "button button" is correct, it joins the first class but also adds button as a separate class.
+	return '<a href="'. esc_attr($link) .'" class="itinerary-registration-'. ($is_button ? 'button button' : 'link').'">'. esc_html($text) .'</a>';
+}
+add_shortcode('itinerary_registration_link', 'aa_shortcode_itinerary_registration_link' );

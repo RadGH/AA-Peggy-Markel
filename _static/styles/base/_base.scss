@@ -19,12 +19,14 @@
 	}
 }
 
-.aside {
+.content-sidebar {
 	float:left;
 	width: 24%;
 	padding-right: 40px;
 	box-sizing: border-box;
 	word-wrap: break-word;
+
+	font-size: 1.4rem;
 
 	@include screen('med') {
 		float: none;

@@ -17,6 +17,8 @@ add_action( 'after_setup_theme', 'aa_flexible_content_image_sizes' );
  *
  * @return string
  */
+// DEPRECATED. Use the dropdown instead.
+/*
 function aa_replace_flexible_content_field_template( $template ) {
 	if ( !is_singular() ) return $template;
 	if ( is_admin() ) return $template;
@@ -25,12 +27,13 @@ function aa_replace_flexible_content_field_template( $template ) {
 	$fields = get_field( 'content-areas' );
 	
 	if ( $fields ) {
-		return get_template_directory() . '/flexible-content-fields.php';
+		return get_template_directory() . '/templates/flexible-content-fields.php';
 	}else{
 		return $template;
 	}
 }
 add_filter( "template_include", "aa_replace_flexible_content_field_template" );
+*/
 
 /**
  * Outputs the start tag for a flexible field's background div.

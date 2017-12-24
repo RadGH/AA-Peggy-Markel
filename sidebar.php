@@ -1,8 +1,8 @@
-<div class="sidebar aside">
-	<div class="mobile-sidebar-button">
-		<a href="#">Navigation <span></span></a>
-	</div>
-	<div id="sidebar">
-		<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar')) : ?><?php endif; ?>
-	</div>
-</div>
+<?php
+if ( function_exists('dynamic_sidebar') ):
+	if ( get_post_type() == 'destination' && get_query_var('itinerary') ) {
+		dynamic_sidebar('Itinerary');
+	}else{
+		dynamic_sidebar('Sidebar');
+	}
+endif;
