@@ -223,3 +223,80 @@ function aa_itinerary_filter_short_tags( $string, $pdf_url, $destination_title =
 	
 	return str_replace( array_keys($tags), array_values($tags), $string );
 }
+
+/**
+ * Returns a destination URL with the itinerary slug at the end.
+ *
+ * @param $destination_id
+ *
+ * @return string
+ */
+function aa_get_itinerary_link( $destination_id ) {
+	if ( is_object($destination_id) ) $destination_id = $destination_id->ID;
+	
+	$url = trailingslashit(get_permalink($destination_id));
+	
+	return $url . 'itinerary/';
+}
+
+/**
+ * Displays a button to view the itinerary page.
+ *
+ * @param $field
+ *
+ * @return mixed
+ */
+function aa_preview_itinerary_button($field) {
+	if ( get_post_type() != 'destination' ) return $field;
+	
+	$id = isset($_REQUEST['post']) ? (int) $_REQUEST['post'] : get_the_ID();
+	$link = aa_get_itinerary_link($id);
+	
+	$button = '<a href="'. esc_attr($link) .'" class="button button-primary" target="itinerary">Go to Detailed Itinerary</a>';
+	
+	if ( empty($field['message']) ) {
+		$field['message'] = $button;
+	}else{
+		$field['message'].= "<br><br>" . $button;
+	}
+	
+	return $field;
+}
+// "View Detailed Itinerary" field:
+add_filter('acf/load_field/key=field_5a3ee22341c21', 'aa_preview_itinerary_button');
+
+/**
+ * Add /itinerary/ as an endpoint. This means every permalink can end in /itinerary/.
+ */
+function aa_itinerary_endpoint() {
+	add_rewrite_endpoint( 'itinerary', EP_PERMALINK );
+}
+add_action( 'init', 'aa_itinerary_endpoint' );
+
+/**
+ * If the itinerary query var is set, set it to true instead of an empty string so that we can compare it.
+ * Note: Empty query vars and unset query vars are both empty string by default - this is to workaround that issue.
+ *
+ * @param $vars
+ *
+ * @return mixed
+ */
+function aa_itinerary_query_var( $vars ) {
+	if( isset( $vars['itinerary'] ) ) $vars['itinerary'] = true;
+	return $vars;
+}
+add_filter( 'request', 'aa_itinerary_query_var' );
+
+/**
+ * Make sure this code can only run on single destination pages.
+ */
+function aa_itinerary_non_destination_redirect() {
+	$itinerary = get_query_var('itinerary');
+	
+	if ( $itinerary === true && !is_singular('destination') ) {
+		// Redirect without the itinerary
+		wp_redirect( str_replace('itinerary/', '', get_permalink() ) );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'aa_itinerary_non_destination_redirect' );
