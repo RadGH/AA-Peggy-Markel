@@ -265,14 +265,29 @@ form.search-form input[type=search]::placeholder {
 	color: $accent2 !important;
 	font-weight: 400;
 }
+#linkbar .header-nav .current-menu-item.menu-item-has-children > a:after {
+	border-top-color: $accent2;
+}
 
-.menu-item-parent > a:after, .menu-item-has-children > a:after {
-	font-family: 'FontAwesome';
-	content: "\f0dd";
-	font-size: 1.6rem;
-	padding-left: 10px;
-	position: relative;
-	top: -2px;
+.menu-item-has-children > a:after {
+	content: '';
+	display: inline-block;
+	border: 5px solid #5c5f63;
+	width: 0;
+	height: 0;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-bottom-width: 0;
+	padding: 0;
+}
+
+.menu-item-has-children > a:after {
+	transition: transform 0.35s linear;
+	transform: translate(5px, -2px) rotate(0deg);
+}
+
+.menu-item-has-children.toggled > a:after {
+	transform: translate(5px, -2px) rotate(180deg);
 }
 
 /* Header Link Bar -> Navigation Menu (Submenu dropdowns) */
