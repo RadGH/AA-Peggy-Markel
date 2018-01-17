@@ -706,45 +706,32 @@ pre > code {
       float: left; }
     .grid.grid-2-cols .cell {
       width: 50%;
-      /* Center the last cell if it is alone */
-      /*
-			&:nth-child(odd):last-child {
-				margin-left: 25%; // Half of a cell when alone on the last line
-			}
-			*/ }
+      /* Center the last cell if it is alone */ }
       .grid.grid-2-cols .cell:nth-child(2n+1) {
         clear: left;
         margin-left: 0; }
+      .grid.grid-2-cols .cell:nth-child(odd):last-child {
+        margin-left: 25%; }
     .grid.grid-3-cols .cell {
       width: 33.33%;
-      /* Center the last row if it is alone */
-      /*
-			&:nth-child(3n+1):nth-last-child(1) {
-				margin-left: 33.33%; // Half of the remaining space for a 1/4 width cell.
-			}
-			*/ }
+      /* Center the last row if it is alone */ }
       .grid.grid-3-cols .cell:nth-child(3n+1) {
         clear: left;
         margin-left: 0; }
+      .grid.grid-3-cols .cell:nth-child(3n+1):nth-last-child(1) {
+        margin-left: 33.33%; }
     .grid.grid-4-cols .cell {
       width: 25%;
-      /* Center the last line of cells */
-      /*
-			&:nth-child(4n+1):nth-last-child(1) {
-				margin-left: 37.5%; // Half of the remaining space for a 1/4 width cell.
-			}
-
-			&:nth-child(4n+1):nth-last-child(2) {
-				margin-left: 25%; // One quarter of the space when two cells are on the last line
-			}
-
-			&:nth-child(4n+1):nth-last-child(3) {
-				margin-left: 12.5%; // Half of a cell when three cells are on a line
-			}
-			*/ }
+      /* Center the last line of cells */ }
       .grid.grid-4-cols .cell:nth-child(4n+1) {
         clear: left;
-        margin-left: 0; } }
+        margin-left: 0; }
+      .grid.grid-4-cols .cell:nth-child(4n+1):nth-last-child(1) {
+        margin-left: 37.5%; }
+      .grid.grid-4-cols .cell:nth-child(4n+1):nth-last-child(2) {
+        margin-left: 25%; }
+      .grid.grid-4-cols .cell:nth-child(4n+1):nth-last-child(3) {
+        margin-left: 12.5%; } }
   @media screen and (max-width: 480px) and (min-width: 241px) {
     .grid .cell {
       float: left; }
