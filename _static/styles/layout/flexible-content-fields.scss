@@ -5,6 +5,10 @@
 		text-transform: uppercase;
 		text-decoration: underline;
 
+		&.button {
+			text-decoration: none;
+		}
+
 		.pm-underline {
 			display: none; // don't double-up the underline.
 		}

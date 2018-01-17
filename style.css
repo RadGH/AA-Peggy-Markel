@@ -349,7 +349,6 @@ input[type="button"] {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   border: none;
-  font-style: italic;
   border-bottom: 1px solid;
   height: auto; }
 
@@ -2529,6 +2528,8 @@ Hero Images with consistent height
   .ff .ff-content a {
     text-transform: uppercase;
     text-decoration: underline; }
+    .ff .ff-content a.button {
+      text-decoration: none; }
     .ff .ff-content a .pm-underline {
       display: none; }
   .ff.spacing-small .container {
