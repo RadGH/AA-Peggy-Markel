@@ -19,12 +19,7 @@ jQuery(function($) {
 	var $trigger = jQuery('#slideout-trigger');
 
 	var $menu = jQuery('#slideout-menu');
-	var $collapse = $menu.find('.slideout-collapse');
 	var $content = $menu.find('.slideout-content');
-
-	var updateSlideoutHeight = function() {
-		$collapse.css('height', $content.outerHeight());
-	};
 
 	// Toggle the menu by adding a body class, adjust a max-height value for proper transitions
 	$trigger.on('click', function(event){
@@ -39,23 +34,20 @@ jQuery(function($) {
 	
 	/*SLIDE OUT MENU DROPDOWN*/
 	var $submenus = $content.find('ul ul');
-	var $item_with_children = $content.find('.menu-item-has-children');
+	var $item_with_children = $content.find('.menu-item-has-children > a');
 
 	$submenus.css('display', 'none');
 
     if ($item_with_children.length > 0) {
 	    $item_with_children.click(function () {
-	    	var $this = jQuery(this);
+	    	var $ul = jQuery(this).closest('li');
 
-		    $this.toggleClass('toggled');
-
-		    // if ( $this.hasClass('toggled') ) {
-			    $this.children('ul').slideToggle();
-		    // }
+		    $ul.toggleClass('toggled');
+		    $ul.children('ul').stop(false, true).slideToggle();
+		    return false;
 
 		    // updateSlideoutHeight();
 
-		    return false;
 
 	    });
     }

@@ -261,7 +261,7 @@ form.search-form input[type=search]::placeholder {
 	transition: all 0.3s ease;
 }
 
-#linkbar .header-nav .current-menu-item a {
+#linkbar .header-nav .current-menu-item > a {
 	color: $accent2 !important;
 	font-weight: 400;
 }

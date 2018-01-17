@@ -1778,7 +1778,7 @@ form.search-form input[type=search]::placeholder {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }
 
-#linkbar .header-nav .current-menu-item a {
+#linkbar .header-nav .current-menu-item > a {
   color: #d29816 !important;
   font-weight: 400; }
 
