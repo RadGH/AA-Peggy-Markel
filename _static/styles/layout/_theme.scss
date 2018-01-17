@@ -1014,4 +1014,9 @@ Hero Images with consistent height
 			flex-direction: column;
 		}
 	}
+
+	// The front page is the only page with a taller hero
+	body.home .flexible-content-fields > .layout-text:first-child .ff-background {
+		height: 550px;
+	}
 }

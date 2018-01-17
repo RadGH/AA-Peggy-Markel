@@ -2466,7 +2466,9 @@ Hero Images with consistent height
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
-      flex-direction: column; } }
+      flex-direction: column; }
+  body.home .flexible-content-fields > .layout-text:first-child .ff-background {
+    height: 550px; } }
 
 .ff {
   text-align: center;
