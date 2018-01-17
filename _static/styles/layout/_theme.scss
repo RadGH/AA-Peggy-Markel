@@ -440,7 +440,7 @@ form.search-form input[type=search]::placeholder {
 
 	font-size: 1.8rem;
 	font-family: $font_text;
-	font-style: italic;
+	text-transform: uppercase;
 }
 
 .destination-item h4.title a {

@@ -1,6 +1,15 @@
 .ff {
 	text-align: center;
 
+	.ff-content a {
+		text-transform: uppercase;
+		text-decoration: underline;
+
+		.pm-underline {
+			display: none; // don't double-up the underline.
+		}
+	}
+
 	/*-----------------------------------------------------------------------------------*/
 	/*  Spacing (padding) above and below each section
 	/*-----------------------------------------------------------------------------------*/
@@ -171,10 +180,10 @@
 	/*  Subtitle
 	/*-----------------------------------------------------------------------------------*/
 	.ff-subtitle {
-		font-size: 1.8rem;
-		letter-spacing: 0.05rem;
-		font-style: italic;
-		font-family: $font_text;
+		font-size: 1.4rem;
+		letter-spacing: 2px;
+		font-family: "EB Garamond", serif;
+		text-transform: uppercase;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -191,22 +200,12 @@
 		}
 
 		h3 {
-			font-size: 1.8rem;
-			letter-spacing: 0.05rem;
-			font-style: italic;
+			font-size: 1.4rem;
+			letter-spacing: 2px;
+			font-family: "EB Garamond", serif;
+			text-transform: uppercase;
 			position: relative;
 			display: inline-block;
-
-			&:after {
-				content: '';
-				display: block;
-				position: absolute;
-				top: 100%;
-				left: 0;
-				right: 0;
-				height: 1px;
-				background: #929292
-			}
 		}
 
 		h4 {
@@ -241,8 +240,7 @@
 		line-height: 25px;
 		padding: 5px 10px 0;
 
-		font-style: italic;
-		text-transform: lowercase;
+		text-transform: uppercase;
 		text-decoration: none;
 
 		color: $text;

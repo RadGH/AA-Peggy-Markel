@@ -177,5 +177,5 @@ add_filter( 'woocommerce_show_page_title', 'aa_disable_shop_archive_title' );
 
 // Add an underline to singular product titles
 function aa_single_product_title() {
-	the_title( '<h1 itemprop="name" class="product_title entry-title"><span class="pm-underline">', '</span></h1>' );
+	the_title( '<h1 itemprop="name" class="product_title entry-title">', '</h1>' );
 }

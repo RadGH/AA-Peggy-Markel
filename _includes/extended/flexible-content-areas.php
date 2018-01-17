@@ -228,9 +228,9 @@ function aa_flexible_field_subtitle( $fields, $key = 'subtitle', $tag = 'h3', $t
 	
 	if ( $tag_appearance === null ) $tag_appearance = $tag;
 	
-	echo '<'. $tag .' class="'. $tag_appearance .' ff-subtitle"><span class="pm-underline">';
+	echo '<'. $tag .' class="'. $tag_appearance .' ff-subtitle">';
 	echo nl2br(esc_html($value));
-	echo '</span></'. $tag .'>';
+	echo '</'. $tag .'>';
 }
 
 /**

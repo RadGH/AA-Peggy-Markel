@@ -24,7 +24,7 @@ body.blog #content-wrapper .container {
 }
 .post .post-title {
 	margin: 0 0 20px;
-	font-style: italic;
+	text-transform: uppercase;
 	font-family: $font_text;
 	letter-spacing: 0.05rem;
 }
@@ -345,6 +345,7 @@ img.alignleft {
 .widget_categories a {
 	color: $text;
 	text-decoration: none;
+	text-transform: uppercase;
 	font-size: 1.4rem;
 }
 
@@ -353,7 +354,6 @@ img.alignleft {
 }
 
 .widget_categories > ul > li > a {
-	text-transform: uppercase;
 	letter-spacing: 0.2em;
 }
 

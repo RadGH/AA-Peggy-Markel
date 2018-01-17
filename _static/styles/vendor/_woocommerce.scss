@@ -212,7 +212,7 @@ html .woocommerce ul.products li {
 	font-size: 1.8rem;
 	font-family: $font_text;
 	text-decoration: underline;
-	font-style: italic;
+	text-transform: uppercase;
 
 	margin: 15px 0 10px;
 }
@@ -278,8 +278,10 @@ html .woocommerce ul.products li {
 }
 
 .single-product h1 {
-	font-family: $font_text;
 	font-size: 2.4rem;
+	letter-spacing: 2px;
+	font-family: "EB Garamond", serif;
+	text-transform: uppercase;
 }
 
 .single-product .price {

@@ -1050,7 +1050,7 @@ body.blog #content-wrapper .container {
 
 .post .post-title {
   margin: 0 0 20px;
-  font-style: italic;
+  text-transform: uppercase;
   font-family: "Crimson Text", serif;
   letter-spacing: 0.05rem; }
 
@@ -1340,13 +1340,13 @@ img.alignleft {
 .widget_categories a {
   color: #1b1b1b;
   text-decoration: none;
+  text-transform: uppercase;
   font-size: 1.4rem; }
 
 .widget_categories a:hover {
   color: #d29816; }
 
 .widget_categories > ul > li > a {
-  text-transform: uppercase;
   letter-spacing: 0.2em; }
 
 .widget_categories ul.children {
@@ -1928,7 +1928,7 @@ form.search-form input[type=search]::placeholder {
   margin-bottom: 12px;
   font-size: 1.8rem;
   font-family: "Crimson Text", serif;
-  font-style: italic; }
+  text-transform: uppercase; }
 
 .destination-item h4.title a {
   color: #000;
@@ -2526,6 +2526,11 @@ Hero Images with consistent height
   /*-----------------------------------------------------------------------------------*/
   /*  Press
 	/*-----------------------------------------------------------------------------------*/ }
+  .ff .ff-content a {
+    text-transform: uppercase;
+    text-decoration: underline; }
+    .ff .ff-content a .pm-underline {
+      display: none; }
   .ff.spacing-small .container {
     padding-top: 30px;
     padding-bottom: 30px; }
@@ -2618,29 +2623,21 @@ Hero Images with consistent height
     .ff .ff-title:last-child {
       margin-bottom: 0; }
   .ff .ff-subtitle {
-    font-size: 1.8rem;
-    letter-spacing: 0.05rem;
-    font-style: italic;
-    font-family: "Crimson Text", serif; }
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    font-family: "EB Garamond", serif;
+    text-transform: uppercase; }
     .ff .ff-subtitle:last-child {
       margin-bottom: 0; }
   .ff .ff-content > :last-child {
     margin-bottom: 0; }
   .ff .ff-content h3 {
-    font-size: 1.8rem;
-    letter-spacing: 0.05rem;
-    font-style: italic;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    font-family: "EB Garamond", serif;
+    text-transform: uppercase;
     position: relative;
     display: inline-block; }
-    .ff .ff-content h3:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: #929292; }
   .ff .ff-content h4 {
     font-family: "EB Garamond", serif;
     font-size: 1.4rem;
@@ -2660,8 +2657,7 @@ Hero Images with consistent height
     display: inline-block;
     line-height: 25px;
     padding: 5px 10px 0;
-    font-style: italic;
-    text-transform: lowercase;
+    text-transform: uppercase;
     text-decoration: none;
     color: #1b1b1b;
     background: transparent;
@@ -3035,7 +3031,7 @@ html .woocommerce ul.products li {
   font-size: 1.8rem;
   font-family: "Crimson Text", serif;
   text-decoration: underline;
-  font-style: italic;
+  text-transform: uppercase;
   margin: 15px 0 10px; }
 
 .woocommerce ul.products a .price {
@@ -3086,8 +3082,10 @@ html .woocommerce ul.products li {
     padding-top: 100px; } }
 
 .single-product h1 {
-  font-family: "Crimson Text", serif;
-  font-size: 2.4rem; }
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+  font-family: "EB Garamond", serif;
+  text-transform: uppercase; }
 
 .single-product .price {
   font-size: 2.4rem; }
