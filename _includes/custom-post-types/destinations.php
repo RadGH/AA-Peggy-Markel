@@ -49,7 +49,10 @@ function aa_register_destinations_post_type() {
 		'has_archive'           => false, // Use the flexible field instead
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
-		'rewrite'               => true,
+		'rewrite'               => array(
+			'slug' => 'departures',
+			'with_front' => false,
+		),
 	);
 	
 	register_post_type( 'destination', $args );
